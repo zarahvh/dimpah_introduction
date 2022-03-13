@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Advanced Interactive Data Exploration with Python
-# 
-# 
 # ## Plotting data
 
 # Those last plots did look promising, didn’t they? Let’s start from the beginning and go through basic plots in Python.

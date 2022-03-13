@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Advanced Interactive Data Exploration with Python
-# 
 # ## Little Control Structures
 
 # We will soon come back to real-life datasets. But before that we need to introduce a few more aspects from Python, the programming language, which you might need in data analysis tasks. This part is probably least about interactive data exploration but is common to all programming languages.

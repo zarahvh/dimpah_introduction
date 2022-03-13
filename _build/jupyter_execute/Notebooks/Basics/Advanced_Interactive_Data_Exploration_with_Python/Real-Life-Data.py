@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Advanced Interactive Data Exploration with Python
-# 
 # ## Exploring a real-life dataset
 
 # Next, we use our knowledge to analyse a real-life social dataset about death penalties. We will work through a detailed example of data exploration and analyse a very small part of the complex question of racism in the USA. 

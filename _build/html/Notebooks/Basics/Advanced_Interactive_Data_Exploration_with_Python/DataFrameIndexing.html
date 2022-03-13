@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Interactive Data Exploration with Python &#8212; Dimpah introduction to python for DH</title>
+    <title>Data Frame Indexing &#8212; Dimpah introduction to python for DH</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Advanced Interactive Data Exploration with Python" href="ControlStructures.html" />
+    <link rel="next" title="Little Control Structures" href="ControlStructures.html" />
     <link rel="prev" title="&lt;no title&gt;" href="../../../Advanced_Data_Exploration_with_Python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -94,13 +94,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../intro.html">
-   Welcome to this Jupyter Book
+   Welcome
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Basicssss
+  Basics
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -126,28 +126,28 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Advanced Interactive Data Exploration with Python
+   Data Frame Indexing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ControlStructures.html">
-   Advanced Interactive Data Exploration with Python
+   Little Control Structures
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Real-Life-Data.html">
-   Advanced Interactive Data Exploration with Python
+   Exploring a real-life dataset
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="BasicVisualisation.html">
-   Advanced Interactive Data Exploration with Python
+   Plotting data
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Machine_Learning_for_Society_and_Culture
+  Machine learning for Society and Culture
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -280,19 +280,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-frame-indexing">
-   Data Frame Indexing
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -300,34 +287,19 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Advanced Interactive Data Exploration with Python</h1>
+                <h1>Data Frame Indexing</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-frame-indexing">
-   Data Frame Indexing
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="advanced-interactive-data-exploration-with-python">
-<h1>Advanced Interactive Data Exploration with Python<a class="headerlink" href="#advanced-interactive-data-exploration-with-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="data-frame-indexing">
-<h2>Data Frame Indexing<a class="headerlink" href="#data-frame-indexing" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="data-frame-indexing">
+<h1>Data Frame Indexing<a class="headerlink" href="#data-frame-indexing" title="Permalink to this headline">¶</a></h1>
 <p>In this part, we work towards exploring and visualising real-life datasets using Python and Pandas and query questions of racial bias in death sentences. Before we can explore real-life datasets, we need to discuss a couple of more advanced Python constructs. First, indexes of data frames.</p>
 <p>First, we need load the libraries Pandas and Numpy. You can run more than one statement in a cell. So, type in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
@@ -1300,7 +1272,6 @@ Name: petal width (cm), dtype: int64
 </div>
 <p>Indexing is a big topic in the Pandas world and unfortunately a bit complicated. Check out <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html</a>. The book Python for Data Analysis is also a great reference. Its author Wes McKinney has actually created Pandas.</p>
 </div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1337,7 +1308,7 @@ Name: petal width (cm), dtype: int64
     <a class='right-next' id="next-link" href="ControlStructures.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced Interactive Data Exploration with Python</p>
+        <p class="prev-next-title">Little Control Structures</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

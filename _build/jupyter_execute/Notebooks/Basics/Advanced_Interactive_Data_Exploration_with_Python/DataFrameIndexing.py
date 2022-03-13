@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Advanced Interactive Data Exploration with Python
-# 
 # ## Data Frame Indexing
 
 # In this part, we work towards exploring and visualising real-life datasets using Python and Pandas and query questions of racial bias in death sentences. Before we can explore real-life datasets, we need to discuss a couple of more advanced Python constructs. First, indexes of data frames.
