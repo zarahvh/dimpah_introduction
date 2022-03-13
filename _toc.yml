@@ -1,0 +1,35 @@
+- file: intro
+
+
+- file: Basics
+  sections:
+   - file: Interactive_Data_Exploration_with_Python
+     sections:
+      - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/StartingPython
+      - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/PythonLists
+      - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/Arrays
+      - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/DataFrames
+   - file: Advanced_Data_Exploration_with_Python
+     sections:
+      - file: Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing
+      - file: Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/ControlStructures
+      - file: Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/Real-Life-Data
+      - file: Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/BasicVisualisation
+
+       
+- file:  Machine_Learning_for_Society_and_Culture
+  sections:
+   - file: Community_Analysis
+     sections:
+      - file: Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/PoliticalCommunities
+      - file: Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/WebScraping
+   - file: Network_Analysis
+     sections: 
+      - file: Notebooks/Machine_Learning_for_Society_and_Culture/Network_Analysis/CreatingGraphs
+      - file: Notebooks/Machine_Learning_for_Society_and_Culture/Network_Analysis/GraphAnalysis
+   - file: Visuals
+     sections:
+      - file: Notebooks/Machine_Learning_for_Society_and_Culture/Visuals/AdvancedVisualisation
+      - file: Notebooks/Machine_Learning_for_Society_and_Culture/Visuals/ImageAnalysis
+
+
