@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Network Analysis &#8212; Dimpah introduction to python for DH</title>
+    <title>Graph Visualisation &#8212; Dimpah introduction to python for DH</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="&lt;no title&gt;" href="../../../Visuals.html" />
-    <link rel="prev" title="Network Analysis" href="CreatingGraphs.html" />
+    <link rel="prev" title="Graphs from Data" href="CreatingGraphs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,91 +94,91 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../intro.html">
-   Welcome to this Jupyter Book
+   Welcome
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Basicssss
+  Basics
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/StartingPython.html">
-   Interactive Data Exploration with Python
+   Starting with Python interactively
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/PythonLists.html">
-   Interactive Data Exploration with Python
+   Python Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/Arrays.html">
-   Interactive Data Exploration with Python
+   Arrays
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/DataFrames.html">
-   Interactive Data Exploration with Python
+   Data Frames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
-   Advanced Interactive Data Exploration with Python
+   Data Frame Indexing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/ControlStructures.html">
-   Advanced Interactive Data Exploration with Python
+   Little Control Structures
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/Real-Life-Data.html">
-   Advanced Interactive Data Exploration with Python
+   Exploring a real-life dataset
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/BasicVisualisation.html">
-   Advanced Interactive Data Exploration with Python
+   Plotting data
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Machine_Learning_for_Society_and_Culture
+  Machine learning for Society and Culture
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Community_Analysis/PoliticalCommunities.html">
-   Community Detection
+   Political Communities
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Community_Analysis/WebScraping.html">
-   Community Detection
+   Web Scraping
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="CreatingGraphs.html">
-   Network Analysis
+   Graphs from Data
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Network Analysis
+   Graph Visualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Visuals/AdvancedVisualisation.html">
-   Visuals and Arts
+   Advanced Visualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Visuals/ImageAnalysis.html">
-   Visuals and Arts
+   Image Analysis
   </a>
  </li>
 </ul>
@@ -280,19 +280,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graph-visualisation">
-   Graph Visualisation
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -300,34 +287,19 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Network Analysis</h1>
+                <h1>Graph Visualisation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graph-visualisation">
-   Graph Visualisation
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="network-analysis">
-<h1>Network Analysis<a class="headerlink" href="#network-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="graph-visualisation">
-<h2>Graph Visualisation<a class="headerlink" href="#graph-visualisation" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="graph-visualisation">
+<h1>Graph Visualisation<a class="headerlink" href="#graph-visualisation" title="Permalink to this headline">¶</a></h1>
 <p>In this session, we will try to create more advanced network visualisations. First, we need to recreate the Karate network. Run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -672,7 +644,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>The new graph clearly shows  where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!</p>
 </div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -703,7 +674,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Network Analysis</p>
+            <p class="prev-next-title">Graphs from Data</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../../Visuals.html" title="next page">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Community Detection &#8212; Dimpah introduction to python for DH</title>
+    <title>Political Communities &#8212; Dimpah introduction to python for DH</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Community Detection" href="WebScraping.html" />
+    <link rel="next" title="Web Scraping" href="WebScraping.html" />
     <link rel="prev" title="&lt;no title&gt;" href="../../../Community_Analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -94,91 +94,91 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../intro.html">
-   Welcome to this Jupyter Book
+   Welcome
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Basicssss
+  Basics
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/StartingPython.html">
-   Interactive Data Exploration with Python
+   Starting with Python interactively
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/PythonLists.html">
-   Interactive Data Exploration with Python
+   Python Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/Arrays.html">
-   Interactive Data Exploration with Python
+   Arrays
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/DataFrames.html">
-   Interactive Data Exploration with Python
+   Data Frames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
-   Advanced Interactive Data Exploration with Python
+   Data Frame Indexing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/ControlStructures.html">
-   Advanced Interactive Data Exploration with Python
+   Little Control Structures
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/Real-Life-Data.html">
-   Advanced Interactive Data Exploration with Python
+   Exploring a real-life dataset
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Advanced_Interactive_Data_Exploration_with_Python/BasicVisualisation.html">
-   Advanced Interactive Data Exploration with Python
+   Plotting data
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Machine_Learning_for_Society_and_Culture
+  Machine learning for Society and Culture
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Community Detection
+   Political Communities
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="WebScraping.html">
-   Community Detection
+   Web Scraping
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Network_Analysis/CreatingGraphs.html">
-   Network Analysis
+   Graphs from Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Network_Analysis/GraphAnalysis.html">
-   Network Analysis
+   Graph Visualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Visuals/AdvancedVisualisation.html">
-   Visuals and Arts
+   Advanced Visualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Visuals/ImageAnalysis.html">
-   Visuals and Arts
+   Image Analysis
   </a>
  </li>
 </ul>
@@ -285,17 +285,17 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#political-communities">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Political Communities
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clustering">
    Clustering
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clustering-with-k-means">
    Clustering with K-means
   </a>
@@ -310,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Community Detection</h1>
+                <h1>Political Communities</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -320,17 +320,17 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#political-communities">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Political Communities
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clustering">
    Clustering
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clustering-with-k-means">
    Clustering with K-means
   </a>
@@ -344,10 +344,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="community-detection">
-<h1>Community Detection<a class="headerlink" href="#community-detection" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="political-communities">
-<h2>Political Communities<a class="headerlink" href="#political-communities" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="political-communities">
+<h1>Political Communities<a class="headerlink" href="#political-communities" title="Permalink to this headline">¶</a></h1>
 <p>Today, we start exploring political and social community data using a popular exploration technique with association mining like clustering. It is very effective and easy to use. We will gain some real insights about US politics as well as communities in social networking sites.</p>
 <p>Another focus today will be to introduce you to the problems of real life social datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges.</p>
 <p>Finally, today will be dedicated to data exploration and the insights you can gain here. Exploring data is not necessarily a very structured part of your work.</p>
@@ -367,7 +365,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="clustering">
-<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+<h1>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h1>
 <p>In this section, we concentrate on introducing the power of digital methodologies and data exploration using a particular method called clustering, which is closely related to the understanding of political and social communities. We will look at the basics of clustering that delivers you powerful results very fast. In particular, we will use the k-means algorithm, which was invented by MacQueen in the late 1960s (<a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">https://en.wikipedia.org/wiki/K-means_clustering</a>). Despite being ancient in terms of computer lives, k-means is still widely used as it delivers good results with great performance. Performance in computing describes the effort we need in terms of computational resources. You will generally notice performance by the execution time.</p>
 <p><a class="reference external" href="https://machinelearningmastery.com/clustering-algorithms-with-python/">https://machinelearningmastery.com/clustering-algorithms-with-python/</a> provides a good overview of clustering algorithms that are implemented in Python.</p>
 <p>k-means tries to develop clusters by
@@ -1054,7 +1052,7 @@ dtype: object
 </div>
 </div>
 <div class="section" id="clustering-with-k-means">
-<h2>Clustering with K-means<a class="headerlink" href="#clustering-with-k-means" title="Permalink to this headline">¶</a></h2>
+<h1>Clustering with K-means<a class="headerlink" href="#clustering-with-k-means" title="Permalink to this headline">¶</a></h1>
 <p>Many of the decisions in analytics are more an art than a science. We need to often estimate many parameters – either based on previous experience or using background knowledge. K-means is famous for heavily depending on k or the number of clusters we want to assign. We need to tell Python which k to use.</p>
 <p>In order to find a good starting point for k, we can use our own knowledge about how the US senate is structured. We would like to investigate voting clusters, and we know that the US senate is dominated by 2 major parties. So, it seems like a good idea to start with two clusters (k = 2), as we can assume that there should be two major party-based voting clusters. Please, assign k = 2.</p>
 <p>Run the code below.</p>
@@ -1244,7 +1242,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 0, 1, 0], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 1, 0, 1], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -1258,7 +1256,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([22, 35])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([35, 22])
 </pre></div>
 </div>
 </div>
@@ -1326,7 +1324,7 @@ dtype: object
       <td>Alexander</td>
       <td>R</td>
       <td>TN</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1334,7 +1332,7 @@ dtype: object
       <td>Ayotte</td>
       <td>R</td>
       <td>NH</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1342,7 +1340,7 @@ dtype: object
       <td>Baldwin</td>
       <td>D</td>
       <td>WI</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1350,7 +1348,7 @@ dtype: object
       <td>Barrasso</td>
       <td>R</td>
       <td>WY</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1358,7 +1356,7 @@ dtype: object
       <td>Bennet</td>
       <td>D</td>
       <td>CO</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1366,7 +1364,7 @@ dtype: object
       <td>Blumenthal</td>
       <td>D</td>
       <td>CT</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1374,7 +1372,7 @@ dtype: object
       <td>Blunt</td>
       <td>R</td>
       <td>MO</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1382,7 +1380,7 @@ dtype: object
       <td>Booker</td>
       <td>D</td>
       <td>NJ</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1390,7 +1388,7 @@ dtype: object
       <td>Boozman</td>
       <td>R</td>
       <td>AR</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1398,7 +1396,7 @@ dtype: object
       <td>Boxer</td>
       <td>D</td>
       <td>CA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>10</th>
@@ -1406,7 +1404,7 @@ dtype: object
       <td>Brown</td>
       <td>D</td>
       <td>OH</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>11</th>
@@ -1414,7 +1412,7 @@ dtype: object
       <td>Burr</td>
       <td>R</td>
       <td>NC</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>12</th>
@@ -1422,7 +1420,7 @@ dtype: object
       <td>Cantwell</td>
       <td>D</td>
       <td>WA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>13</th>
@@ -1430,7 +1428,7 @@ dtype: object
       <td>Capito</td>
       <td>R</td>
       <td>WV</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>14</th>
@@ -1438,7 +1436,7 @@ dtype: object
       <td>Cardin</td>
       <td>D</td>
       <td>MD</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>15</th>
@@ -1446,7 +1444,7 @@ dtype: object
       <td>Carper</td>
       <td>D</td>
       <td>DE</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>16</th>
@@ -1454,7 +1452,7 @@ dtype: object
       <td>Casey</td>
       <td>D</td>
       <td>PA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>17</th>
@@ -1462,7 +1460,7 @@ dtype: object
       <td>Cassidy</td>
       <td>R</td>
       <td>LA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>18</th>
@@ -1470,7 +1468,7 @@ dtype: object
       <td>Coats</td>
       <td>R</td>
       <td>IN</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>19</th>
@@ -1478,7 +1476,7 @@ dtype: object
       <td>Cochran</td>
       <td>R</td>
       <td>MS</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>20</th>
@@ -1486,7 +1484,7 @@ dtype: object
       <td>Collins</td>
       <td>R</td>
       <td>ME</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>21</th>
@@ -1494,7 +1492,7 @@ dtype: object
       <td>Coons</td>
       <td>D</td>
       <td>DE</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>22</th>
@@ -1502,7 +1500,7 @@ dtype: object
       <td>Corker</td>
       <td>R</td>
       <td>TN</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>23</th>
@@ -1510,7 +1508,7 @@ dtype: object
       <td>Cornyn</td>
       <td>R</td>
       <td>TX</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>24</th>
@@ -1518,7 +1516,7 @@ dtype: object
       <td>Cotton</td>
       <td>R</td>
       <td>AR</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>25</th>
@@ -1526,7 +1524,7 @@ dtype: object
       <td>Crapo</td>
       <td>R</td>
       <td>ID</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>26</th>
@@ -1534,7 +1532,7 @@ dtype: object
       <td>Cruz</td>
       <td>R</td>
       <td>TX</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>27</th>
@@ -1542,7 +1540,7 @@ dtype: object
       <td>Daines</td>
       <td>R</td>
       <td>MT</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>28</th>
@@ -1550,7 +1548,7 @@ dtype: object
       <td>Donnelly</td>
       <td>D</td>
       <td>IN</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>29</th>
@@ -1558,7 +1556,7 @@ dtype: object
       <td>Durbin</td>
       <td>D</td>
       <td>IL</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>30</th>
@@ -1566,7 +1564,7 @@ dtype: object
       <td>Enzi</td>
       <td>R</td>
       <td>WY</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>31</th>
@@ -1574,7 +1572,7 @@ dtype: object
       <td>Ernst</td>
       <td>R</td>
       <td>IA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>32</th>
@@ -1582,7 +1580,7 @@ dtype: object
       <td>Feinstein</td>
       <td>D</td>
       <td>CA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>33</th>
@@ -1590,7 +1588,7 @@ dtype: object
       <td>Fischer</td>
       <td>R</td>
       <td>NE</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>34</th>
@@ -1598,7 +1596,7 @@ dtype: object
       <td>Flake</td>
       <td>R</td>
       <td>AZ</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>35</th>
@@ -1606,7 +1604,7 @@ dtype: object
       <td>Franken</td>
       <td>D</td>
       <td>MN</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>36</th>
@@ -1614,7 +1612,7 @@ dtype: object
       <td>Gardner</td>
       <td>R</td>
       <td>CO</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>37</th>
@@ -1622,7 +1620,7 @@ dtype: object
       <td>Gillibrand</td>
       <td>D</td>
       <td>NY</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>38</th>
@@ -1630,7 +1628,7 @@ dtype: object
       <td>Graham</td>
       <td>R</td>
       <td>SC</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>39</th>
@@ -1638,7 +1636,7 @@ dtype: object
       <td>Grassley</td>
       <td>R</td>
       <td>IA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>40</th>
@@ -1646,7 +1644,7 @@ dtype: object
       <td>Hatch</td>
       <td>R</td>
       <td>UT</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>41</th>
@@ -1654,7 +1652,7 @@ dtype: object
       <td>Heinrich</td>
       <td>D</td>
       <td>NM</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>42</th>
@@ -1662,7 +1660,7 @@ dtype: object
       <td>Heitkamp</td>
       <td>D</td>
       <td>ND</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>43</th>
@@ -1670,7 +1668,7 @@ dtype: object
       <td>Heller</td>
       <td>R</td>
       <td>NV</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>44</th>
@@ -1678,7 +1676,7 @@ dtype: object
       <td>Hirono</td>
       <td>D</td>
       <td>HI</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>45</th>
@@ -1686,7 +1684,7 @@ dtype: object
       <td>Hoeven</td>
       <td>R</td>
       <td>ND</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>46</th>
@@ -1694,7 +1692,7 @@ dtype: object
       <td>Inhofe</td>
       <td>R</td>
       <td>OK</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>47</th>
@@ -1702,7 +1700,7 @@ dtype: object
       <td>Isakson</td>
       <td>R</td>
       <td>GA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>48</th>
@@ -1710,7 +1708,7 @@ dtype: object
       <td>Johnson</td>
       <td>R</td>
       <td>WI</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>49</th>
@@ -1718,7 +1716,7 @@ dtype: object
       <td>Kaine</td>
       <td>D</td>
       <td>VA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>50</th>
@@ -1726,7 +1724,7 @@ dtype: object
       <td>King</td>
       <td>I</td>
       <td>ME</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>51</th>
@@ -1734,7 +1732,7 @@ dtype: object
       <td>Kirk</td>
       <td>R</td>
       <td>IL</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>52</th>
@@ -1742,7 +1740,7 @@ dtype: object
       <td>Klobuchar</td>
       <td>D</td>
       <td>MN</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>53</th>
@@ -1750,7 +1748,7 @@ dtype: object
       <td>Lankford</td>
       <td>R</td>
       <td>OK</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>54</th>
@@ -1758,7 +1756,7 @@ dtype: object
       <td>Leahy</td>
       <td>D</td>
       <td>VT</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>55</th>
@@ -1766,7 +1764,7 @@ dtype: object
       <td>Lee</td>
       <td>R</td>
       <td>UT</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>56</th>
@@ -1774,7 +1772,7 @@ dtype: object
       <td>Manchin</td>
       <td>D</td>
       <td>WV</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1820,18 +1818,18 @@ dtype: object
   <tbody>
     <tr>
       <th>D</th>
-      <td>21</td>
       <td>2</td>
+      <td>21</td>
     </tr>
     <tr>
       <th>I</th>
-      <td>1</td>
       <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>R</th>
-      <td>0</td>
       <td>33</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1839,7 +1837,6 @@ dtype: object
 </div>
 <p>Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result data frame?</p>
 <p>k = 2 seems to have been a fairly good choice as there is a lot of overlap between parties and voting clusters. But if you want to practice further, why not rerun the analysis with a different k?</p>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1877,7 +1874,7 @@ dtype: object
     <a class='right-next' id="next-link" href="WebScraping.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Community Detection</p>
+        <p class="prev-next-title">Web Scraping</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
