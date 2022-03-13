@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Visuals and Arts
-# 
 # ## Image Analysis
 
 # Up to now we have mainly used this session to introduce how to produce visuals of data. This is important but there is also the analysis of images and other multimedia. Next, we talk therefore about a few simple exercises to work with images. We will see that basic image manipulation is actually quite simple because images are matrixes and can be manipulated just like any other matrix. You might remember matrixes from the introductions? If not, it is good to look them up again. They are similar to data frames but simpler. They contain only one type for all columns. In the case of images, these are pixel values.

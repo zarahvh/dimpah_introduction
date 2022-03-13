@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# #  Network Analysis
-# 
 # ## Graph Visualisation
 
 # In this session, we will try to create more advanced network visualisations. First, we need to recreate the Karate network. Run the code below.

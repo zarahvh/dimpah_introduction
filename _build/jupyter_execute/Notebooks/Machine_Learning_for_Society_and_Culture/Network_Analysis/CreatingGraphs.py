@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# #  Network Analysis
-# 
 # ## Graphs from Data
 
 # In this session, we would like to start digging into the details of (social) network analysis. Let’s use a famous example from the past. Zachary’s karate club is a social network of friendships of 34 members of a karate club at a US university in the 1970s. It is described in W. W. Zachary, An information flow model for conflict and fission in small groups, Journal of Anthropological Research 33, 452-473 (1977). It is a famous early example of successful social network analysis. According to Wikipedia, ‘during the study a conflict arose between the administrator and instructor, which led to the split of the club into two. Half of the members formed a new club around the instructor members from the other part found a new instructor or gave up karate. Based on collected data Zachary assigned correctly all but one member of the club to the groups they actually joined after the split.’ https://en.wikipedia.org/wiki/Zachary%27s_karate_club. Let's see whether we can recreate this analysis.

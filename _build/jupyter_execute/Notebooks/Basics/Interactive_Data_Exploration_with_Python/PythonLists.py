@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Interactive Data Exploration with Python
-# 
 # ## Python Lists
 
 # This was a lot of stuff in the first lesson. Unfortunately, this is necessary but once you have learned one programming language all of this becomes quite obvious and repetitive. 

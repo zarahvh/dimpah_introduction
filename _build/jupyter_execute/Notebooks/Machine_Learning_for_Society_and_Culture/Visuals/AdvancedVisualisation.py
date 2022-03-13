@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Visuals and Arts 
-# 
 # ## Advanced Visualisation
 
 # It is time to visualise and organise data into graphs. We have already done this of course but in this session we take a more systematic look.

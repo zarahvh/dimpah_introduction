@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Interactive Data Exploration with Python
-# 
 # ## Data Frames
 
 # The most important structure in Python to store and process data are ‘data frames’. 

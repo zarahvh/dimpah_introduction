@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Interactive Data Exploration with Python
-# 
 # ## Starting with Python interactively
 
 # This is an introduction to the programming language Python where we focus on interactive data exploration. There are lots of other more general introductions to Python as well. If you are interested in Python as a programming language, why not try one of the many online environments that help you learn it? We like the Code Academy course: https://www.codecademy.com/learn/learn-python but there are many more.

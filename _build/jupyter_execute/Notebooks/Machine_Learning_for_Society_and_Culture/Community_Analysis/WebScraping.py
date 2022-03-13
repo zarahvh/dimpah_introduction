@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Community Detection
-# 
 # ## Web Scraping
 # 
 # The web has become a unique source of data for community analysis . Munzert et al. (2014) in their book on 'Automated data collection (...). A practical guide to web scraping and text mining' (John Wiley & Sons) emphasize in the Introduction that 'the rapid growth of the World Wide Web over the past two decades tremendously changed the way we share, collect, and publish data. Firms, public institutions, and private users provide every imaginable type of information and new channels of communication generate vast amounts of data on human behavior. What was once a fundamental problem for the social sciences — the scarcity and inaccessibility of observations — is quickly turning into an abundance of data. This turn of events does not come without problems. (…), traditional techniques for collecting and analyzing data may no longer suffice to overcome the tangled masses of data.' (p. XV). 
