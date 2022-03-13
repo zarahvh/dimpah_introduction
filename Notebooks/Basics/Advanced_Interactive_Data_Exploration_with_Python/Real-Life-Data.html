@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Interactive Data Exploration with Python &#8212; Dimpah introduction to python for DH</title>
+    <title>Exploring a real-life dataset &#8212; Dimpah introduction to python for DH</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Advanced Interactive Data Exploration with Python" href="BasicVisualisation.html" />
-    <link rel="prev" title="Advanced Interactive Data Exploration with Python" href="ControlStructures.html" />
+    <link rel="next" title="Plotting data" href="BasicVisualisation.html" />
+    <link rel="prev" title="Little Control Structures" href="ControlStructures.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,13 +94,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../intro.html">
-   Welcome to this Jupyter Book
+   Welcome
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Basicssss
+  Basics
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -126,28 +126,28 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DataFrameIndexing.html">
-   Advanced Interactive Data Exploration with Python
+   Data Frame Indexing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ControlStructures.html">
-   Advanced Interactive Data Exploration with Python
+   Little Control Structures
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Advanced Interactive Data Exploration with Python
+   Exploring a real-life dataset
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="BasicVisualisation.html">
-   Advanced Interactive Data Exploration with Python
+   Plotting data
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Machine_Learning_for_Society_and_Culture
+  Machine learning for Society and Culture
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -280,19 +280,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploring-a-real-life-dataset">
-   Exploring a real-life dataset
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -300,34 +287,19 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Advanced Interactive Data Exploration with Python</h1>
+                <h1>Exploring a real-life dataset</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploring-a-real-life-dataset">
-   Exploring a real-life dataset
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="advanced-interactive-data-exploration-with-python">
-<h1>Advanced Interactive Data Exploration with Python<a class="headerlink" href="#advanced-interactive-data-exploration-with-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exploring-a-real-life-dataset">
-<h2>Exploring a real-life dataset<a class="headerlink" href="#exploring-a-real-life-dataset" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="exploring-a-real-life-dataset">
+<h1>Exploring a real-life dataset<a class="headerlink" href="#exploring-a-real-life-dataset" title="Permalink to this headline">¶</a></h1>
 <p>Next, we use our knowledge to analyse a real-life social dataset about death penalties. We will work through a detailed example of data exploration and analyse a very small part of the complex question of racism in the USA.</p>
 <p>The data deathpenalty_df covers judgements of defendants in cases of multiple murders in Florida between 1976 and 1987. The cases all have features that (a) describe whether the death penalty was handed out (where 0 refers to no, 1 to yes), (b) the race of the defendant and (c) the race of the victim (black is referred as 0, white is 1).</p>
 <p>Load the dataset by running the code below. Later on we will discuss in detail how you can load your own data in data frame, but if you are already curious check out: <a class="reference external" href="https://www.w3schools.com/python/pandas/pandas_csv.asp">https://www.w3schools.com/python/pandas/pandas_csv.asp</a>.</p>
@@ -951,7 +923,6 @@ Name: Freq, dtype: float64
 <p>The boxplot displays the centre and spread in a format that allows you to quickly obtain a sense of the behaviour of the data. The median is denoted by the line inside the box while the box around it stands for the spread. The boxplot shows one outlier (the top dot). Can you identify it in the dataset?</p>
 <p>But this was just a taste of the visualisations that we focus on in the next sessions.</p>
 </div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -982,13 +953,13 @@ Name: Freq, dtype: float64
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Advanced Interactive Data Exploration with Python</p>
+            <p class="prev-next-title">Little Control Structures</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="BasicVisualisation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced Interactive Data Exploration with Python</p>
+        <p class="prev-next-title">Plotting data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
