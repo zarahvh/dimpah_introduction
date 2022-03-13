@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community Detection &#8212; Dimpah introduction to python for DH</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,36 +31,41 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Community Detection" href="WebScraping.html" />
     <link rel="prev" title="&lt;no title&gt;" href="../../../Community_Analysis.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -72,27 +74,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
-  
-  <img src="../../../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Dimpah introduction to python for DH</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dimpah introduction to python for DH</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../intro.html">
-   Welcome to your Jupyter Book
+   Welcome to this Jupyter Book
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<p class="caption">
+ <span class="caption-text">
+  Basicssss
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Basics/Interactive_Data_Exploration_with_Python/StartingPython.html">
    Interactive Data Exploration with Python
@@ -133,6 +144,13 @@
    Advanced Interactive Data Exploration with Python
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Machine_Learning_for_Society_and_Culture
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Community Detection
@@ -165,6 +183,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -208,7 +227,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -230,12 +249,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -259,14 +278,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#political-communities">
    Political Communities
@@ -284,17 +302,49 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Community Detection</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#political-communities">
+   Political Communities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering-with-k-means">
+   Clustering with K-means
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="community-detection">
+  <div class="tex2jax_ignore mathjax_ignore section" id="community-detection">
 <h1>Community Detection<a class="headerlink" href="#community-detection" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="political-communities">
 <h2>Political Communities<a class="headerlink" href="#political-communities" title="Permalink to this headline">¶</a></h2>
@@ -1194,7 +1244,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 1, 0, 1], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 0, 1, 0], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -1208,7 +1258,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([35, 22])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([22, 35])
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1326,7 @@ dtype: object
       <td>Alexander</td>
       <td>R</td>
       <td>TN</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1284,7 +1334,7 @@ dtype: object
       <td>Ayotte</td>
       <td>R</td>
       <td>NH</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1292,7 +1342,7 @@ dtype: object
       <td>Baldwin</td>
       <td>D</td>
       <td>WI</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1300,7 +1350,7 @@ dtype: object
       <td>Barrasso</td>
       <td>R</td>
       <td>WY</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1308,7 +1358,7 @@ dtype: object
       <td>Bennet</td>
       <td>D</td>
       <td>CO</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1316,7 +1366,7 @@ dtype: object
       <td>Blumenthal</td>
       <td>D</td>
       <td>CT</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1324,7 +1374,7 @@ dtype: object
       <td>Blunt</td>
       <td>R</td>
       <td>MO</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1332,7 +1382,7 @@ dtype: object
       <td>Booker</td>
       <td>D</td>
       <td>NJ</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1340,7 +1390,7 @@ dtype: object
       <td>Boozman</td>
       <td>R</td>
       <td>AR</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1348,7 +1398,7 @@ dtype: object
       <td>Boxer</td>
       <td>D</td>
       <td>CA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>10</th>
@@ -1356,7 +1406,7 @@ dtype: object
       <td>Brown</td>
       <td>D</td>
       <td>OH</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>11</th>
@@ -1364,7 +1414,7 @@ dtype: object
       <td>Burr</td>
       <td>R</td>
       <td>NC</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>12</th>
@@ -1372,7 +1422,7 @@ dtype: object
       <td>Cantwell</td>
       <td>D</td>
       <td>WA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>13</th>
@@ -1380,7 +1430,7 @@ dtype: object
       <td>Capito</td>
       <td>R</td>
       <td>WV</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>14</th>
@@ -1388,7 +1438,7 @@ dtype: object
       <td>Cardin</td>
       <td>D</td>
       <td>MD</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>15</th>
@@ -1396,7 +1446,7 @@ dtype: object
       <td>Carper</td>
       <td>D</td>
       <td>DE</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>16</th>
@@ -1404,7 +1454,7 @@ dtype: object
       <td>Casey</td>
       <td>D</td>
       <td>PA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>17</th>
@@ -1412,7 +1462,7 @@ dtype: object
       <td>Cassidy</td>
       <td>R</td>
       <td>LA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>18</th>
@@ -1420,7 +1470,7 @@ dtype: object
       <td>Coats</td>
       <td>R</td>
       <td>IN</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>19</th>
@@ -1428,7 +1478,7 @@ dtype: object
       <td>Cochran</td>
       <td>R</td>
       <td>MS</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>20</th>
@@ -1436,7 +1486,7 @@ dtype: object
       <td>Collins</td>
       <td>R</td>
       <td>ME</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>21</th>
@@ -1444,7 +1494,7 @@ dtype: object
       <td>Coons</td>
       <td>D</td>
       <td>DE</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>22</th>
@@ -1452,7 +1502,7 @@ dtype: object
       <td>Corker</td>
       <td>R</td>
       <td>TN</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>23</th>
@@ -1460,7 +1510,7 @@ dtype: object
       <td>Cornyn</td>
       <td>R</td>
       <td>TX</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>24</th>
@@ -1468,7 +1518,7 @@ dtype: object
       <td>Cotton</td>
       <td>R</td>
       <td>AR</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>25</th>
@@ -1476,7 +1526,7 @@ dtype: object
       <td>Crapo</td>
       <td>R</td>
       <td>ID</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>26</th>
@@ -1484,7 +1534,7 @@ dtype: object
       <td>Cruz</td>
       <td>R</td>
       <td>TX</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>27</th>
@@ -1492,7 +1542,7 @@ dtype: object
       <td>Daines</td>
       <td>R</td>
       <td>MT</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>28</th>
@@ -1500,7 +1550,7 @@ dtype: object
       <td>Donnelly</td>
       <td>D</td>
       <td>IN</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>29</th>
@@ -1508,7 +1558,7 @@ dtype: object
       <td>Durbin</td>
       <td>D</td>
       <td>IL</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>30</th>
@@ -1516,7 +1566,7 @@ dtype: object
       <td>Enzi</td>
       <td>R</td>
       <td>WY</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>31</th>
@@ -1524,7 +1574,7 @@ dtype: object
       <td>Ernst</td>
       <td>R</td>
       <td>IA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>32</th>
@@ -1532,7 +1582,7 @@ dtype: object
       <td>Feinstein</td>
       <td>D</td>
       <td>CA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>33</th>
@@ -1540,7 +1590,7 @@ dtype: object
       <td>Fischer</td>
       <td>R</td>
       <td>NE</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>34</th>
@@ -1548,7 +1598,7 @@ dtype: object
       <td>Flake</td>
       <td>R</td>
       <td>AZ</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>35</th>
@@ -1556,7 +1606,7 @@ dtype: object
       <td>Franken</td>
       <td>D</td>
       <td>MN</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>36</th>
@@ -1564,7 +1614,7 @@ dtype: object
       <td>Gardner</td>
       <td>R</td>
       <td>CO</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>37</th>
@@ -1572,7 +1622,7 @@ dtype: object
       <td>Gillibrand</td>
       <td>D</td>
       <td>NY</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>38</th>
@@ -1580,7 +1630,7 @@ dtype: object
       <td>Graham</td>
       <td>R</td>
       <td>SC</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>39</th>
@@ -1588,7 +1638,7 @@ dtype: object
       <td>Grassley</td>
       <td>R</td>
       <td>IA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>40</th>
@@ -1596,7 +1646,7 @@ dtype: object
       <td>Hatch</td>
       <td>R</td>
       <td>UT</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>41</th>
@@ -1604,7 +1654,7 @@ dtype: object
       <td>Heinrich</td>
       <td>D</td>
       <td>NM</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>42</th>
@@ -1612,7 +1662,7 @@ dtype: object
       <td>Heitkamp</td>
       <td>D</td>
       <td>ND</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>43</th>
@@ -1620,7 +1670,7 @@ dtype: object
       <td>Heller</td>
       <td>R</td>
       <td>NV</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>44</th>
@@ -1628,7 +1678,7 @@ dtype: object
       <td>Hirono</td>
       <td>D</td>
       <td>HI</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>45</th>
@@ -1636,7 +1686,7 @@ dtype: object
       <td>Hoeven</td>
       <td>R</td>
       <td>ND</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>46</th>
@@ -1644,7 +1694,7 @@ dtype: object
       <td>Inhofe</td>
       <td>R</td>
       <td>OK</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>47</th>
@@ -1652,7 +1702,7 @@ dtype: object
       <td>Isakson</td>
       <td>R</td>
       <td>GA</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>48</th>
@@ -1660,7 +1710,7 @@ dtype: object
       <td>Johnson</td>
       <td>R</td>
       <td>WI</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>49</th>
@@ -1668,7 +1718,7 @@ dtype: object
       <td>Kaine</td>
       <td>D</td>
       <td>VA</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>50</th>
@@ -1676,7 +1726,7 @@ dtype: object
       <td>King</td>
       <td>I</td>
       <td>ME</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>51</th>
@@ -1684,7 +1734,7 @@ dtype: object
       <td>Kirk</td>
       <td>R</td>
       <td>IL</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>52</th>
@@ -1692,7 +1742,7 @@ dtype: object
       <td>Klobuchar</td>
       <td>D</td>
       <td>MN</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>53</th>
@@ -1700,7 +1750,7 @@ dtype: object
       <td>Lankford</td>
       <td>R</td>
       <td>OK</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>54</th>
@@ -1708,7 +1758,7 @@ dtype: object
       <td>Leahy</td>
       <td>D</td>
       <td>VT</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>55</th>
@@ -1716,7 +1766,7 @@ dtype: object
       <td>Lee</td>
       <td>R</td>
       <td>UT</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>56</th>
@@ -1724,7 +1774,7 @@ dtype: object
       <td>Manchin</td>
       <td>D</td>
       <td>WV</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -1770,18 +1820,18 @@ dtype: object
   <tbody>
     <tr>
       <th>D</th>
-      <td>2</td>
       <td>21</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>I</th>
-      <td>0</td>
       <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>R</th>
-      <td>33</td>
       <td>0</td>
+      <td>33</td>
     </tr>
   </tbody>
 </table>
@@ -1814,36 +1864,42 @@ dtype: object
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../../Community_Analysis.html" title="previous page">&lt;no title&gt;</a>
-    <a class='right-next' id="next-link" href="WebScraping.html" title="next page">Community Detection</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../../Community_Analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="WebScraping.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Community Detection</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Tobias Blanke, Zarah van Hout<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Tobias Blanke, Zarah van Hout<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>
