@@ -2,7 +2,7 @@
 
 
 - file: Basics
-  sections:
+  chapters:
    - file: Interactive_Data_Exploration_with_Python
      sections:
       - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/StartingPython
@@ -18,7 +18,7 @@
 
        
 - file:  Machine_Learning_for_Society_and_Culture
-  sections:
+  chapters:
    - file: Community_Analysis
      sections:
       - file: Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/PoliticalCommunities
