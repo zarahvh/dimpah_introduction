@@ -4,12 +4,8 @@
 # ## Starting with Python interactively
 
 # This is an introduction to the programming language Python where we focus on interactive data exploration. There are lots of other more general introductions to Python as well. If you are interested in Python as a programming language, why not try one of the many online environments that help you learn it? We like the Code Academy course: https://www.codecademy.com/learn/learn-python but there are many more.
-# 
-# Jupyter Notebooks are a great data exploration and analysis environment. They allow you to use Python more interactively. Python is of course a fully-fledged programming language for writing long chunks of code and complex applications. But in data analysis you often just want to run one step a time and change things fast. Jupyter Notebook’s allow you do just that. These introduction notebooks explore this aspect. You can find the full notebooks for this course at https://github.com/zarahvh/dimpah/tree/master/Notebooks. In this environment, you can read them directly but if you go to the GitHub page you can download the notebooks and run more interactive session. You can also find many more additional sessions if you would like to continue learning.
 
-# Welcome to your first session on how to use Python interactively in Jupyter Notebooks. We will have several more sessions like this. Afterwards, you will have a better understanding of processing cultural and social datasets with Python.
-# 
-# Let’s try to add two numbers. Please, type ```4 + 3``` into cell below. Then, press enter.
+# Welcome to your first session on how to usePython interactively in Jupyter Notebooks. We will have several more sessions like this. Afterwards, you will have a better understanding of processing cultural and social datasets with Python.
 
 # In[1]:
 
