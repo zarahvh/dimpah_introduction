@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph Visualisation &#8212; Introduction to Data Analysis with Python</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Data Analysis with Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Interactive_Data_Exploration_with_Python/StartingPython.html">
+   Starting with Python interactively
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Interactive_Data_Exploration_with_Python/PythonLists.html">
+   Python Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Interactive_Data_Exploration_with_Python/Arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Interactive_Data_Exploration_with_Python/DataFrames.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
+   DataFrame Indexing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/ControlStructures.html">
+   Little Control Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/Real-Life-Data.html">
+   Exploring a real-life dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/BasicVisualisation.html">
+   Plotting data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Machine learning for Society and Culture
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/PoliticalCommunities.html">
+   Political Communities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/WebScraping.html">
+   Web Scraping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Machine_Learning_for_Society_and_Culture/Network_Analysis/CreatingGraphs.html">
+   Graphs from Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Machine_Learning_for_Society_and_Culture/Network_Analysis/GraphAnalysis.html">
+   Graph Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Machine_Learning_for_Society_and_Culture/Visuals/AdvancedVisualisation.html">
+   Advanced Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Notebooks/Machine_Learning_for_Society_and_Culture/Visuals/ImageAnalysis.html">
+   Image Analysis
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks_solutions/Machine_Learning_for_Society_and_Culture/Network_Analysis/GraphAnalysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah_introduction"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah_introduction/issues/new?title=Issue%20on%20page%20%2FNotebooks_solutions/Machine_Learning_for_Society_and_Culture/Network_Analysis/GraphAnalysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah_introduction/master?urlpath=tree/Notebooks_solutions/Machine_Learning_for_Society_and_Culture/Network_Analysis/GraphAnalysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/zarahvh/dimpah_introduction/blob/master/Notebooks_solutions/Machine_Learning_for_Society_and_Culture/Network_Analysis/GraphAnalysis.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Graph Visualisation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="graph-visualisation">
+<h1>Graph Visualisation<a class="headerlink" href="#graph-visualisation" title="Permalink to this headline">¶</a></h1>
+<p>In this session, we will try to create more advanced network visualisations. First, we need to recreate the Karate network. Run the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="n">karate_nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://tinyurl.com/2p9byesa&quot;</span><span class="p">)</span>
+<span class="n">karate_edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://tinyurl.com/mtmwc8hd&quot;</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;from&quot;</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(),</span> <span class="n">edge_attr</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">node_attr</span> <span class="o">=</span> <span class="n">karate_nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_attr</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_2_01.png" src="../../../_images/GraphAnalysis_2_01.png" />
+</div>
+</div>
+<p>There is a great number of options to improve this graph. You can, for instance, add the labels, use curved edges  and reduce the arrow size. Try: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">with_labels=True,</span> <span class="pre">connectionstyle=&quot;arc3,rad=0.4&quot;,</span> <span class="pre">arrowsize=0.4)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.4&quot;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_4_0.png" src="../../../_images/GraphAnalysis_4_0.png" />
+</div>
+</div>
+<p>The ids are not very exciting as node labels. Let’s try and use the first names. We can do this with the labels argument for nx.draw.</p>
+<p>Remember how we accessed the ids? Do the same with the names. It requires a dictionary mapping node id to the first name. That’s easy to get with <code class="docutils literal notranslate"><span class="pre">node_labels</span> <span class="pre">=</span> <span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'first_name')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now add this to nx.draw: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">with_labels=True,</span> <span class="pre">labels=node_labels,</span> <span class="pre">connectionstyle=&quot;arc3,rad=0.4&quot;,</span> <span class="pre">arrowsize=0.4)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.4&quot;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_9_0.png" src="../../../_images/GraphAnalysis_9_0.png" />
+</div>
+</div>
+<p>Let’s say we want to colour our network nodes based on gender as well as size them based on age. We will also change the width of the edges based on their weight. We need to apply a series of changes to the attributes pf our igraph. To get the different colours for different genders we need to add these colours to our data frame karate_nodes.</p>
+<p>The Matlib colour names are listed at: <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a></p>
+<p>np.where is one of the many functions of numpy that we will use a lot. It chooses either x or y (second and third argument) depending on the condition in the first argument. Type in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>colour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Trang</td>
+      <td>Philips</td>
+      <td>F</td>
+      <td>18</td>
+      <td>tomato</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Lovie</td>
+      <td>Stanek</td>
+      <td>F</td>
+      <td>36</td>
+      <td>tomato</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Gary</td>
+      <td>James</td>
+      <td>M</td>
+      <td>43</td>
+      <td>skyblue</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Maximo</td>
+      <td>Larimer</td>
+      <td>M</td>
+      <td>41</td>
+      <td>skyblue</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Bruno</td>
+      <td>Drury</td>
+      <td>M</td>
+      <td>18</td>
+      <td>skyblue</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now draw the graph again with another attribute node_color=np.array(karate_nodes[‘colour’]). Type in: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">node_color=np.array(karate_nodes['colour']),</span> <span class="pre">with_labels=True,</span> <span class="pre">labels=node_labels)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_13_0.png" src="../../../_images/GraphAnalysis_13_0.png" />
+</div>
+</div>
+<p>We also wanted to change the node size based on age. We could, for example, multiply the age by 10 to get the size that we want. Add <code class="docutils literal notranslate"><span class="pre">node_size</span> <span class="pre">=</span> <span class="pre">10*np.array(karate_nodes['age'])</span></code> as an attribute to nx.draw.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+                         <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_15_0.png" src="../../../_images/GraphAnalysis_15_0.png" />
+</div>
+</div>
+<p>The weight of the like-relationship will determine the width of the arrow between two nodes. All we need to do is add another attribute. Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_17_0.png" src="../../../_images/GraphAnalysis_17_0.png" />
+</div>
+</div>
+<p>Actually, these graphs have never been that great. Too many overlaps …</p>
+<p>You can  plot graphs with different layouts to avoid overlaps. To adjust the graph layout, networkx contains layout generators, which try to place the vertices and edges in a way that is more visually appealing. They position (‘pos’) the nodes and edges on a plane defined by x-values and y-values.</p>
+<p>There are many layout functions, let’s first try a random one. Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_19_0.png" src="../../../_images/GraphAnalysis_19_0.png" />
+</div>
+</div>
+<p>This is indeed very random. We can  change the layout parameter and use another function. Fruchterman Reingold (<a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">https://en.wikipedia.org/wiki/Force-directed_graph_drawing</a>) is a very popular layout algorithm. It’s called spring layout in NetworkX. Change the first line of the last code block into <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.spring_layout(G)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_21_0.png" src="../../../_images/GraphAnalysis_21_0.png" />
+</div>
+</div>
+<p>This is a bit better. Less overlap. Let’s try another layout. Replace the pos line with <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.kamada_kawai_layout(G)</span></code>.</p>
+<p>Also, the edges are too dark. A good trick is often to set their colours to greyscale. Also add:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;silver&quot;</span><span class="p">,</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;silver&quot;</span><span class="p">,</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_23_0.png" src="../../../_images/GraphAnalysis_23_0.png" />
+</div>
+</div>
+<p>Ok. At least everything is readable … But it is still difficult to see any interesting patterns in the network. Remember, e.g., the original insight from the 1970s paper of the karate club? It described how the larger community of the whole club was effectively the result of several separate communities of members and split thererfore according to trust placed in either the administrator or instructor. Thus the whole karate club community can split up easily. Graph analysis comes with a lot of so-called community detection algorithms that support such investigations. We will use what many consider one of the best algorithms in this domain. Louvain is explained at <a class="reference external" href="https://towardsdatascience.com/louvain-algorithm-93fde589f58c">https://towardsdatascience.com/louvain-algorithm-93fde589f58c</a>.</p>
+<p>Let’s first load the library with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">community</span> <span class="pre">import</span> <span class="pre">community_louvain</span></code>. You might have to install it first? Run the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#install with pip install python-louvain</span>
+
+<span class="kn">from</span> <span class="nn">community</span> <span class="kn">import</span> <span class="n">community_louvain</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Louvain requires undirected graphs. We create an undirected copy with <code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">G.to_undirected()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s create the optimal partition of the graph according to Louvain. Run <code class="docutils literal notranslate"><span class="pre">partition</span> <span class="pre">=</span> <span class="pre">community_louvain.best_partition(g)</span></code>. Print out the items of the resulting dictionary with <code class="docutils literal notranslate"><span class="pre">partition.items()</span></code>. These contain the nodes and the partition they belong to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partition</span> <span class="o">=</span> <span class="n">community_louvain</span><span class="o">.</span><span class="n">best_partition</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">partition</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(1, 0), (2, 1), (3, 1), (4, 1), (5, 0), (6, 0), (7, 0), (8, 1), (9, 3), (11, 0), (12, 0), (13, 1), (14, 1), (18, 1), (20, 0), (22, 1), (32, 2), (31, 1), (10, 3), (28, 2), (29, 3), (33, 3), (17, 0), (34, 3), (15, 3), (16, 3), (19, 3), (21, 3), (23, 3), (24, 2), (26, 2), (30, 3), (25, 2), (27, 3)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Louvain creates four partitions (0 - 3). Let’s plot these partitions by colour-coding the nodes. Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>cmap=plt.cm.Set3 is new and chooses a colormap for Python to assign a colour to each partition. Colormaps are very powerful:
+<a class="reference external" href="https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/">https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_31_0.png" src="../../../_images/GraphAnalysis_31_0.png" />
+</div>
+</div>
+<p>This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities Lourain has detected. Let’s investigate this further and visualise the degree by which members are connected to other members. A graph degree basically counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree. First though we need to calculate the degree for each node. That’s very easy using igraph’s degree function. Simply type graph.degree()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">degree</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+<span class="n">degree_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[800, 450, 500, 300, 150]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s reassign the size of the nodes with setting vertex_size= vertex_size=graph.degree()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">node_size</span><span class="o">=</span><span class="n">degree_list</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/GraphAnalysis_35_0.png" src="../../../_images/GraphAnalysis_35_0.png" />
+</div>
+</div>
+<p>The new graph clearly shows  where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks_solutions/Machine_Learning_for_Society_and_Culture/Network_Analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Tobias Blanke, Zarah van Hout<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

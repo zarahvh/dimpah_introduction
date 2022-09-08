@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Data Frames" href="DataFrames.html" />
+    <link rel="next" title="DataFrames" href="DataFrames.html" />
     <link rel="prev" title="Python Lists" href="PythonLists.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -121,12 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DataFrames.html">
-   Data Frames
+   DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
-   Data Frame Indexing
+   DataFrame Indexing
   </a>
  </li>
  <li class="toctree-l1">
@@ -305,184 +305,32 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="arrays">
 <h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
-<p>The next new concept is the numpy array. You often use this construct in data analysis. We want to use the numpy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?</p>
-<p>Numpy has been a long-standing toolkit for data analysis. According to <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>, it is ‘the fundamental package for scientific computing with Python’. It features heavily in what is still a standard introduction in our field: <a class="reference external" href="https://wesmckinney.com/pages/book.html">https://wesmckinney.com/pages/book.html</a>. It is a really good book to further work on the topics that are discussed in these introductions.</p>
+<p>The next new concept is the NumPy array. You often use this construct in data analysis. We want to employ the NumPy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?</p>
+<p>NumPy has been a long-standing toolkit for data analysis. According to <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>, it is ‘the fundamental package for scientific computing with Python’. It features heavily in what is still a standard introduction in our field: <a class="reference external" href="https://wesmckinney.com/pages/book.html">https://wesmckinney.com/pages/book.html</a>. It is a really good book to further work on the topics that are discussed in these introductions.</p>
 <p>First, we have to import the library numpy. You always do that in Python with import. In this case, type in <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s move on from our gambling and look at social media.</p>
-<p>We will now introduce an example from social analytics brought to us by <a class="reference external" href="http://dataquest.com">dataquest.com</a>, which we will come back to again later in the course. You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week.</p>
+<p>Let’s move on from our gambling and look at social media. We will now introduce an example from social analytics brought to us by <a class="reference external" href="http://dataquest.io/">dataquest.com</a>, which we will come back to again later in the course.</p>
+<p>You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week.</p>
 <p>Type in <code class="docutils literal notranslate"><span class="pre">linkedin</span> <span class="pre">=</span> <span class="pre">numpy.array([16,</span> <span class="pre">9,</span> <span class="pre">13,</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">17,</span> <span class="pre">14])</span></code> to record the views for LinkedIn.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linkedin</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is how you create a numpy array directly. If you are reminded of standard Python lists, you are right. For now, numpy arrays and lists are basically the same for us.</p>
+<p>This is how you create a NumPy array directly. If you are reminded of standard Python lists, you are right. For now, NumPy arrays and lists are basically the same for us.</p>
 <p>Now, please create the list <code class="docutils literal notranslate"><span class="pre">facebook_list</span> <span class="pre">=</span> <span class="pre">[17,</span> <span class="pre">7,</span> <span class="pre">5,</span> <span class="pre">16,</span> <span class="pre">8,</span> <span class="pre">13,</span> <span class="pre">14]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>You can transform lists easily into arrays with <code class="docutils literal notranslate"><span class="pre">facebook</span> <span class="pre">=</span> <span class="pre">numpy.array(facebook_list)</span></code>. Try it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">facebook_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Print out facebook to see that it is numpy array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([17,  7,  5, 16,  8, 13, 14])
-</pre></div>
-</div>
-</div>
-</div>
 <p>Matrices are another important concept in data analysis. They are two-dimensional arrays. They are more commmon than you think. For instance, black and white images are such matrices. They contain a pixel value at the horizontal and vertical dimension.</p>
 <p>We can create a matrix called views by simply combing linkedin and facebook. Type in <code class="docutils literal notranslate"><span class="pre">views</span> <span class="pre">=</span> <span class="pre">numpy.array([linkedin,</span> <span class="pre">facebook])</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">linkedin</span><span class="p">,</span> <span class="n">facebook</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Print out views.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16,  9, 13,  5,  2, 17, 14],
-       [17,  7,  5, 16,  8, 13, 14]])
-</pre></div>
-</div>
-</div>
-</div>
 <p>With <code class="docutils literal notranslate"><span class="pre">views.shape</span></code>, you can check the shape of the matrix. It has 2 rows and 7 columns.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 7)
-</pre></div>
-</div>
-</div>
-</div>
 <p>We can then ask a couple of good questions against the matrix views without having to reference the arrays it is made of.</p>
 <p>To find out on which days we had 13 views for either LinkedIn or Facebook, we type <code class="docutils literal notranslate"><span class="pre">views</span> <span class="pre">==</span> <span class="pre">13</span></code>. The == is the Boolean equivalence operator.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">==</span> <span class="mi">13</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False,  True, False, False, False, False],
-       [False, False, False, False, False,  True, False]])
-</pre></div>
-</div>
-</div>
-</div>
 <p>When are views less than or equal to 14? Try <code class="docutils literal notranslate"><span class="pre">views</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">&lt;=</span> <span class="mi">14</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False,  True,  True,  True,  True, False,  True],
-       [False,  True,  True, False,  True,  True,  True]])
-</pre></div>
-</div>
-</div>
-</div>
 <p>How often does facebook equal or exceed linkedin views times two? This is actually a quite advanced expression already. Try it with <code class="docutils literal notranslate"><span class="pre">sum(facebook</span> <span class="pre">&gt;=</span> <span class="pre">(linkedin</span> <span class="pre">*</span> <span class="pre">2))</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">facebook</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">linkedin</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
-</div>
 <p>Take a moment to think about the components of this expression. Maybe, you want to take a piece of paper and a pen to write down all the components. Hint: Boolean variables can also be thought of a 0 for False and 1 for True.</p>
 <p>Similar to arrays, we can access each element of a matrix, but this time we of course need 2 dimensions. <code class="docutils literal notranslate"><span class="pre">views[0][1]</span></code> will select the first row’s second element. Try it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
-</pre></div>
-</div>
-</div>
-</div>
-<p>The order is of indexs is row first and then column. Try <code class="docutils literal notranslate"><span class="pre">views[1][4]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-</pre></div>
-</div>
-</div>
-</div>
-<p>There is much more we can do. Numpy contains a lot of support functions.</p>
-<p>We can, for instance, reorder the social media views, so that the social media companies to be the columns and the rows to be the days.</p>
+<p>The order of indexes is row first and then column. Try <code class="docutils literal notranslate"><span class="pre">views[1][4]</span></code>.</p>
+<p>There is much more we can do. NumPy contains a lot of support functions.</p>
+<p>We can, for instance, reorder the social media views, so that the social media companies are the columns and the rows are the days.</p>
 <p>If you remember your school days, you can do change the axes in a matrix by transposing it - in Python with numpy.transpose. Simply run <code class="docutils literal notranslate"><span class="pre">views_t</span> <span class="pre">=</span> <span class="pre">numpy.transpose(views)</span></code>. Print out views_t.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views_t</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">views</span><span class="p">)</span>
-<span class="n">views_t</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16, 17],
-       [ 9,  7],
-       [13,  5],
-       [ 5, 16],
-       [ 2,  8],
-       [17, 13],
-       [14, 14]])
-</pre></div>
-</div>
-</div>
-</div>
-<p>Array and matrix are important ideas for interactive data explorations. Many of the comparisions we did in this notebook cannot be done directly with Python lists. In the next session, we will be introduced to the idea of data frames, which takes the matrix one step further.</p>
+<p>Array and matrix are important ideas for interactive data explorations. Many of the comparisons we did in this notebook cannot be done directly with Python lists.</p>
+<p>In the next session, we will be introduced to the idea of data frames, which takes the matrix one step further.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -520,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="DataFrames.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Frames</p>
+        <p class="prev-next-title">DataFrames</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

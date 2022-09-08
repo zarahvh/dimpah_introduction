@@ -121,12 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DataFrames.html">
-   Data Frames
+   DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
-   Data Frame Indexing
+   DataFrame Indexing
   </a>
  </li>
  <li class="toctree-l1">
@@ -305,8 +305,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="starting-with-python-interactively">
 <h1>Starting with Python interactively<a class="headerlink" href="#starting-with-python-interactively" title="Permalink to this headline">¶</a></h1>
-<p>This is an introduction to the programming language Python where we focus on interactive data exploration. There are lots of other more general introductions to Python as well. If you are interested in Python as a programming language, why not try one of the many online environments that help you learn it? We like the Code Academy course: <a class="reference external" href="https://www.codecademy.com/learn/learn-python">https://www.codecademy.com/learn/learn-python</a> but there are many more.</p>
-<p>Welcome to your first session on how to usePython interactively in Jupyter Notebooks. We will have several more sessions like this. Afterwards, you will have a better understanding of processing cultural and social datasets with Python.</p>
+<p>This is an introduction to the programming language Python where we focus on interactive data exploration. There are lots of other more general introductions to Python as well. If you are interested in Python as a programming language, why not try one of the many online environments that help you learn it? We like the Code Academy course <a class="reference external" href="https://www.codecademy.com/learn/learn-python">https://www.codecademy.com/learn/learn-python</a> but there are many more.</p>
+<p>A notebook is split into cells. You can run each cell with code by clicking on the arrow/Run in the top menu. Go to the next cell and click on it. Then, click on arrow/Run in the menu and you should see 4 + 3 = 7 as an output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span>
@@ -319,184 +319,33 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Now, let’s try <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">–</span> <span class="pre">5</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">-</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<p>And finally, brackets can be used to indicate that operators in the sub-expression take precedence - just like at school math. Try <code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">*</span> <span class="pre">3)</span> <span class="pre">–</span> <span class="pre">4</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
-</pre></div>
-</div>
-</div>
-</div>
-<p>These were all numbers. All this is very similar to what you know from calculators. But computers can process many other symbols as well. Other important symbols include ‘strings’, which you know as words. These can be any number of characters like a, b, c, etc. but also -, 1 or &amp; count as characters.</p>
-<p>Let’s try this … Please, type <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code> into the Cell’s command prompt. The quotation marks indicate that this is a string. You could also use “Hello World”.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello World&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello World&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>What do you see when you enter <code class="docutils literal notranslate"><span class="pre">type(‘string’)</span></code>?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
-</pre></div>
-</div>
-</div>
-</div>
+<p>Now, let’s try it yourself by typing in <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">–</span> <span class="pre">5</span></code> into the cell below. And then click on arrow/Run again.</p>
+<p>This works a little like a calculator from your school days.</p>
+<p>Brackets can be used to indicate that operators in the sub-expression take precedence - just like at school math. Try typing in <code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">*</span> <span class="pre">3)</span> <span class="pre">-</span> <span class="pre">4</span></code>.</p>
+<p>All this is very similar to what you know from calculators. But computers can process many other symbols as well. Other important symbols include ‘strings’, which you know as words. These can be any number of characters like a, b, c, etc. but also -, 1 or &amp; count as characters.</p>
+<p>Let’s try this …</p>
+<p>Please, type <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code> into the next cell. The quotation marks indicate that this is a string. You could also use <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code>.</p>
+<p>What do you see when you enter <code class="docutils literal notranslate"><span class="pre">type('string')</span></code>?</p>
 <p>There are many more types, which we will cover throughout the course. Check out <a class="reference external" href="https://realpython.com/python-data-types/">https://realpython.com/python-data-types/</a> for an overview.</p>
 <p>Booleans are another important type. They evaluate whether an assumption is True or False. Please, type <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">&lt;</span> <span class="pre">5</span></code>. What do you get back?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>Another important concept that discriminates programming languages from calculators are variables. They are basically names for places in the computer’s memory where we can store things. We create variables with the Python assignment operator =.</p>
+<p>Another concept that discriminates programming languages from calculators are variables. They are basically names for places in the computer’s memory where we can store things. We create variables with the Python assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <p>Let’s try that and assign the value 5 to the variable my_apples. Please, type in <code class="docutils literal notranslate"><span class="pre">my_apples</span> <span class="pre">=</span> <span class="pre">5</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_apples</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Well done.</p>
 <p>Now print out my_apples. Just type <code class="docutils literal notranslate"><span class="pre">my_apples</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_apples</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-</div>
-</div>
 <p>Numbers in Python are generally either integers (those without a floating point) or floats (those with a floating point). Check out <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html">https://docs.python.org/3/library/stdtypes.html</a> for an overview of all the different numerical types in Python.</p>
 <p>Now let’s try to assign two variables.</p>
 <p>Type <code class="docutils literal notranslate"><span class="pre">my_oranges</span> <span class="pre">=</span> <span class="pre">6</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_oranges</span> <span class="o">=</span> <span class="mi">6</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>You have now created two variables my_apples and my_oranges.</p>
+<p>You have created two variables my_apples and my_oranges.</p>
 <p>Just like numbers we can add two numerical variables. Please try it with <code class="docutils literal notranslate"><span class="pre">my_apples</span> <span class="pre">+</span> <span class="pre">my_oranges</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_apples</span> <span class="o">+</span> <span class="n">my_oranges</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
-</pre></div>
-</div>
-</div>
-</div>
 <p>We can also assign the result to a new variable my_fruit. Please type <code class="docutils literal notranslate"><span class="pre">my_fruit</span> <span class="pre">=</span> <span class="pre">my_apples</span> <span class="pre">+</span> <span class="pre">my_oranges</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_fruit</span> <span class="o">=</span> <span class="n">my_apples</span> <span class="o">+</span> <span class="n">my_oranges</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>To check that the new variable exists, please enter <code class="docutils literal notranslate"><span class="pre">my_fruit</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_fruit</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
-</pre></div>
-</div>
-</div>
-</div>
-<p>But we can only combine variables of the same type. Please assign the string ‘six’ to my_oranges with <code class="docutils literal notranslate"><span class="pre">my_oranges</span> <span class="pre">=</span> <span class="pre">‘six’</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_oranges</span> <span class="o">=</span> <span class="s1">&#39;six&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>But we can only combine variables of the same type. Please assign the string ‘six’ to my_oranges with <code class="docutils literal notranslate"><span class="pre">my_oranges</span> <span class="pre">=</span> <span class="pre">'six'</span></code>.</p>
 <p>Now let’s try and ‘add’ my_apples and my_oranges. Type <code class="docutils literal notranslate"><span class="pre">my_apples</span> <span class="pre">+</span> <span class="pre">my_oranges</span></code> and you will get an error.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_apples</span> <span class="o">+</span> <span class="n">my_oranges</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">13</span><span class="n">a741a3bfe8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_apples</span> <span class="o">+</span> <span class="n">my_oranges</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <p>Variables are very important in any programming language.</p>
 <p>A final key idea for this first session is the function. It is  a predefined set of commands. On your calculator you can, for instance, use the inv function to get the inverse of a number. Python also has a lot of pre-defined functions like inv. But in any programming language you can also define your own functions. We will come back to this later in much more detail. For now, we focus on how to use functions.</p>
 <p>In Python, functions are called with arguments in brackets. They are often found in extra libraries that are basically collections of functions. More on that also later …</p>
-<p>Please run round(9.5) to run the built-in math function round in Python. You should get 10. round is the function name and 9.5 is the only ‘argument’ as the input into functions is called.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">9.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<p>That’s already it for the first session. Lots of ideas that will help you with getting into Python. You will get used to them with practice.</p>
+<p>Please run <code class="docutils literal notranslate"><span class="pre">round(9.5)</span></code> to run the built-in math function round in Python. You should get 10. round is the function name and 9.5 is the only ‘argument’ as the input into functions is called.</p>
+<p>That’s already it for the first session. Lots of ideas that will help you with getting into Python. You will get used to them with practice. Why not try now to look at <a class="reference external" href="https://www.codecademy.com/learn/learn-python">https://www.codecademy.com/learn/learn-python</a> to practice.</p>
 </div>
 
     <script type="text/x-thebe-config">
