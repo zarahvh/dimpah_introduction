@@ -5,7 +5,7 @@
 
 # Today, we start exploring political and social community data using a popular exploration technique with association mining like clustering. It is very effective and easy to use. We will gain some real insights about US politics as well as communities in social networking sites.
 # 
-# Another focus today will be to introduce you to the problems of real life social datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges. 
+# Another focus today will be to introduce you to the problems of datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges. 
 # 
 # Finally, today will be dedicated to data exploration and the insights you can gain here. Exploring data is not necessarily a very structured part of your work. 
 # 
@@ -42,7 +42,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # 
 # The data is a subset of the data from https://www.dataquest.io/blog/k-means-clustering-us-senators/.
 # 
-# Please, run the code below to create the congress_114 data frame, which contains the voting behaviour of 114th US Senate. According to Wikipedia (https://en.wikipedia.org/wiki/114th_United_States_Congress), the 114th Congress met in Washington, D.C. from 3 January 2015 to 3 January 2017, during the final two years of Barack Obama's presidency. 
+# Please, run the code below to create the congress_114 dataframe, which contains the voting behaviour of 114th US Senate. According to Wikipedia (https://en.wikipedia.org/wiki/114th_United_States_Congress), the 114th Congress met in Washington, D.C. from 3 January 2015 to 3 January 2017, during the final two years of Barack Obama's presidency. 
 # 
 # The 2014 elections gave the Republicans control of the Senate (and control of both houses of Congress) for the first time since the 109th Congress. With 247 seats in the House of Representatives and 54 seats in the Senate, this Congress began with the largest Republican majority since the 71st Congress of 1929–1931. There are 23 Democrats, 1 Independent and 33 Republicans in our dataset. Please note that this does not represent the full 114th congress but a sample. 
 
@@ -54,68 +54,68 @@ congress_114 = pd.read_csv("https://tinyurl.com/2p8vyp99")
 
 # To warm up check the first five entries of the dataset. It contains the name of a particular senator, his/her party and home state as well as for each bill whether the senator voted for the bill (1) or against it (0). Check out the first 5 rows in congress_114 with head().
 
-# In[3]:
+# In[ ]:
 
 
-congress_114.head(5)
+
 
 
 # Next check the last five records. You know how of course ...
 # 
 # You will see that the last record contains lots of NaN values, which stand in Python for missing values. This is the voting record of a senator who was not able to vote. In real-life datasets, you will see quite a few of these kinds of records – maybe because they never existed or they were not recorded in the first place, etc.
 
-# In[4]:
+# In[ ]:
 
 
-congress_114.tail(5)
+
 
 
 # There are many strategies to deal with these kinds of missing records or 'dirty' data. Here, we will use the brute-force version and simply remove it from the data set. It is only one record and is completely missing. So, removing these records should be safe.
 # 
 # First check that there is really only one record by displaying all null entries in the dataset. Run `congress_114[congress_114.isnull().any(axis=1)]`. isnull() checks for NaN entries and any(axis=1) applies this to all columns.
 
-# In[5]:
+# In[ ]:
 
 
-congress_114[congress_114.isnull().any(axis=1)]
+
 
 
 # That's only one record missing, and the person has really not voted at all. This makes us confident that we can just delete them ...
 
 # Remove the record. The easiest is to simply remove all the records with NaN values. Pandas has a function for that. Type in `congress_114 = congress_114.dropna()`.
 
-# In[6]:
+# In[ ]:
 
 
-congress_114 = congress_114.dropna()
+
 
 
 # Check the last 5 elements again to make sure that the observation with NaN values (of the senator who missed votes) is really gone.
 
-# In[7]:
+# In[ ]:
 
 
-congress_114.tail(5)
+
 
 
 # Finally, check how many democrats, republicans and independents there are in the dataset congress_114. As you can see this is only a subset of the 100 senators. Type in `congress_114.iloc[:,2].value_counts()` to select column 3 with iloc and apply value_counts().
 
-# In[8]:
+# In[ ]:
 
 
-congress_114.iloc[:,2].value_counts()
+
 
 
 # We want to improve the content of the dataframe next and make the types fit better. To this end, we change the float types to integers. 
 # 
-# This is actually quite hard work in things like Pandas. You need to first select the right columns in the data frame. You could just count the column numbers, as it is a very small data frame. But there is a trick to find the indexes automatically. We match the beginnings of the column names and are only interested in those that start with "bill-". 
+# This is actually quite hard work in things like Pandas. You need to first select the right columns in the dataframe. You could just count the column numbers, as it is a very small dataframe. But there is a trick to find the indexes automatically. We match the beginnings of the column names and are only interested in those that start with "bill-". 
 # 
 # Check first the names of the columns to verify that there is a pattern you can exploit. Run `congress_114.columns`.
 
-# In[9]:
+# In[ ]:
 
 
-congress_114.columns
+
 
 
 # Next, use the string function startswith() to select only the 'bills-' columns. Assign them to bill_cols and print it out with:
@@ -124,29 +124,28 @@ congress_114.columns
 # bill_cols
 # ```
 
-# In[10]:
+# In[ ]:
 
 
-bill_cols = congress_114.columns.str.startswith("bill-")
-bill_cols
+
 
 
 # With the Pandas loc function and bill_cols, you can select all the bill columns. Make them all integer columns with astype(int): `congress_114.loc[:, bill_cols] = congress_114.loc[:, bill_cols].astype(int)`.
 
-# In[11]:
+# In[ ]:
 
 
-congress_114.loc[:, bill_cols] = congress_114.loc[:, bill_cols].astype(int)
 
 
-# Check that everything has come out as planned by running dtypes. 
+
+# Check that everything has come out as planned by running ```dtypes```. 
 # 
 # BTW, you will have noticed that string types are objects in Pandas ...
 
-# In[12]:
+# In[ ]:
 
 
-congress_114.dtypes
+
 
 
 # ## Clustering with K-means
@@ -157,19 +156,18 @@ congress_114.dtypes
 # 
 # Run the code below.
 
-# In[13]:
+# In[3]:
 
 
 k = 2
 
 
-# Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use congress_114.loc[:, bill_cols] to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.
+# Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use ```congress_114.loc[:, bill_cols]`` to create ```congress_114_voting```. Also, print out the first couple of rows of congress_114_voting.
 
-# In[14]:
+# In[ ]:
 
 
-congress_114_voting = congress_114.loc[:, bill_cols]
-congress_114_voting.head()
+
 
 
 # Great, we are ready to cluster the votes. Check out the details of k-means in the SKlearn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
@@ -178,7 +176,7 @@ congress_114_voting.head()
 # 
 # First import KMeans from sklearn.cluster by running the code below.
 
-# In[15]:
+# In[4]:
 
 
 from sklearn.cluster import KMeans
@@ -190,11 +188,10 @@ from sklearn.cluster import KMeans
 # kmeans.fit(congress_114_voting)
 # ```
 
-# In[16]:
+# In[ ]:
 
 
-kmeans = KMeans(n_clusters  = k) 
-kmeans.fit(congress_114_voting)
+
 
 
 # This should not have taken too long, as the dataset is very small. 
@@ -203,10 +200,8 @@ kmeans.fit(congress_114_voting)
 
 # The cluster assignments are stored as a one-dimensional NumPy array in kmeans.labels_. Here’s a look at the first five predicted labels. Run the code below.
 
-# In[17]:
+# In[5]:
 
-
-#Keep cell
 
 kmeans.labels_[:5]
 
@@ -215,10 +210,10 @@ kmeans.labels_[:5]
 # 
 # Use np.bincount with kmeans.labels_, please, and run `np.bincount(kmeans.labels_)`.
 
-# In[18]:
+# In[ ]:
 
 
-np.bincount(kmeans.labels_)
+
 
 
 # These numbers show that there is not really a clear division between Republicans and Democrats, as the clusters do not correspond to the numbers each party has in the senate. 
@@ -231,27 +226,26 @@ np.bincount(kmeans.labels_)
 # congress_114_result["cluster"] = pd.Series(kmeans.labels_)
 # ```
 
-# In[19]:
+# In[ ]:
 
 
-congress_114_result = congress_114.loc[:, np.logical_not(congress_114.columns.str.startswith('bill-'))].copy()
-congress_114_result["cluster"] = pd.Series(kmeans.labels_)
+
 
 
 # Because we like it tidy, we give the columns of congress_114_result new readable names. We can do this by assigning the columns directly to a list of names: `congress_114_result.columns = ['index','name','party', 'state', 'cluster']`.
 
-# In[20]:
+# In[ ]:
 
 
-congress_114_result.columns = ['index','name','party', 'state', 'cluster']
+
 
 
 # Let's take a look at the composition of  congress_114_result. This time we want to take a look at the whole congress_114_result. What do you see?
 
-# In[21]:
+# In[ ]:
 
 
-congress_114_result
+
 
 
 # Finally, let's take a look at the composition of our 2 clusters. 
@@ -260,12 +254,18 @@ congress_114_result
 # 
 # In order to compare party and cluster features, use pd.crosstab: https://pandas.pydata.org/docs/reference/api/pandas.crosstab.html. With the crosstab function, we can count the frequency of the combination of two columns. Simply run: `pd.crosstab(congress_114_result['party'], congress_114_result['cluster'])`.
 
-# In[22]:
+# In[ ]:
 
 
-pd.crosstab(congress_114_result['party'], congress_114_result['cluster'])
 
 
-# Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result data frame? 
+
+# Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result dataframe? 
 # 
 # k = 2 seems to have been a fairly good choice as there is a lot of overlap between parties and voting clusters. But if you want to practice further, why not rerun the analysis with a different k?
+
+# In[ ]:
+
+
+
+

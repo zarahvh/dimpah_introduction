@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Frames &#8212; Introduction to Data Analysis with Python</title>
+    <title>DataFrames &#8212; Introduction to Data Analysis with Python</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -121,12 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Data Frames
+   DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
-   Data Frame Indexing
+   DataFrame Indexing
   </a>
  </li>
  <li class="toctree-l1">
@@ -292,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Frames</h1>
+                <h1>DataFrames</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -303,18 +303,11 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="data-frames">
-<h1>Data Frames<a class="headerlink" href="#data-frames" title="Permalink to this headline">¶</a></h1>
-<p>The most important structure in Python to store and process data are ‘data frames’.</p>
-<p>The library to do so is Pandas that is a key part of our work. It is another library just like numpy. With <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, we tell Python to use the acronym pd for accessing pandas operations. This way we avoid having to type in pandas all the time.</p>
+  <div class="section" id="dataframes">
+<h1>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h1>
+<p>The most important structure in Python to store and process data are ‘dataframes’.</p>
+<p>The library to do so in Python is Pandas - a key part of our work. It is another library just like NumPy. With <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, we tell Python to use the acronym pd for accessing Pandas operations. This way we avoid having to type in pandas all the time.</p>
 <p>Try <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Before we continue, we need to recreate the data from the last session. Please run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -329,652 +322,37 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Just like matrixes, data frames also have rows and columns but can hold different types of variables in each of their columns.</p>
-<p>Think about it for a moment. The power! This way, we can record any observation in the world. Any observation will have different attributes we associate with it. For instance, flowers can be of different types and colours. With data frames we can record each observation of flowers by recording it in rows and assign to the columns the various features we observe like colour, type, etc. This way the whole world is for us to record in data frames!</p>
-<p>In order to get our week together into a single data frame, we create <code class="docutils literal notranslate"><span class="pre">my_week_df</span> <span class="pre">=</span> <span class="pre">pd.DataFrame(views_t,</span> <span class="pre">columns</span> <span class="pre">=</span> <span class="pre">['Facebook',</span> <span class="pre">'LinkedIn'])</span></code>. To create my_week_df, first the DataFrame function from Pandas (pd) is called with the transposed views. It is given the columns attribute with a list of names for the columns.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">views_t</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedin&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Think about it for a moment. The power! This way, we can record any observation in the world. Any observation will have different attributes we associate with it. For instance, flowers can be of different types and colours. With dataframes, we can record each observation of flowers by recording it in rows and assign to the columns the various features we observe like colour, type, etc. This way the whole world is for us to record in dataframes!</p>
+<p>In order to get our week together into a single dataframe, we create <code class="docutils literal notranslate"><span class="pre">my_week_df</span> <span class="pre">=</span> <span class="pre">pd.DataFrame(views_t,</span> <span class="pre">columns</span> <span class="pre">=</span> <span class="pre">['Facebook',</span> <span class="pre">'LinkedIn'])</span></code>. To create my_week_df, first the DataFrame function from Pandas (pd) is called with the transposed views. It is given the columns attribute with a list of names for the columns.</p>
 <p>Print out my_week_df.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Just like matrixes, we can select rows and columns. For that, we need the operator iloc[row][column]. We need to use the Pandas iloc function here but otherwise it is the same principle as for lists and arrays.</p>
-<p>Select row 1, column 2 with <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[0][1]</span></code>. Please note, that this function uses [] brackets instead of (). I guess they wanted to give it the numpy feel.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
-</pre></div>
-</div>
-</div>
-</div>
+<p>Just like matrixes, we can select rows and columns in dataframes. For that, we need the operator <code class="docutils literal notranslate"><span class="pre">iloc[row][column]</span></code>. We need to use the Pandas iloc function here but otherwise it is the same principle as for lists and arrays.</p>
+<p>Select row 1, column 2 with <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[0][1]</span></code>. Please note, that this function uses [] brackets instead of ().</p>
 <p>Do you remember how to select multiple elements in a list?</p>
 <p>It is similar for data frames. In order to select row 1 and 2, type in <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[0:2][:]</span></code>. This means that the first colon operator selects everything between its first index and the second index – 1. The second colon operator uses : to select all columns.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][:]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9</td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>You can also leave out the [:]. Run <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[1]</span></code> to select the second row.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>facebook    9
-linkedin    7
-Name: 1, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Any idea how to select the second column rather than a row? Take a look at <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html</a>, and you will find out that it is <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[:,</span> <span class="pre">1]</span></code>. Try it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    17
-1     7
-2     5
-3    16
-4     8
-5    13
-6    14
-Name: linkedin, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
+<p>Any idea how to select the second column rather than a row?</p>
+<p>Take a look at <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html</a>, and you will find out that it is <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[:,</span> <span class="pre">1]</span></code>. Try it.</p>
 <p>Do you know how to select the third and forth row?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>You can also select the facebook column directly with <code class="docutils literal notranslate"><span class="pre">my_week_df['facebook']</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    16
-1     9
-2    13
-3     5
-4     2
-5    17
-6    14
-Name: facebook, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
 <p>If you use two [[ ]], you get back a new dataframe. Try <code class="docutils literal notranslate"><span class="pre">my_week_df[['facebook']]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="p">[[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>14</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>Let’s add another column to our dataframe, which we call ‘happy’ for our happy days in the week.</p>
 <p>First define a list <code class="docutils literal notranslate"><span class="pre">happy</span> <span class="pre">=</span> <span class="pre">[False,</span> <span class="pre">True,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">False]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>We can then append this list to the dataframe by naming a new column and assign happy to it. Run <code class="docutils literal notranslate"><span class="pre">my_week_df['happy']</span> <span class="pre">=</span> <span class="pre">happy</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">happy</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Print out my_week_df.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-      <th>happy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-      <td>17</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9</td>
-      <td>7</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13</td>
-      <td>5</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>16</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>8</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17</td>
-      <td>13</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>14</td>
-      <td>14</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Say, we would like to select all days, we were happy. We first define a selector series for the happy days with <code class="docutils literal notranslate"><span class="pre">happy_days</span> <span class="pre">=</span> <span class="pre">df['happy']</span> <span class="pre">==</span> <span class="pre">True</span></code>. Remember the numpy arrays? This is very similar.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days</span> <span class="o">=</span> <span class="n">my_week_df</span> <span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Say, we would like to select all days, we were happy.</p>
+<p>We first define a selector series for the happy days with <code class="docutils literal notranslate"><span class="pre">happy_days</span> <span class="pre">=</span> <span class="pre">df['happy']</span> <span class="pre">==</span> <span class="pre">True</span></code>. Remember the numpy arrays? This is very similar.</p>
 <p>Print out happy_days.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
-1     True
-2    False
-3     True
-4    False
-5     True
-6    False
-Name: happy, dtype: bool
-</pre></div>
-</div>
-</div>
-</div>
 <p>It is a ‘Series’ of Booleans. Series is yet another term for lists and arrays. Pandas calls single columns things like that. I know there are lots of names here …</p>
 <p>Now, we use the Boolean selector to create <code class="docutils literal notranslate"><span class="pre">happy_days_df</span> <span class="pre">=</span> <span class="pre">df.loc[happy_days]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days_df</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">happy_days</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>It looks complicated but it is actually just a combination of statements we already know. Take some time and look at the expression happy_days_df. What kind of parts can you identify? How are the rows/days selected when you were happy?</p>
 <p>Print out happy_days_df.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-      <th>happy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>9</td>
-      <td>7</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>16</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17</td>
-      <td>13</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>If you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can proceed in a similar way. First define the selector with <code class="docutils literal notranslate"><span class="pre">small</span> <span class="pre">=</span> <span class="pre">my_week_df['linkedin']</span> <span class="pre">&gt;</span> <span class="pre">my_week_df['facebook']</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;linkedin&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Then, create a new data frame with <code class="docutils literal notranslate"><span class="pre">small_df</span> <span class="pre">=</span> <span class="pre">my_week_df.loc[small]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_df</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">small</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Then, create a new dataframe with <code class="docutils literal notranslate"><span class="pre">small_df</span> <span class="pre">=</span> <span class="pre">my_week_df.loc[small]</span></code>.</p>
 <p>Print out small_df.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-      <th>happy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-      <td>17</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>16</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>8</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>That’s almost it for data frames.</p>
-<p>I promise they get more interesting once we start working with real data. One more thing you often want to do is to sort a data frame according to one of its columns. We have another Pandas function for that called sort_values. Run <code class="docutils literal notranslate"><span class="pre">sorted_df</span> <span class="pre">=</span> <span class="pre">my_week_df.sort_values(by=['facebook'])</span></code> to sort my_week_df by the values in the facebook column.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_df</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>I promise they get more interesting once we start working with real data. One more thing you often want to do is to sort a dataframe according to one of its columns. We have another Pandas function for that called sort_values. Run <code class="docutils literal notranslate"><span class="pre">sorted_df</span> <span class="pre">=</span> <span class="pre">my_week_df.sort_values(by=['facebook'])</span></code> to sort my_week_df by the values in the facebook column.</p>
 <p>Print out sorted_df.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>facebook</th>
-      <th>linkedin</th>
-      <th>happy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>8</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>16</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9</td>
-      <td>7</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13</td>
-      <td>5</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>14</td>
-      <td>14</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-      <td>17</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17</td>
-      <td>13</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>That’s it for the most important concepts around data frames in Python.</p>
+<p>That’s it for the most important concepts around dataframes in Python.</p>
 <p>Next, we move on to some real-life datasets and more advanced data exploration.</p>
 </div>
 

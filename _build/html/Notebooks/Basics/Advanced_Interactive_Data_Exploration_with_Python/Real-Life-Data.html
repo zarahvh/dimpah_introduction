@@ -121,12 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Interactive_Data_Exploration_with_Python/DataFrames.html">
-   Data Frames
+   DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DataFrameIndexing.html">
-   Data Frame Indexing
+   DataFrame Indexing
   </a>
  </li>
  <li class="toctree-l1">
@@ -305,9 +305,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="exploring-a-real-life-dataset">
 <h1>Exploring a real-life dataset<a class="headerlink" href="#exploring-a-real-life-dataset" title="Permalink to this headline">¶</a></h1>
-<p>Next, we use our knowledge to analyse a real-life social dataset about death penalties. We will work through a detailed example of data exploration and analyse a very small part of the complex question of racism in the USA.</p>
+<p>Next, we use our knowledge to analyse a real-life dataset about death penalties. We will work through a detailed example of data exploration and analyse a very small part of the complex question of racism in the USA.</p>
 <p>The data deathpenalty_df covers judgements of defendants in cases of multiple murders in Florida between 1976 and 1987. The cases all have features that (a) describe whether the death penalty was handed out (where 0 refers to no, 1 to yes), (b) the race of the defendant and (c) the race of the victim (black is referred as 0, white is 1).</p>
-<p>Load the dataset by running the code below. Later on we will discuss in detail how you can load your own data in data frame, but if you are already curious check out: <a class="reference external" href="https://www.w3schools.com/python/pandas/pandas_csv.asp">https://www.w3schools.com/python/pandas/pandas_csv.asp</a>.</p>
+<p>Load the dataset by running the code below. Later on we will discuss in detail how you can load your own data in a dataframe, but if you are already curious check out: <a class="reference external" href="https://www.w3schools.com/python/pandas/pandas_csv.asp">https://www.w3schools.com/python/pandas/pandas_csv.asp</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -319,614 +319,50 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>By typing in <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.head()</span></code>, we can see the first couple of cases/rows. What types of columns do you see?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DeathPenalty</th>
-      <th>VictimRace</th>
-      <th>DefendantRace</th>
-      <th>Freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>139</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>37</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>16</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>By entering <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.tail()</span></code>, we can see the last couple of cases/rows.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DeathPenalty</th>
-      <th>VictimRace</th>
-      <th>DefendantRace</th>
-      <th>Freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>414</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>53</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Next, we will try to ask the data a few simple questions. With the Numpy function np.mean(), you can retrieve the average of a series of numbers.</p>
-<p>We want to know the average of the frequency column by selecting it from the dataframe. You can thus answer what the average frequency of judgements would be by entering <code class="docutils literal notranslate"><span class="pre">np.mean(deathpenalty_df['Freq'])</span></code>. Try it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>84.25
-</pre></div>
-</div>
-</div>
-</div>
-<p>The numpy mean function is very useful to understand data. When something is deemed average, it falls somewhere between the extreme ends of the scale. An average student might have marks falling in the middle of their classmates; an average weight is neither unusually light nor heavy. An average item is typical, and not too unlike the others in the group. You might think of an average as an exemplar or even an expectation/tendency if you do not anything else.</p>
-<p>median is another function like mean that summarizes a whole dataset by delivering a central tendency. Like mean, it identifies a value that falls in the middle of a set of data. median splits the upper 50% of a data from the lower 50%. It thus delivers the value that occurs halfway if we order a list of values. How do you get the median frequency of judgements? Hint: The Numpy function is called np.median.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.5
-</pre></div>
-</div>
-</div>
-</div>
+<p>Next, we will try to ask the data a few simple questions. With the function np.mean(), you can retrieve the average of a series of numbers.</p>
+<p>We want to know the average of the frequency column by selecting it from the dataframe. The average frequency of judgements is found by entering <code class="docutils literal notranslate"><span class="pre">np.mean(deathpenalty_df['Freq'])</span></code>. Try it.</p>
+<p>The NumPy mean function is very useful to understand data. When something is deemed average, it falls somewhere between the extreme ends of the scale. An average student might have marks falling in the middle of their classmates; an average weight is neither unusually light nor heavy. An average item is typical, and not too unlike the others in the group. You might think of an average as an exemplar or even an expectation/tendency if you do not anything else.</p>
+<p>median is another function like mean that summarizes a whole dataset by delivering a central tendency. Like mean, it identifies a value that falls in the middle of a set of data. median splits the upper 50% of a data from the lower 50%. It thus delivers the value that occurs halfway if we order a list of values. How do you get the median frequency of judgements? Hint: The NumPy function is called np.median.</p>
 <p>There is a significant diffference between the mean and medium value. What does it mean? Check out <a class="reference external" href="https://www.datascienceblog.net/post/basic-statistics/mean_vs_median/">https://www.datascienceblog.net/post/basic-statistics/mean_vs_median/</a>.</p>
-<p>What is the lowest number of judgements (np.min)? Assign the value to min_freq, please. Print out min_freq, too.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
-<span class="n">min_freq</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
-</div>
-</div>
-<p>What is the highest number of judgements (np.max)? Assign the value to max_freq, please. Print out max_freq, too.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
-<span class="n">max_freq</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>414
-</pre></div>
-</div>
-</div>
-</div>
+<p>What is the lowest number of judgements <code class="docutils literal notranslate"><span class="pre">(np.min)</span></code>? Assign the value to min_freq, please. Print out min_freq, too.</p>
+<p>What is the highest number of judgements (<code class="docutils literal notranslate"><span class="pre">np.max</span></code>)? Assign the value to max_freq, please. Print out max_freq, too.</p>
 <p>What kind of case combinations had the lowest numbers of judgements? We could use min_freq and max_freq to select the specific rows from deathpenalty_df. Do you know how?</p>
-<p>Try it for the highest number of judgements (max_freq).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">max_freq</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DeathPenalty</th>
-      <th>VictimRace</th>
-      <th>DefendantRace</th>
-      <th>Freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>414</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+<p>Try it for the highest number of judgements (<code class="docutils literal notranslate"><span class="pre">max_freq</span></code>).</p>
 <p>This selection is so common that we can optain these cases using functions that come with Pandas.</p>
 <p>To get the row with the smallest value for Freq, type <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.nsmallest(1,</span> <span class="pre">'Freq')</span></code>. The first argument specifies the numnber of items to retrieve and the second the column.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DeathPenalty</th>
-      <th>VictimRace</th>
-      <th>DefendantRace</th>
-      <th>Freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>Onwards …</p>
-<p>Which case combinations had the highest number of judgements? You just need to change the function to deathpenalty_df.nlargest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DeathPenalty</th>
-      <th>VictimRace</th>
-      <th>DefendantRace</th>
-      <th>Freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>414</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+<p>Which case combinations had the highest number of judgements? You just need to change the function to <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.nlargest</span></code>.</p>
 <p>This is already very interesting. While whites murdering white is the by far most common case, there were no deapth penalities here.</p>
 <p>min and max are measures of the diversity or spread of data. Knowing about the spread provides a sense of the data’s highs and lows, and whether most values are like or unlike the mean and median. The span between the minimum and maximum value is known as the range. Calculate the range next using <code class="docutils literal notranslate"><span class="pre">max_freq</span> <span class="pre">-</span> <span class="pre">min_freq</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_freq</span> <span class="o">-</span> <span class="n">min_freq</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>414
-</pre></div>
-</div>
-</div>
-</div>
 <p>The data is very spread out …</p>
-<p>To know more about the distribution of data, np.quantile comes in handy. The function defines cut-off points dividing observations. It is the function that helps us calculate the nth quantile of the given data.</p>
+<p>To know more about the distribution of data, np.quantile comes in handy. The function defines cut-off points dividing observations. It is the function that helps us calculate the n-th quantile of the data.</p>
 <p>Check out <code class="docutils literal notranslate"><span class="pre">np.quantile(deathpenalty_df['Freq'],</span> <span class="pre">[0.25,0.5,</span> <span class="pre">0.75,</span> <span class="pre">1])</span></code>. The first argument is the column and the second argument is the list of the percentage cut-off points at 25%, 50%, 75% and 100%.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  9.25,  26.5 ,  74.5 , 414.  ])
-</pre></div>
-</div>
-</div>
-</div>
 <p>The answer should read that 9.25 as frequency is the 25% cut-off, 26.5 the 50% cut-off, etc.</p>
 <p>There are two more really useful data exploration functions in Python. The first one is describe. Try <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.describe()</span></code> and see what is returned.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DeathPenalty</th>
-      <th>VictimRace</th>
-      <th>DefendantRace</th>
-      <th>Freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>8.000000</td>
-      <td>8.000000</td>
-      <td>8.000000</td>
-      <td>8.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>0.500000</td>
-      <td>0.500000</td>
-      <td>0.500000</td>
-      <td>84.250000</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>0.534522</td>
-      <td>0.534522</td>
-      <td>0.534522</td>
-      <td>140.663479</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>9.250000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>0.500000</td>
-      <td>0.500000</td>
-      <td>0.500000</td>
-      <td>26.500000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>74.500000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>414.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>describes returns the value you just tried to find yourself! Oh, well.</p>
-<p>There is another Pandas function called info(), which returns the structure of a data frame. It is very useful to find out about columns and features of a dataset. Try <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.info()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 8 entries, 0 to 7
-Data columns (total 4 columns):
- #   Column         Non-Null Count  Dtype
----  ------         --------------  -----
- 0   DeathPenalty   8 non-null      int64
- 1   VictimRace     8 non-null      int64
- 2   DefendantRace  8 non-null      int64
- 3   Freq           8 non-null      int64
-dtypes: int64(4)
-memory usage: 384.0 bytes
-</pre></div>
-</div>
-</div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">describes</span></code> returns the value you just tried to find yourself! Oh, well.</p>
+<p>There is another Pandas function called <code class="docutils literal notranslate"><span class="pre">info()</span></code>, which returns the structure of a dataframe. It is very useful to find out about columns and features of a dataset. Try <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.info()</span></code>.</p>
 <p>Summary statistics work only with what in statistics is called numerical data, which is basically anything measured in numbers. Freq is a numerical column.</p>
-<p>Alternatively, if data is represented by a set of categories, it is called categorical or nominal. In Python, we can compare categorical features by counting the values of the VictimRace to see how often each race occurs by typing deathpenalty_df.value_counts(‘VictimRace’). You will see that both victim races are equally represented.</p>
+<p>Alternatively, if data is represented by a set of categories, it is called categorical or nominal. In Python, we can compare categorical features by counting the values of the VictimRace to see how often each race occurs by typing <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.value_counts('VictimRace')</span></code>. You will see that both victim races are equally represented.</p>
 <p>BTW: ‘race’ is a highly contested idea, and we should be more careful than the data we use, which assigns people to two very simplified categories. Discussing such constraint should be part of your own critical data analysis.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;VictimRace&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VictimRace
-0    4
-1    4
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
 <p>We are only getting warm. Let’s make this all a little bit more complicated.</p>
 <p>We want to know how many ‘black’ or ‘white’ defandants received the death penalty.</p>
-<p>Remember that a black person is represented by 0 and a white by 1. A death penalty was handed out if the column DeathPenalty equals 1, with 0 otherwise. Let’s first create a new data frame black_and_deathpenalty, which contains black defendants who received the death penalty by usling deathpenalty_df.loc[]. It is a bit complicated with <code class="docutils literal notranslate"><span class="pre">black_and_deathpenalty</span> <span class="pre">=</span> <span class="pre">deathpenalty_df.loc[(deathpenalty_df['DefendantRace']</span> <span class="pre">==</span> <span class="pre">0)</span> <span class="pre">&amp;</span> <span class="pre">(deathpenalty_df['DeathPenalty']</span> <span class="pre">==</span> <span class="pre">1)]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">black_and_deathpenalty</span> <span class="o">=</span> <span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;DefendantRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;DeathPenalty&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Remember that a black person is represented by 0 and a white by 1. A death penalty was handed out if the column DeathPenalty equals 1, with 0 otherwise.</p>
+<p>Let’s first create a new dataframe black_and_deathpenalty, which contains black defendants which received the death penalty by using deathpenalty_df.loc[]. It is a bit complicated: <code class="docutils literal notranslate"><span class="pre">black_and_deathpenalty</span> <span class="pre">=</span> <span class="pre">deathpenalty_df.loc[(deathpenalty_df['DefendantRace']</span> <span class="pre">==</span> <span class="pre">0)</span> <span class="pre">&amp;</span> <span class="pre">(deathpenalty_df['DeathPenalty']</span> <span class="pre">==</span> <span class="pre">1)]</span></code>.</p>
 <p>Similarly, we can get the white defendants who received the death penalty. Get the subset and assign it to white_and_deathpenalty.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">white_and_deathpenalty</span> <span class="o">=</span> <span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;DefendantRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">deathpenalty_df</span><span class="p">[</span><span class="s1">&#39;DeathPenalty&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Overall, we want to compare the likelihood of white and black defendants to receive the death penalty. In order to achieve this, the next step is to find out about the overall number of black people who received the death penalty. You can get this with the sum function, which we have already met and assign it to n_black_deathpenalty. Run <code class="docutils literal notranslate"><span class="pre">n_black_deathpenalty</span> <span class="pre">=</span> <span class="pre">black_and_deathpenalty['Freq'].sum()</span></code>. Print out n_black_deathpenalty.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_black_deathpenalty</span> <span class="o">=</span> <span class="n">black_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">n_black_deathpenalty</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
-</pre></div>
-</div>
-</div>
-</div>
 <p>Next, find those whites, which were given a death penalty. Assign to a new variable n_white_deathpenalty.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_white_deathpenalty</span> <span class="o">=</span> <span class="n">white_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">n_white_deathpenalty</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>53
-</pre></div>
-</div>
-</div>
-</div>
 <p>What is therefore the proportion of black people receiving the death penalty? Remember you can get this by dividing the number of black defendants with the death penalty by the total number of defendants with the death penalty.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_black_deathpenalty</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_black_deathpenalty</span> <span class="o">+</span> <span class="n">n_white_deathpenalty</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.22058823529411764
-</pre></div>
-</div>
-</div>
-</div>
 <p>That’s quite a low percentage. Do we  not need to worry then about racial biases in the judgements? What other information do we need to come to such a conclusion? Let’s find out next.</p>
 <p>Proportionally, how many of the death penalties handed out to black people were for killing a white person?</p>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">black_and_deathpenalty.loc[(black_and_deathpenalty['VictimRace']</span> <span class="pre">==</span> <span class="pre">1)]['Freq']</span> <span class="pre">/</span> <span class="pre">n_black_deathpenalty</span></code> is a bit complicated but gets the right result. Can you explain how?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">black_and_deathpenalty</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">black_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;VictimRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)][</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_black_deathpenalty</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    0.733333
-Name: Freq, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
 <p>Finally, how likely is it that a white person killing a black person will receive the death penalty? Can you change the last expression?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">white_and_deathpenalty</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">white_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;VictimRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)][</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_white_deathpenalty</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5    0.0
-Name: Freq, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
 <p>0 should be the answer though there were 53 death penalities for white people.</p>
 <p>Out of 15 death penalties for black people, 73% were for killing a white person. While none of the 53 death penalties for white people in Florida were given for killing a black person.</p>
 <p>I hope you can see that there are many powerful functions to explore data directly in Python. Another really good way to explore data is not to ask direct questions but to summarize it with graphs and visualisations. Visualisations and graphs are easy to do with Python.</p>
 <p>Try <code class="docutils literal notranslate"><span class="pre">deathpenalty_df.boxplot('Freq')</span></code>? What do you see? Ask the Internet!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deathpenalty_df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
-</div>
-<img alt="../../../_images/Real-Life-Data_47_1.png" src="../../../_images/Real-Life-Data_47_1.png" />
-</div>
-</div>
 <p>The boxplot displays the centre and spread in a format that allows you to quickly obtain a sense of the behaviour of the data. The median is denoted by the line inside the box while the box around it stands for the spread. The boxplot shows one outlier (the top dot). Can you identify it in the dataset?</p>
-<p>But this was just a taste of the visualisations that we focus on in the next sessions.</p>
+<p>But this was just a taste of the visualisations we focus on in the next sessions.</p>
 </div>
 
     <script type="text/x-thebe-config">

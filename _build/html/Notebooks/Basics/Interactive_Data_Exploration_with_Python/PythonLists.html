@@ -121,12 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DataFrames.html">
-   Data Frames
+   DataFrames
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Advanced_Interactive_Data_Exploration_with_Python/DataFrameIndexing.html">
-   Data Frame Indexing
+   DataFrame Indexing
   </a>
  </li>
  <li class="toctree-l1">
@@ -308,180 +308,27 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This was a lot of stuff in the first lesson. Unfortunately, this is necessary but once you have learned one programming language all of this becomes quite obvious and repetitive.</p>
 <p>And, there is more. We need to also learn one more important concept in Python. With so-called lists, you can collect several elements in the same variable. This is immensely useful as we will see later.</p>
 <p>Let’s try lists, which store an ordered set of values called elements. A list can contain any number of elements using brackets. Type in <code class="docutils literal notranslate"><span class="pre">numeric_list</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">10,</span> <span class="pre">49]</span></code> to create a numeric list of three numbers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">49</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>To check that the new list exists, please type <code class="docutils literal notranslate"><span class="pre">numeric_list</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 10, 49]
-</pre></div>
-</div>
-</div>
-</div>
 <p>We can also create a string/characters list, with <code class="docutils literal notranslate"><span class="pre">string_list</span> <span class="pre">=</span> <span class="pre">['abc',</span> <span class="pre">'def',</span> <span class="pre">'ghi']</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;ghi&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>To check that the new vector exists, please type <code class="docutils literal notranslate"><span class="pre">string_list</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;]
-</pre></div>
-</div>
-</div>
-</div>
 <p>Lists are useful to, for instance, hold your poker winnings during the week. You do not play on Saturday and Sunday, but record all the other 5 days, by entering <code class="docutils literal notranslate"><span class="pre">poker_list</span> <span class="pre">=</span> <span class="pre">[140,</span> <span class="pre">-50,</span> <span class="pre">20,</span> <span class="pre">-120,</span> <span class="pre">240]</span></code>.</p>
-<p>Thank you <a class="reference external" href="http://datacamp.com">datacamp.com</a> for this example! An excellent resource to learn data science things btw, but unfortunately you have to pay for it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poker_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">140</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="mi">240</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Thank you  <a class="reference external" href="https://www.datacamp.com">datacamp.com</a> for this example! An excellent resource to learn data science things btw, but unfortunately you have to pay for it.</p>
 <p>You feel this is your lucky week. So, you play roulette, too. Please record your winnings with <code class="docutils literal notranslate"><span class="pre">roulette_list</span> <span class="pre">=[-24,</span> <span class="pre">-50,</span> <span class="pre">100,</span> <span class="pre">-350,</span> <span class="pre">10]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roulette_list</span> <span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">350</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Because you prefer it organised, you would now like to name each of the entries. This is possible in Python with dictionaries. Please create an empty dictionary by typing <code class="docutils literal notranslate"><span class="pre">names_poker</span> <span class="pre">=</span> <span class="pre">{}</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_poker</span> <span class="o">=</span> <span class="p">{}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>To create a dictionary (which is like a named list), simply use the {} and then for each element the key to access the element comes first, then a ‘:’, and finish it with the value.</p>
+<p>Because you prefer it organised, you would now like to name each of the entries. This is possible in Python with <a class="reference external" href="https://realpython.com/python-dicts/">dictionaries</a>. Please create an empty dictionary by typing <code class="docutils literal notranslate"><span class="pre">names_poker</span> <span class="pre">=</span> <span class="pre">{}</span></code>.</p>
+<p>To create a dictionary (which is like a named list), simply use the {}. For each element, use the key to access the element comes first, then a ‘:’, and finish it with the value.</p>
 <p>So, in order to create a dictionary containing all your poker winnings type in <code class="docutils literal notranslate"><span class="pre">names_poker</span> <span class="pre">=</span> <span class="pre">{'Monday':</span> <span class="pre">140,'Tuesday':</span> <span class="pre">-50,</span> <span class="pre">'Wednesday':</span> <span class="pre">20,</span> <span class="pre">'Thursday':</span> <span class="pre">-120,</span> <span class="pre">'Friday':</span> <span class="pre">240}</span></code>.</p>
 <p>Dictionaries are further explained at <a class="reference external" href="https://www.w3schools.com/python/python_dictionaries.asp">https://www.w3schools.com/python/python_dictionaries.asp</a>. Also a good resource to learn some more Python.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_poker</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Monday&#39;</span><span class="p">:</span> <span class="mi">140</span><span class="p">,</span><span class="s1">&#39;Tuesday&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">:</span> <span class="mi">240</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now you can access a single element with <code class="docutils literal notranslate"><span class="pre">names_poker['Monday']</span></code>. Type it in.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_poker</span><span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140
-</pre></div>
-</div>
-</div>
-</div>
+<p>Now, you can access a single element with <code class="docutils literal notranslate"><span class="pre">names_poker['Monday']</span></code>. Type it in.</p>
 <p>Next, you are interested in how much you win in poker and roulette per day.</p>
 <p>You can simply add up all the elements in the list. Remember that we can use built-in functions? To add up elements in a list we can use the function sum, which comes directly with Python. Try it with <code class="docutils literal notranslate"><span class="pre">sum(poker_list)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">poker_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230
-</pre></div>
-</div>
-</div>
-</div>
 <p>And of course we can also do <code class="docutils literal notranslate"><span class="pre">sum(roulette_list)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">roulette_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-314
-</pre></div>
-</div>
-</div>
-</div>
 <p>In order to get our total winnings per day for the week, we can simply add both lists with the Python sum function. Type in <code class="docutils literal notranslate"><span class="pre">total_week</span> <span class="pre">=</span> <span class="pre">sum(poker_list)</span> <span class="pre">+</span> <span class="pre">sum(roulette_list)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_week</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">poker_list</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">roulette_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Print out total_week.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_week</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-84
-</pre></div>
-</div>
-</div>
-</div>
+<p>Print out total_week. No hint this time. You know how to do it.</p>
 <p>We have almost covered everything there is to know about lists. One more important concept is that lists are indexed. Using square brackets, we can select the first, second and third element directly with 0, 1, 2, etc. respectively. So, the index count in Python starts with 0 for the first element. The last element is then the length of the list n – 1.</p>
 <p>To select Monday’s poker winning (first day of the week) simply use square brackets [] and type <code class="docutils literal notranslate"><span class="pre">poker_monday</span> <span class="pre">=</span> <span class="pre">poker_list[0]</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poker_monday</span> <span class="o">=</span> <span class="n">poker_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Print out poker_monday.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poker_monday</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140
-</pre></div>
-</div>
-</div>
-</div>
 <p>You can also select more than one element with the colon operator.</p>
-<p>In order to select your winnings from Tuesday to Friday, please run <code class="docutils literal notranslate"><span class="pre">roulette_selection_list</span> <span class="pre">=</span> <span class="pre">roulette_list[1:5]</span></code>.  The first value, left of the colon, is the first index to select (in this case Tuesday). The last value is the first index NOT to select (here an imaginary Saturday). Print out roulette_selection_list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roulette_selection_list</span> <span class="o">=</span> <span class="n">roulette_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">roulette_selection_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-50, 100, -350, 10]
-</pre></div>
-</div>
-</div>
-</div>
+<p>In order to select your winnings from Tuesday to Friday, please run <code class="docutils literal notranslate"><span class="pre">roulette_selection_list</span> <span class="pre">=</span> <span class="pre">roulette_list[1:5]</span></code>.  The first value, left of the colon, is the first index to select (in this case Tuesday). The last value is the first index NOT to select (here an imaginary Saturday). Print out roulette_selection_list in the same cell.</p>
 <p>This is called list slicing in Python and requires some getting used to.</p>
 <p>If you have a list l, these are the options:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">l</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>  <span class="c1"># items start through stop-1</span>
@@ -491,40 +338,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>To find out about our roulette winnings from Tuesday to Friday, we can use sum again. Try <code class="docutils literal notranslate"><span class="pre">sum(roulette_selection_list)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">roulette_selection_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-290
-</pre></div>
-</div>
-</div>
-</div>
-<p>Using the index we can also update elements in lists.</p>
+<p>Using the index, we can also update elements in lists.</p>
 <p>Let’s  set the Wednesday winnings of roulette_selection_vector to 1000 with <code class="docutils literal notranslate"><span class="pre">roulette_selection_list[1]</span> <span class="pre">=</span> <span class="pre">1000</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roulette_selection_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Print out  roulette_selection_list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">roulette_selection_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-50, 1000, -350, 10]
-</pre></div>
-</div>
-</div>
-</div>
 <p>Well done. Your introduction to lists (and dictionaries) is done.</p>
 </div>
 
