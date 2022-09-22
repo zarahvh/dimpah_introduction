@@ -318,13 +318,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Seaborn is a more recent Python data visualization library based on Matplotlib. According to <a class="reference external" href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a>, it ‘provides a high-level interface for drawing attractive and informative statistical graphics.’ It integrates easily with Pandas and provides an easier to use set of more high-level functions. So, load the library with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">seaborn</span> <span class="pre">as</span> <span class="pre">sns</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>In the session, we look at museums and how to get a job as an analyst there. Several arts museums around the world publish their collections’ metadata online. Very popular is, for instance, New York’s Museum of Modern Art (MoMA) collection data (<a class="reference external" href="https://github.com/MuseumofModernArt/collection">https://github.com/MuseumofModernArt/collection</a>). Let us take a look at their artworks’ information. Please note that this data is refreshed monthly and fairly large with over 50 MB at the time of writing. So, if you download it now you might see some differences to our suggested data frame moma_artworks, which is just a sample.</p>
 <p>Run the code below.</p>
 <div class="cell docutils container">
@@ -334,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Type in <code class="docutils literal notranslate"><span class="pre">moma_artworks.head()</span></code> to take a look at the first rows. For the rest of the MoMA exercises, we take inspiration from <a class="reference external" href="http://sebastianbarfort.github.io/">http://sebastianbarfort.github.io/</a> who many years ago came up with this task.</p>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">moma_art.head()</span></code> to take a look at the first rows. For the rest of the MoMA exercises, we take inspiration from <a class="reference external" href="http://sebastianbarfort.github.io/">http://sebastianbarfort.github.io/</a> who many years ago came up with this task.</p>
 <p>In this part, let’s pretend you work for MoMA, and your manager has asked you to create a visualisation showcasing the development of the museum stock. Next to the moma_artworks, we have also created the moma_stock dataframe. We would like to know how the stock has developed in recent years and visualise it.</p>
 <p>Run the next code and observe the argument parse_date which allows you to specify which columns should be parsed for the date format.</p>
 <div class="cell docutils container">
@@ -345,6 +338,71 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Check out the first few records of moma_stock.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moma_stock</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>supply</th>
+      <th>stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1929-11-01</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1930-01-01</td>
+      <td>3</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1930-04-01</td>
+      <td>2</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1930-06-01</td>
+      <td>1</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1930-10-01</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>Next, we draw a simple line to represent the stock development.</p>
 <p>Try whether you can use Searborn’s sns.lineplot with moma_stock. x=’date’ and y=’stock’. Run <code class="docutils literal notranslate"><span class="pre">sns.lineplot(data=moma_stock,</span> <span class="pre">x='date',</span> <span class="pre">y='stock')</span></code>.</p>
 <p>There is a definite jump in holdings from the late 1960s onwards. Or is this simply a recording issue? We cannot know  and would have to do further research.</p>
@@ -444,7 +502,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/AdvancedVisualisation_26_0.png" src="../../../_images/AdvancedVisualisation_26_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">55</span><span class="n">b5e8714a16</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">moma_dep</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;stock&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Department&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>Your manager likes it!</p>
@@ -457,154 +524,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>gallery</th>
-      <th>visitors</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2006</td>
-      <td>Britain</td>
-      <td>1665</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2007</td>
-      <td>Britain</td>
-      <td>1533</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2008</td>
-      <td>Britain</td>
-      <td>1587</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2009</td>
-      <td>Britain</td>
-      <td>1576</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2010</td>
-      <td>Britain</td>
-      <td>1606</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2011</td>
-      <td>Britain</td>
-      <td>1465</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2012</td>
-      <td>Britain</td>
-      <td>1396</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2013</td>
-      <td>Britain</td>
-      <td>1419</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2014</td>
-      <td>Britain</td>
-      <td>1373</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2015</td>
-      <td>Britain</td>
-      <td>1273</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2016</td>
-      <td>Britain</td>
-      <td>1363</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2017</td>
-      <td>Britain</td>
-      <td>1548</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2018</td>
-      <td>Britain</td>
-      <td>1357</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2019</td>
-      <td>Britain</td>
-      <td>1621</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2006</td>
-      <td>Modern</td>
-      <td>5235</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>2007</td>
-      <td>Modern</td>
-      <td>5237</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2008</td>
-      <td>Modern</td>
-      <td>4648</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>2009</td>
-      <td>Modern</td>
-      <td>4788</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2010</td>
-      <td>Modern</td>
-      <td>5035</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>2011</td>
-      <td>Modern</td>
-      <td>4766</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>tate_attendance obviously contains the visitor numbers since 2006 for all TATE-galleries in Britain. You are eager to plot the data in order to compare visitor developments. You heard that the wonderful area plots would do a great job at it. There is no seaborn area plot but Matplotlib has one: <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.area.html">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.area.html</a></p>
 <p>You soon realise that there is an issue with the format. It has been created as ‘tidy data’, as defined by Hadley Wickham in the Journal of Statistical Software (<a class="reference external" href="https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf">https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf</a>). In tidy data, each row is an observation and each column contains the values of a variable (i.e. an attribute of what we are observing). It is also called narrow format as in <a class="reference external" href="https://en.wikipedia.org/wiki/Wide_and_narrow_data">https://en.wikipedia.org/wiki/Wide_and_narrow_data</a> (sometimes this distinction is also called long and wide to make it even more confusing).</p>

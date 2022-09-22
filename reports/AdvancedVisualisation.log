@@ -17,16 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-rotated_gogh = np.rot90(nGogh)
-imshow(rotated_gogh)
+sns.lineplot(data=moma_dep,x='date', y='stock', hue='Department')
+plt.legend(bbox_to_anchor=(1.01, 1))
+plt.tick_params(labelsize=8)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-4-6fcc87866111>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mrotated_gogh[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mrot90[0m[0;34m([0m[0mnGogh[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mimshow[0m[0;34m([0m[0mrotated_gogh[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-6-55b5e8714a16>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0msns[0m[0;34m.[0m[0mlineplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mmoma_dep[0m[0;34m,[0m[0mx[0m[0;34m=[0m[0;34m'date'[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;34m'stock'[0m[0;34m,[0m [0mhue[0m[0;34m=[0m[0;34m'Department'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mplt[0m[0;34m.[0m[0mlegend[0m[0;34m([0m[0mbbox_to_anchor[0m[0;34m=[0m[0;34m([0m[0;36m1.01[0m[0;34m,[0m [0;36m1[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0mplt[0m[0;34m.[0m[0mtick_params[0m[0;34m([0m[0mlabelsize[0m[0;34m=[0m[0;36m8[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'nGogh' is not defined
-NameError: name 'nGogh' is not defined
+[0;31mNameError[0m: name 'sns' is not defined
+NameError: name 'sns' is not defined
 

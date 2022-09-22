@@ -305,7 +305,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Web Scraping<a class="headerlink" href="#web-scraping" title="Permalink to this headline">¶</a></h1>
 <p>The web has become a unique source of data for community analysis . Munzert et al. (2014) in their book on ‘Automated data collection (…). A practical guide to web scraping and text mining’ (John Wiley &amp; Sons) emphasize in the Introduction that ‘the rapid growth of the World Wide Web over the past two decades tremendously changed the way we share, collect, and publish data. Firms, public institutions, and private users provide every imaginable type of information and new channels of communication generate vast amounts of data on human behavior. What was once a fundamental problem for the social sciences — the scarcity and inaccessibility of observations — is quickly turning into an abundance of data. This turn of events does not come without problems. (…), traditional techniques for collecting and analyzing data may no longer suffice to overcome the tangled masses of data.’ (p. XV).</p>
 <p>In short, we can find lots of data on the web. A big problem with web data is, however, that it is often inconsistent and heterogeneous. To get access to it, one often has to visit multiple web sites and assemble their data together. Finally, the data is generally published without reuse in mind, which implies that the data can be of low quality. That said, the web is so vast that it still provides an often overwhelming source of exciting data.</p>
-<p>Let’s take a look at how we can access web data in general by scraping web sites but first let’s load the relevant packages you should already be familiar with.</p>
+<p>Let’s take a look at how we can access web data in general by scraping web sites but first let’s load the relevant packages you should already be familiar with. Run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -339,7 +339,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>If it all worked as it should run the code below to create our senators data frame.</p>
+<p>If it all worked as it should run the code below to create our senators dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span> <span class="o">=</span> <span class="n">senator_wiki</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -403,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
       <td>Tommy Tuberville</td>
       <td>NaN</td>
       <td>Republican</td>
-      <td>(age 67)</td>
+      <td>(age 68)</td>
       <td>College football coachInvestment management fi...</td>
       <td>None</td>
       <td>Southern Arkansas University (BS)</td>
@@ -541,11 +541,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022
-</pre></div>
-</div>
-</div>
 </div>
 <p>The years in the office of a senator can be calculated by subtracting from year_ the year when the office was assumed. We can use our regular expression knowledge and simply look for the strings which are four consecutive numbers (\d\d\d\d) and return those. Type in <code class="docutils literal notranslate"><span class="pre">senators['Years</span> <span class="pre">in</span> <span class="pre">Office']</span> <span class="pre">=</span> <span class="pre">year_</span> <span class="pre">-</span> <span class="pre">senators['Assumed</span> <span class="pre">office'].str.extract(r'.*,.*(\d\d\d\d).*').astype(int)</span></code>. Observe that we use astype(int) to transform the extracted string into an int.</p>
 <div class="cell docutils container">
@@ -558,128 +553,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Finally, let’s delete all unnecessary columns that you now changed such as ‘Born’ and ‘Party.1’. Run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
-<span class="n">senators</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Party.1&#39;</span><span class="p">,</span> <span class="s1">&#39;Born&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Party.1&#39;</span><span class="p">,</span> <span class="s1">&#39;Born&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/lp/8kksc8s95_75rtb5ks_4v8xm0000gn/T/ipykernel_44475/2668333954.py:2: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument &#39;labels&#39; will be keyword-only
-  senators.drop([&#39;Party.1&#39;, &#39;Born&#39;], 1, inplace = True)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>State</th>
-      <th>Portrait</th>
-      <th>Senator</th>
-      <th>Party</th>
-      <th>Occupation(s)</th>
-      <th>Previous electiveoffice(s)</th>
-      <th>Education</th>
-      <th>Assumed office</th>
-      <th>Term up</th>
-      <th>Residence[2]</th>
-      <th>Age</th>
-      <th>Years in Office</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Alabama</td>
-      <td>NaN</td>
-      <td>Richard Shelby</td>
-      <td>Republican[d]</td>
-      <td>Lawyer</td>
-      <td>U.S. HouseAlabama Senate</td>
-      <td>University of Alabama (BA, LLB) Birmingham Sch...</td>
-      <td>January 3, 1987</td>
-      <td>2022</td>
-      <td>Tuscaloosa</td>
-      <td>87</td>
-      <td>35</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Alabama</td>
-      <td>NaN</td>
-      <td>Tommy Tuberville</td>
-      <td>Republican</td>
-      <td>College football coachPartner, investment mana...</td>
-      <td>None</td>
-      <td>Southern Arkansas University (BS)</td>
-      <td>January 3, 2021</td>
-      <td>2026</td>
-      <td>Auburn[3]</td>
-      <td>67</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Alaska</td>
-      <td>NaN</td>
-      <td>Lisa Murkowski</td>
-      <td>Republican</td>
-      <td>Lawyer</td>
-      <td>Alaska House of Representatives</td>
-      <td>Georgetown University (AB) Willamette Universi...</td>
-      <td>December 20, 2002[e]</td>
-      <td>2022</td>
-      <td>Girdwood</td>
-      <td>64</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Alaska</td>
-      <td>NaN</td>
-      <td>Dan Sullivan</td>
-      <td>Republican</td>
-      <td>U.S. Marine Corps officerLawyerAssistant Secre...</td>
-      <td>Alaska Attorney General</td>
-      <td>Harvard University (AB) Georgetown University ...</td>
-      <td>January 3, 2015</td>
-      <td>2026</td>
-      <td>Anchorage</td>
-      <td>57</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Arizona</td>
-      <td>NaN</td>
-      <td>Kyrsten Sinema</td>
-      <td>Democratic</td>
-      <td>Social workerPolitical activistLawyerCollege l...</td>
-      <td>U.S. HouseArizona SenateArizona House of Repre...</td>
-      <td>Brigham Young University (BA) Arizona State Un...</td>
-      <td>January 3, 2019</td>
-      <td>2024</td>
-      <td>Phoenix</td>
-      <td>45</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Just like before, we now would like to ask questions against the dataset and explore it.</p>
 <p>In particular, we would like to understand the pressure on parties during the next election for the US Senate. At the time of writing, these were the 2022 elections for Congress. We could now reuse some of the strategies for exploring data in Pandas we have learned about earlier.</p>
@@ -687,7 +565,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Run <code class="docutils literal notranslate"><span class="pre">senators_seatup</span> <span class="pre">=</span> <span class="pre">senators[['Senator',</span> <span class="pre">'State',</span> <span class="pre">'Party',</span> <span class="pre">'Occupation(s)',</span> <span class="pre">'Years</span> <span class="pre">in</span> <span class="pre">Office',</span> <span class="pre">'Term</span> <span class="pre">up']].copy()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup</span> <span class="o">=</span> <span class="n">senators</span><span class="p">[[</span><span class="s1">&#39;Senator&#39;</span><span class="p">,</span> <span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;Party&#39;</span><span class="p">,</span> <span class="s1">&#39;Occupation(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;Years in Office&#39;</span><span class="p">,</span> <span class="s1">&#39;Term up&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>       
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup</span> <span class="o">=</span> <span class="n">senators</span><span class="p">[[</span><span class="s1">&#39;Senator&#39;</span><span class="p">,</span> <span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;Party&#39;</span><span class="p">,</span> <span class="s1">&#39;Occupation(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;Years in Office&#39;</span><span class="p">,</span> <span class="s1">&#39;Term up&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -699,98 +577,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Senator</th>
-      <th>State</th>
-      <th>Party</th>
-      <th>Occupation(s)</th>
-      <th>Years in Office</th>
-      <th>Term up</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Richard Shelby</td>
-      <td>Alabama</td>
-      <td>Republican[d]</td>
-      <td>Lawyer</td>
-      <td>35</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Tommy Tuberville</td>
-      <td>Alabama</td>
-      <td>Republican</td>
-      <td>College football coachPartner, investment mana...</td>
-      <td>1</td>
-      <td>2026</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lisa Murkowski</td>
-      <td>Alaska</td>
-      <td>Republican</td>
-      <td>Lawyer</td>
-      <td>20</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Dan Sullivan</td>
-      <td>Alaska</td>
-      <td>Republican</td>
-      <td>U.S. Marine Corps officerLawyerAssistant Secre...</td>
-      <td>7</td>
-      <td>2026</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Kyrsten Sinema</td>
-      <td>Arizona</td>
-      <td>Democratic</td>
-      <td>Social workerPolitical activistLawyerCollege l...</td>
-      <td>3</td>
-      <td>2024</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>What are the types? Do you need to change them?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Senator            object
-State              object
-Party              object
-Occupation(s)      object
-Years in Office     int64
-Term up             int64
-dtype: object
 </pre></div>
 </div>
 </div>
@@ -805,11 +596,6 @@ dtype: object
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">next_election</span> <span class="o">=</span> <span class="n">senators_seatup</span><span class="p">[</span><span class="s1">&#39;Term up&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="n">next_election</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022
 </pre></div>
 </div>
 </div>
@@ -829,343 +615,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Senator</th>
-      <th>State</th>
-      <th>Party</th>
-      <th>Occupation(s)</th>
-      <th>Years in Office</th>
-      <th>Term up</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Richard Shelby</td>
-      <td>Alabama</td>
-      <td>Republican[d]</td>
-      <td>Lawyer</td>
-      <td>35</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lisa Murkowski</td>
-      <td>Alaska</td>
-      <td>Republican</td>
-      <td>Lawyer</td>
-      <td>20</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Mark Kelly</td>
-      <td>Arizona</td>
-      <td>Democratic</td>
-      <td>U.S. Navy officerNASA AstronautFounder, Americ...</td>
-      <td>2</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>John Boozman</td>
-      <td>Arkansas</td>
-      <td>Republican</td>
-      <td>Optometrist</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Alex Padilla</td>
-      <td>California</td>
-      <td>Democratic</td>
-      <td>Engineer</td>
-      <td>1</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Michael Bennet</td>
-      <td>Colorado</td>
-      <td>Democratic</td>
-      <td>LawyerInvestment company executiveDenver Publi...</td>
-      <td>13</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Richard Blumenthal</td>
-      <td>Connecticut</td>
-      <td>Democratic</td>
-      <td>Marine Corps Reserve SergeantSenate stafferLaw...</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Marco Rubio</td>
-      <td>Florida</td>
-      <td>Republican</td>
-      <td>Lawyer</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Raphael Warnock</td>
-      <td>Georgia</td>
-      <td>Democratic</td>
-      <td>Pastor</td>
-      <td>1</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Brian Schatz</td>
-      <td>Hawaii</td>
-      <td>Democratic</td>
-      <td>TeacherNonprofit organization executive</td>
-      <td>10</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Mike Crapo</td>
-      <td>Idaho</td>
-      <td>Republican</td>
-      <td>Lawyer</td>
-      <td>23</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Tammy Duckworth</td>
-      <td>Illinois</td>
-      <td>Democratic</td>
-      <td>Army National Guard OfficerCoordinator, Center...</td>
-      <td>5</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Todd Young</td>
-      <td>Indiana</td>
-      <td>Republican</td>
-      <td>Marine Corps OfficerProfessorConsultantLawyer</td>
-      <td>5</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>Chuck Grassley</td>
-      <td>Iowa</td>
-      <td>Republican</td>
-      <td>FarmerCollege professor</td>
-      <td>41</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>Jerry Moran</td>
-      <td>Kansas</td>
-      <td>Republican</td>
-      <td>BankerLawyer</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>Rand Paul</td>
-      <td>Kentucky</td>
-      <td>Republican</td>
-      <td>Physician specializing in Ophthalmology</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>John Kennedy</td>
-      <td>Louisiana</td>
-      <td>Republican</td>
-      <td>Magazine editorLawyerProfessorStaff of Louisia...</td>
-      <td>5</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>Chris Van Hollen</td>
-      <td>Maryland</td>
-      <td>Democratic</td>
-      <td>U.S. Senate staff memberMaryland Governor's le...</td>
-      <td>5</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>Roy Blunt</td>
-      <td>Missouri</td>
-      <td>Republican</td>
-      <td>University president</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>Catherine Cortez Masto</td>
-      <td>Nevada</td>
-      <td>Democratic</td>
-      <td>Lawyer</td>
-      <td>5</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>Maggie Hassan</td>
-      <td>New Hampshire</td>
-      <td>Democratic</td>
-      <td>Lawyer</td>
-      <td>5</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>Chuck Schumer</td>
-      <td>New York</td>
-      <td>Democratic</td>
-      <td>Lawyer</td>
-      <td>23</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>Richard Burr</td>
-      <td>North Carolina</td>
-      <td>Republican</td>
-      <td>Sales managerNonprofit organization executive</td>
-      <td>17</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>John Hoeven</td>
-      <td>North Dakota</td>
-      <td>Republican</td>
-      <td>Banker</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>Rob Portman</td>
-      <td>Ohio</td>
-      <td>Republican</td>
-      <td>LawyerU.S. Trade RepresentativeDirector of the...</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>James Lankford</td>
-      <td>Oklahoma</td>
-      <td>Republican</td>
-      <td>TeacherNonprofit program director</td>
-      <td>7</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>Ron Wyden</td>
-      <td>Oregon</td>
-      <td>Democratic</td>
-      <td>TeacherNonprofit organization executive</td>
-      <td>26</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>Pat Toomey</td>
-      <td>Pennsylvania</td>
-      <td>Republican</td>
-      <td>Currency traderRestaurant owner</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>Tim Scott</td>
-      <td>South Carolina</td>
-      <td>Republican</td>
-      <td>Insurance agentFinancial adviser</td>
-      <td>9</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>John Thune</td>
-      <td>South Dakota</td>
-      <td>Republican</td>
-      <td>Nonprofit organization executiveState Railroad...</td>
-      <td>17</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>86</th>
-      <td>Mike Lee</td>
-      <td>Utah</td>
-      <td>Republican</td>
-      <td>LawyerGovernor's general counselAssistant Unit...</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>88</th>
-      <td>Patrick Leahy</td>
-      <td>Vermont</td>
-      <td>Democratic</td>
-      <td>Lawyer</td>
-      <td>47</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>92</th>
-      <td>Patty Murray</td>
-      <td>Washington</td>
-      <td>Democratic</td>
-      <td>TeacherLobbyist</td>
-      <td>29</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>96</th>
-      <td>Ron Johnson</td>
-      <td>Wisconsin</td>
-      <td>Republican</td>
-      <td>AccountantCorporate executive</td>
-      <td>11</td>
-      <td>2022</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>So far so good. Let’s next group observations together to gain composite insights. Let’s look at the senators per US state. Use senators_seatup_next and the columns ‘State’ and ‘Term up’ to display the number of terms that are up in the next election. Run <code class="docutils literal notranslate"><span class="pre">senators_seatup_next[['State',</span> <span class="pre">'Term</span> <span class="pre">up']].groupby(['State'],</span> <span class="pre">as_index=False).count()</span></code>.</p>
 <div class="cell docutils container">
@@ -1174,203 +623,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>State</th>
-      <th>Term up</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Alabama</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Alaska</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Arizona</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Arkansas</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>California</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Colorado</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Connecticut</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Florida</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Georgia</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Hawaii</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Idaho</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Illinois</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Indiana</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Iowa</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Kansas</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Kentucky</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Louisiana</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Maryland</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Missouri</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Nevada</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>New Hampshire</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>New York</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>North Carolina</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>North Dakota</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Ohio</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Oklahoma</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Oregon</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>Pennsylvania</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>South Carolina</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>South Dakota</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>Utah</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>Vermont</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>Washington</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>Wisconsin</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>At least in 2022, there were quite a few senators up for re-election. How does it look for you?</p>
 <p>Finally, we wanted to look into the election challenges per party. Select ‘Party’ and ‘Term up’ and group by party to display the results with count(), please. You can do it …</p>
@@ -1380,48 +632,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Party</th>
-      <th>Term up</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Democratic</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Republican</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Republican[d]</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Republicans had  more seats to lose in 2022. You might see different results depending on the election you look at. Let’s try and find out a little bit more about the senators up for re-election.  What is their median time in office if you group them by party?</p>
 <p>That’s it for today’s analysis of communities with the additional bonus of learning a little bit about how to harvest data from the web, which is already advanced stuff. Thank you …</p>

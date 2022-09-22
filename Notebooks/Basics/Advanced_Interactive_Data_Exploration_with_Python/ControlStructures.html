@@ -369,18 +369,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L
-i
-n
-k
-e
-d
-I
-n
-</pre></div>
-</div>
-</div>
 </div>
 <p>For-loops can be very useful to perform repeated operations on collections of data, which is something we often want to do. So, for instance, loops could be used to get the square of each element in a list/array. Or, we could use them to calculate the average value of a numeric column in a dataframe, etc.</p>
 <p>The next cell introduces the <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">l</span> <span class="pre">in</span> <span class="pre">list</span></code> construct, which is a short form for going through elements in a list. Run the following to square each number in our list ind and observe the code:</p>
@@ -393,31 +381,6 @@ n
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">i**2</span></code> is the power-operator in Python.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-4
-9
-16
-25
-36
-49
-64
-81
-</pre></div>
-</div>
-</div>
-</div>
 <p>However NumPy also has easier operators to apply functions to the entire array at once, which is why we often prefer it over standard Python.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">np.square(ind)</span></code> and admire the simplicity.</p>
 <p>Here, NumPy is simply amazing and super fast.</p>

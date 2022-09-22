@@ -353,11 +353,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_9_0.png" src="../../../_images/GraphAnalysis_9_0.png" />
+<img alt="../../../_images/GraphAnalysis_8_0.png" src="../../../_images/GraphAnalysis_8_0.png" />
 </div>
 </div>
-<p>Let’s say we want to colour our network nodes based on gender as well as size them based on age. We will also change the width of the edges based on their weight. We need to apply a series of changes to the attributes pf our igraph. To get the different colours for different genders we need to add these colours to our data frame karate_nodes.</p>
-<p>The Matlib colour names are listed at: <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a></p>
+<p>Let’s say we want to colour our network nodes based on gender as well as size them based on age. We will also change the width of the edges based on their weight. We need to apply a series of changes to the attributes of our graph. We do this step by step.</p>
+<p>First, to get the different colours for different genders we need to add these colours to our dataframe karate_nodes. The Matlib colour names are listed at: <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a></p>
 <p>np.where is one of the many functions of numpy that we will use a lot. It chooses either x or y (second and third argument) depending on the condition in the first argument. Type in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
 <span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -450,24 +450,20 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now draw the graph again with another attribute node_color=np.array(karate_nodes[‘colour’]). Type in: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">node_color=np.array(karate_nodes['colour']),</span> <span class="pre">with_labels=True,</span> <span class="pre">labels=node_labels)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_13_0.png" src="../../../_images/GraphAnalysis_13_0.png" />
+<img alt="../../../_images/GraphAnalysis_12_0.png" src="../../../_images/GraphAnalysis_12_0.png" />
 </div>
 </div>
 <p>We also wanted to change the node size based on age. We could, for example, multiply the age by 10 to get the size that we want. Add <code class="docutils literal notranslate"><span class="pre">node_size</span> <span class="pre">=</span> <span class="pre">10*np.array(karate_nodes['age'])</span></code> as an attribute to nx.draw.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
-                         <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_15_0.png" src="../../../_images/GraphAnalysis_15_0.png" />
 </div>
 </div>
 <p>The weight of the like-relationship will determine the width of the arrow between two nodes. All we need to do is add another attribute. Type:</p>
@@ -487,7 +483,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_17_0.png" src="../../../_images/GraphAnalysis_17_0.png" />
+<img alt="../../../_images/GraphAnalysis_16_0.png" src="../../../_images/GraphAnalysis_16_0.png" />
 </div>
 </div>
 <p>Actually, these graphs have never been that great. Too many overlaps …</p>
@@ -513,27 +509,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_19_0.png" src="../../../_images/GraphAnalysis_19_0.png" />
+<img alt="../../../_images/GraphAnalysis_18_0.png" src="../../../_images/GraphAnalysis_18_0.png" />
 </div>
 </div>
-<p>This is indeed very random. We can  change the layout parameter and use another function. Fruchterman Reingold (<a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">https://en.wikipedia.org/wiki/Force-directed_graph_drawing</a>) is a very popular layout algorithm. It’s called spring layout in NetworkX. Change the first line of the last code block into <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.spring_layout(G)</span></code>.</p>
+<p>This is indeed very random. We can  change the layout parameter and use another function. Fruchterman Reingold (<a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">https://en.wikipedia.org/wiki/Force-directed_graph_drawing</a>) is a very popular layout algorithm. It’s called spring layout in NetworkX. Change the first line of the last code block to start with <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.spring_layout(G)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
-        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
-        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
-        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_21_0.png" src="../../../_images/GraphAnalysis_21_0.png" />
-</div>
 </div>
 <p>This is a bit better. Less overlap. Let’s try another layout. Replace the pos line with <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.kamada_kawai_layout(G)</span></code>.</p>
-<p>Also, the edges are too dark. A good trick is often to set their colours to greyscale. Also add:</p>
+<p>Also, the edges are too dark. A good trick is often to set their colours to greyscale with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
         <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
         <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
@@ -543,9 +531,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
         <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
         <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
         <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;silver&quot;</span><span class="p">,</span>
@@ -554,16 +540,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_23_0.png" src="../../../_images/GraphAnalysis_23_0.png" />
+<img alt="../../../_images/GraphAnalysis_22_0.png" src="../../../_images/GraphAnalysis_22_0.png" />
 </div>
 </div>
 <p>Ok. At least everything is readable … But it is still difficult to see any interesting patterns in the network. Remember, e.g., the original insight from the 1970s paper of the karate club? It described how the larger community of the whole club was effectively the result of several separate communities of members and split thererfore according to trust placed in either the administrator or instructor. Thus the whole karate club community can split up easily. Graph analysis comes with a lot of so-called community detection algorithms that support such investigations. We will use what many consider one of the best algorithms in this domain. Louvain is explained at <a class="reference external" href="https://towardsdatascience.com/louvain-algorithm-93fde589f58c">https://towardsdatascience.com/louvain-algorithm-93fde589f58c</a>.</p>
 <p>Let’s first load the library with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">community</span> <span class="pre">import</span> <span class="pre">community_louvain</span></code>. You might have to install it first? Run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#install with pip install python-louvain</span>
-
-<span class="kn">from</span> <span class="nn">community</span> <span class="kn">import</span> <span class="n">community_louvain</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">community</span> <span class="kn">import</span> <span class="n">community_louvain</span>
 </pre></div>
 </div>
 </div>
@@ -585,7 +569,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(1, 0), (2, 1), (3, 1), (4, 1), (5, 0), (6, 0), (7, 0), (8, 1), (9, 3), (11, 0), (12, 0), (13, 1), (14, 1), (18, 1), (20, 0), (22, 1), (32, 2), (31, 1), (10, 3), (28, 2), (29, 3), (33, 3), (17, 0), (34, 3), (15, 3), (16, 3), (19, 3), (21, 3), (23, 3), (24, 2), (26, 2), (30, 3), (25, 2), (27, 3)])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(1, 3), (2, 1), (3, 1), (4, 1), (5, 3), (6, 3), (7, 3), (8, 1), (9, 2), (11, 3), (12, 3), (13, 1), (14, 1), (18, 1), (20, 3), (22, 1), (32, 0), (31, 1), (10, 2), (28, 0), (29, 2), (33, 2), (17, 3), (34, 2), (15, 2), (16, 2), (19, 2), (21, 2), (23, 2), (24, 0), (26, 0), (30, 2), (25, 0), (27, 2)])
 </pre></div>
 </div>
 </div>
@@ -605,10 +589,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_31_0.png" src="../../../_images/GraphAnalysis_31_0.png" />
+<img alt="../../../_images/GraphAnalysis_30_0.png" src="../../../_images/GraphAnalysis_30_0.png" />
 </div>
 </div>
-<p>This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities Lourain has detected. Let’s investigate this further and visualise the degree by which members are connected to other members. A graph degree basically counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree. First though we need to calculate the degree for each node. That’s very easy using igraph’s degree function. Simply type graph.degree()</p>
+<p>This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities Lourain has detected. Let’s investigate this further and visualise the degree by which members are connected to other members.</p>
+<p>A graph degree counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree.</p>
+<p>First though we need to calculate the degree for each node. That’s very easy using the degree function. Simply type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">degree_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">degree</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+<span class="n">degree_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">degree</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
@@ -622,7 +612,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Now, let’s reassign the size of the nodes with setting vertex_size= vertex_size=graph.degree()</p>
+<p>Now, let’s reassign the size of the nodes with setting <code class="docutils literal notranslate"><span class="pre">vertex_size=</span> <span class="pre">vertex_size=graph.degree()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">node_size</span><span class="o">=</span><span class="n">degree_list</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
@@ -630,10 +620,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/GraphAnalysis_35_0.png" src="../../../_images/GraphAnalysis_35_0.png" />
+<img alt="../../../_images/GraphAnalysis_34_0.png" src="../../../_images/GraphAnalysis_34_0.png" />
 </div>
 </div>
-<p>The new graph clearly shows  where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!</p>
+<p>The new graph clearly shows  where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check out the Internet and happy playing!</p>
 </div>
 
     <script type="text/x-thebe-config">

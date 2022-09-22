@@ -304,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="section" id="plotting-data">
 <h1>Plotting data<a class="headerlink" href="#plotting-data" title="Permalink to this headline">¶</a></h1>
 <p>Those last plots did look promising, didn’t they? Let’s start from the beginning and go through basic plots in Python.</p>
-<p>To make it a bit more interesting, we return to the LinkedIn and Facebook view numbers. We would like to investigate their relationship. They should be loaded already. Let’s create our Linkedin and Facebook views of the week again and also create a dataframe df to hold them. Run the code below. Do you understand what it is doing?</p>
+<p>To make it a bit more interesting, we return to the LinkedIn and Facebook view numbers. We would like to investigate their relationship. Let’s create our Linkedin and Facebook views of the week again and also create a dataframe df to hold them. Run the code below. Do you understand what it is doing?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -381,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div></div></div>
 </div>
-<p>The earlier boxplot function came directly with the Pandas library. There are some limited plots in Pandas called basic plots at <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html</a>. It would be easy to plot the linkedin and facebook data directly as a line plot with df.plot().</p>
+<p>The earlier boxplot function came directly with the Pandas library. There are some limited plots in Pandas called basic plots: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html</a>. It would be easy to plot the linkedin and facebook data directly as a line plot with df.plot().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -395,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../../../_images/BasicVisualisation_4_1.png" src="../../../_images/BasicVisualisation_4_1.png" />
 </div>
 </div>
-<p>While Pandas plot normally provides only a quick overview of the data, in this case it is actually very good because the data is quite simply. The plot function would, however, struggle with the death penality dataset, as it contains different types of columns.</p>
+<p>While Pandas, plots normally provide only a quick overview of the data - in this case it is actually very good because the data is quite simple. The plot function would, however, struggle with the death penalty dataset, as it contains different types of columns.</p>
 <p>We want more control and use the most popular libraries in Python to plot and visualise. According to <a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a>, ‘Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python’.</p>
 <p>Next, we import Matplotlib in the standard way with import matplotlib.pyplot as plt. Run the code below.</p>
 <p>We also need to tell Jupyter Notebook to display plots inline with the %matplotlib inline ‘magic command’. We will cover more details on this when we move to advanced visualisations.</p>
@@ -416,7 +416,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119c576a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1101c06d0&gt;]
 </pre></div>
 </div>
 <img alt="../../../_images/BasicVisualisation_8_1.png" src="../../../_images/BasicVisualisation_8_1.png" />
@@ -431,7 +431,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119d383d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1102a1550&gt;]
 </pre></div>
 </div>
 <img alt="../../../_images/BasicVisualisation_10_1.png" src="../../../_images/BasicVisualisation_10_1.png" />
@@ -471,8 +471,9 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../../../_images/BasicVisualisation_14_1.png" src="../../../_images/BasicVisualisation_14_1.png" />
 </div>
 </div>
-<p>Better. Now, we would like to compare LinkedIn and Facebook views and create a graph containing both.</p>
-<p>First let’s set the xlabel to Days and the ylabel to views. Run:</p>
+<p>Better.</p>
+<p>Next, we would like to compare LinkedIn and Facebook views and create a graph containing both.</p>
+<p>First let’s set the xlabel (x-axis label) to Days and the ylabel to views. Run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linkedin</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Days&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Views&#39;</span><span class="p">)</span>
@@ -552,19 +553,19 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">facebook</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Days&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Views&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;LinkedIn-Facebook-Week&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mon&#39;</span><span class="p">,</span><span class="s1">&#39;Tue&#39;</span><span class="p">,</span><span class="s1">&#39;Wed&#39;</span><span class="p">,</span><span class="s1">&#39;Thu&#39;</span><span class="p">,</span><span class="s1">&#39;Fri&#39;</span><span class="p">,</span><span class="s1">&#39;Sat&#39;</span><span class="p">,</span><span class="s1">&#39;Sun&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;LinkedIn-Facebook-week&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mon&#39;</span><span class="p">,</span><span class="s1">&#39;Tue&#39;</span><span class="p">,</span><span class="s1">&#39;Wed&#39;</span><span class="p">,</span><span class="s1">&#39;Thu&#39;</span><span class="p">,</span><span class="s1">&#39;Fri&#39;</span><span class="p">,</span><span class="s1">&#39;Sat&#39;</span><span class="p">,</span><span class="s1">&#39;Sun&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick at 0x11a282a60&gt;,
-  &lt;matplotlib.axis.XTick at 0x11a282a30&gt;,
-  &lt;matplotlib.axis.XTick at 0x11a279dc0&gt;,
-  &lt;matplotlib.axis.XTick at 0x11a396bb0&gt;,
-  &lt;matplotlib.axis.XTick at 0x11a3a0340&gt;,
-  &lt;matplotlib.axis.XTick at 0x11a3968b0&gt;,
-  &lt;matplotlib.axis.XTick at 0x11a3a0c40&gt;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick at 0x1107eba90&gt;,
+  &lt;matplotlib.axis.XTick at 0x1107eba60&gt;,
+  &lt;matplotlib.axis.XTick at 0x1107eb8e0&gt;,
+  &lt;matplotlib.axis.XTick at 0x110901a30&gt;,
+  &lt;matplotlib.axis.XTick at 0x1109091c0&gt;,
+  &lt;matplotlib.axis.XTick at 0x110901d60&gt;,
+  &lt;matplotlib.axis.XTick at 0x1109099a0&gt;],
  [Text(0, 0, &#39;Mon&#39;),
   Text(1, 0, &#39;Tue&#39;),
   Text(2, 0, &#39;Wed&#39;),
@@ -622,8 +623,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Much better. You could add this graph already to your presentations. It looks good enough. There are, however, a million ways to improve this even further in Python/Matplotlib. If you are interested, just search the web for all the fantastic visualisations people have created with Matplotlib.</p>
-<p>But, we will move on to look at how visualisations can be used with a data frame. Remember, data frames are the workhorses of Python, which we use in almost all our data analysis tasks.</p>
-<p>Let’s create a simple barplot of facebook views with a barplot using Matplotlib directly with Pandas: <a class="reference external" href="https://en.wikipedia.org/wiki/Bar_chart">https://en.wikipedia.org/wiki/Bar_chart</a>. Run df[‘Facebook’].plot.bar().</p>
+<p>But, we will move on to look at how visualisations can be used with a dataframe. Remember, dataframes are the workhorses of Python, which we use in almost all our data analysis tasks.</p>
+<p>Let’s create a simple barplot of facebook views with a barplot using Matplotlib directly with Pandas: <a class="reference external" href="https://en.wikipedia.org/wiki/Bar_chart">https://en.wikipedia.org/wiki/Bar_chart</a>. Run <code class="docutils literal notranslate"><span class="pre">df['Facebook'].plot.bar()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Facebook&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
@@ -658,7 +659,7 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../../../_images/BasicVisualisation_31_0.png" src="../../../_images/BasicVisualisation_31_0.png" />
 </div>
 </div>
-<p>Finally, we can also create a stacked barplot and show both the views of facebook and linkedin using the same function as before but now adding stacked=True as an argument.</p>
+<p>We can also create a stacked barplot and show both the views of facebook and linkedin using the same function as before but now adding stacked=True as an argument.</p>
 <p>Run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Views&#39;</span><span class="p">)</span>

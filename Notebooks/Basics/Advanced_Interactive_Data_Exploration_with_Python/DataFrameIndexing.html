@@ -311,6 +311,14 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>To introduce Pandas indexes, we will use the famous iris dataset, every data analyst will know. It contains observations about flowers/irises. The details can be found here: <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/iris">https://archive.ics.uci.edu/ml/datasets/iris</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">contains</span> <span class="mi">3</span> <span class="n">classes</span> <span class="n">of</span> <span class="mi">50</span> <span class="n">instances</span> <span class="n">each</span><span class="p">,</span> <span class="n">where</span> <span class="n">each</span> <span class="k">class</span> <span class="nc">refers</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">iris</span> <span class="n">plant</span><span class="o">.</span> 
 <span class="n">Attribute</span> <span class="n">Information</span><span class="p">:</span>
@@ -335,18 +343,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">ce45e4a161f6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>Do you at least a little bit understand what is going on here? You access the sklearn.datasets library and then load the iris dataset before transforming it into a data frame.</p>
 <p>You can look at the first ten observations/rows by typing in df with head(). Type in <code class="docutils literal notranslate"><span class="pre">df.head(10)</span></code>.</p>
@@ -364,7 +360,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>First, we create an array <code class="docutils literal notranslate"><span class="pre">flower_names</span> <span class="pre">=</span> <span class="pre">np.array(['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d',</span> <span class="pre">'e',</span> <span class="pre">'f',</span> <span class="pre">'g',</span> <span class="pre">'h',</span> <span class="pre">'i',</span> <span class="pre">'j'])</span></code>. Type it in.</p>
 <p>Now, we recreate my_df2 with the flower_names as the index.</p>
 <p>First, we need to add a new column called names to the data frame with <code class="docutils literal notranslate"><span class="pre">my_df2['names']</span> <span class="pre">=</span> <span class="pre">flower_names</span></code>.</p>
-<p>Next we can use <code class="docutils literal notranslate"><span class="pre">my_df.set_index('names',</span> <span class="pre">inPlace</span> <span class="pre">=</span> <span class="pre">True)</span></code> to update the index of my_df2. Print out my_df2.</p>
+<p>Next we can use <code class="docutils literal notranslate"><span class="pre">my_df2.set_index('names',</span> <span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True)</span></code> to update the index of my_df2. Print out my_df2.</p>
 <p>With the names index, we can directly select rows for different flower names values using the .loc function. To select a single name type in <code class="docutils literal notranslate"><span class="pre">my_df2.loc['a']</span></code>.</p>
 <p>Let’s pick up two flowers. Type in <code class="docutils literal notranslate"><span class="pre">my_df2.loc[['c','d']]</span></code>.</p>
 <p>You can also select certain columns with a second list of column names. Try <code class="docutils literal notranslate"><span class="pre">my_df2.loc[['c','d'],</span> <span class="pre">['sepal</span> <span class="pre">length</span> <span class="pre">(cm)','sepal</span> <span class="pre">width</span> <span class="pre">(cm)']]</span></code>.</p>
