@@ -17,18 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import requests
-Gogh_re = requests.get('https://tinyurl.com/yntmv8z2', stream=True).raw
-Gogh = Image.open(Gogh_re)
+rotated_gogh = np.rot90(nGogh)
+imshow(rotated_gogh)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-2-398f51385182>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;32mimport[0m [0mrequests[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      2[0m [0mGogh_re[0m [0;34m=[0m [0mrequests[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m'https://tinyurl.com/yntmv8z2'[0m[0;34m,[0m [0mstream[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m.[0m[0mraw[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 3[0;31m [0mGogh[0m [0;34m=[0m [0mImage[0m[0;34m.[0m[0mopen[0m[0;34m([0m[0mGogh_re[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mNameError[0m: name 'Image' is not defined
-NameError: name 'Image' is not defined
+[0;32m<ipython-input-4-6fcc87866111>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mrotated_gogh[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mrot90[0m[0;34m([0m[0mnGogh[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mimshow[0m[0;34m([0m[0mrotated_gogh[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'nGogh' is not defined
+NameError: name 'nGogh' is not defined
 

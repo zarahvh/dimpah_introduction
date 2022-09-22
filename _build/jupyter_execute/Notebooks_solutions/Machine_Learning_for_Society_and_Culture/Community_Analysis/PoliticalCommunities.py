@@ -5,7 +5,7 @@
 
 # Today, we start exploring political and social community data using a popular exploration technique with association mining like clustering. It is very effective and easy to use. We will gain some real insights about US politics as well as communities in social networking sites.
 # 
-# Another focus today will be to introduce you to the problems of real life social datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges. 
+# Another focus today will be to introduce you to the problems of datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges. 
 # 
 # Finally, today will be dedicated to data exploration and the insights you can gain here. Exploring data is not necessarily a very structured part of your work. 
 # 
@@ -42,7 +42,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # 
 # The data is a subset of the data from https://www.dataquest.io/blog/k-means-clustering-us-senators/.
 # 
-# Please, run the code below to create the congress_114 data frame, which contains the voting behaviour of 114th US Senate. According to Wikipedia (https://en.wikipedia.org/wiki/114th_United_States_Congress), the 114th Congress met in Washington, D.C. from 3 January 2015 to 3 January 2017, during the final two years of Barack Obama's presidency. 
+# Please, run the code below to create the congress_114 dataframe, which contains the voting behaviour of 114th US Senate. According to Wikipedia (https://en.wikipedia.org/wiki/114th_United_States_Congress), the 114th Congress met in Washington, D.C. from 3 January 2015 to 3 January 2017, during the final two years of Barack Obama's presidency. 
 # 
 # The 2014 elections gave the Republicans control of the Senate (and control of both houses of Congress) for the first time since the 109th Congress. With 247 seats in the House of Representatives and 54 seats in the Senate, this Congress began with the largest Republican majority since the 71st Congress of 1929–1931. There are 23 Democrats, 1 Independent and 33 Republicans in our dataset. Please note that this does not represent the full 114th congress but a sample. 
 
@@ -95,7 +95,7 @@ congress_114 = congress_114.dropna()
 # In[7]:
 
 
-congress_114.tail(5)
+congress_114 = congress_114.dropna()
 
 
 # Finally, check how many democrats, republicans and independents there are in the dataset congress_114. As you can see this is only a subset of the 100 senators. Type in `congress_114.iloc[:,2].value_counts()` to select column 3 with iloc and apply value_counts().
@@ -108,7 +108,7 @@ congress_114.iloc[:,2].value_counts()
 
 # We want to improve the content of the dataframe next and make the types fit better. To this end, we change the float types to integers. 
 # 
-# This is actually quite hard work in things like Pandas. You need to first select the right columns in the data frame. You could just count the column numbers, as it is a very small data frame. But there is a trick to find the indexes automatically. We match the beginnings of the column names and are only interested in those that start with "bill-". 
+# This is actually quite hard work in things like Pandas. You need to first select the right columns in the dataframe. You could just count the column numbers, as it is a very small dataframe. But there is a trick to find the indexes automatically. We match the beginnings of the column names and are only interested in those that start with "bill-". 
 # 
 # Check first the names of the columns to verify that there is a pattern you can exploit. Run `congress_114.columns`.
 
@@ -139,7 +139,7 @@ bill_cols
 congress_114.loc[:, bill_cols] = congress_114.loc[:, bill_cols].astype(int)
 
 
-# Check that everything has come out as planned by running dtypes. 
+# Check that everything has come out as planned by running ```dtypes```. 
 # 
 # BTW, you will have noticed that string types are objects in Pandas ...
 
@@ -163,7 +163,7 @@ congress_114.dtypes
 k = 2
 
 
-# Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use congress_114.loc[:, bill_cols] to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.
+# Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use ```congress_114.loc[:, bill_cols]``` to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.
 
 # In[14]:
 
@@ -205,8 +205,6 @@ kmeans.fit(congress_114_voting)
 
 # In[17]:
 
-
-#Keep cell
 
 kmeans.labels_[:5]
 
@@ -266,6 +264,12 @@ congress_114_result
 pd.crosstab(congress_114_result['party'], congress_114_result['cluster'])
 
 
-# Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result data frame? 
+# Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result dataframe? 
 # 
 # k = 2 seems to have been a fairly good choice as there is a lot of overlap between parties and voting clusters. But if you want to practice further, why not rerun the analysis with a different k?
+
+# In[ ]:
+
+
+
+

@@ -12,10 +12,11 @@
 # import pandas as pd
 # ```
 
-# In[ ]:
+# In[1]:
 
 
-
+import numpy as np 
+import pandas as pd
 
 
 # To introduce Pandas indexes, we will use the famous iris dataset, every data analyst will know. It contains observations about flowers/irises. The details can be found here: https://archive.ics.uci.edu/ml/datasets/iris. 
@@ -37,7 +38,7 @@
 # 
 # Run the following code to load iris from a library and assign it to a dataframe called df.
 
-# In[1]:
+# In[2]:
 
 
 from sklearn.datasets import load_iris
@@ -126,7 +127,7 @@ df = pd.DataFrame(data.data, columns=data.feature_names)
 
 
 
-# Next we can use ```my_df.set_index('names', inPlace = True)``` to update the index of my_df2. Print out my_df2.
+# Next we can use ```my_df2.set_index('names', inplace = True)``` to update the index of my_df2. Print out my_df2.
 
 # In[ ]:
 

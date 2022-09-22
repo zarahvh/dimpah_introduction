@@ -24,7 +24,7 @@ nx.draw(G)
 
 # There is a great number of options to improve this graph. You can, for instance, add the labels, use curved edges  and reduce the arrow size. Try: `nx.draw(G, with_labels=True, connectionstyle="arc3,rad=0.4", arrowsize=0.4)`
 
-# In[2]:
+# In[ ]:
 
 
 
@@ -34,7 +34,7 @@ nx.draw(G)
 # 
 # Remember how we accessed the ids? Do the same with the names. It requires a dictionary mapping node id to the first name. That's easy to get with `node_labels = nx.get_node_attributes(G, 'first_name')`. 
 
-# In[3]:
+# In[ ]:
 
 
 
@@ -42,7 +42,7 @@ nx.draw(G)
 
 # Now add this to nx.draw: `nx.draw(G, with_labels=True, labels=node_labels, connectionstyle="arc3,rad=0.4", arrowsize=0.4)`.
 
-# In[4]:
+# In[ ]:
 
 
 
@@ -58,7 +58,7 @@ nx.draw(G)
 # karate_nodes.head()
 # ```
 
-# In[5]:
+# In[ ]:
 
 
 
@@ -66,7 +66,7 @@ nx.draw(G)
 
 # Now draw the graph again with another attribute node_color=np.array(karate_nodes['colour']). Type in: `nx.draw(G, node_color=np.array(karate_nodes['colour']), with_labels=True, labels=node_labels)`.
 
-# In[6]:
+# In[ ]:
 
 
 
@@ -74,7 +74,7 @@ nx.draw(G)
 
 # We also wanted to change the node size based on age. We could, for example, multiply the age by 10 to get the size that we want. Add `node_size = 10*np.array(karate_nodes['age'])` as an attribute to nx.draw.
 
-# In[7]:
+# In[ ]:
 
 
 
@@ -88,7 +88,7 @@ nx.draw(G)
 #         width= 0.25 * np.array(karate_edges['weight']))
 # ```
 
-# In[8]:
+# In[ ]:
 
 
 
@@ -108,7 +108,7 @@ nx.draw(G)
 #         width= 0.25 * np.array(karate_edges['weight']))
 # ```
 
-# In[9]:
+# In[ ]:
 
 
 
@@ -116,7 +116,7 @@ nx.draw(G)
 
 # This is indeed very random. We can  change the layout parameter and use another function. Fruchterman Reingold (https://en.wikipedia.org/wiki/Force-directed_graph_drawing) is a very popular layout algorithm. It's called spring layout in NetworkX. Change the first line of the last code block to start with `pos = nx.spring_layout(G)`.
 
-# In[10]:
+# In[ ]:
 
 
 
@@ -189,7 +189,7 @@ nx.draw(G)
 # degree_list[:5]
 # ```
 
-# In[16]:
+# In[ ]:
 
 
 

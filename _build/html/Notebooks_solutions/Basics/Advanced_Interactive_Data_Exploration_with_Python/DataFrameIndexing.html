@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Frame Indexing &#8212; Introduction to Data Analysis with Python</title>
+    <title>DataFrame Indexing &#8212; Introduction to Data Analysis with Python</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -290,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Frame Indexing</h1>
+                <h1>DataFrame Indexing</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -301,9 +301,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="data-frame-indexing">
-<h1>Data Frame Indexing<a class="headerlink" href="#data-frame-indexing" title="Permalink to this headline">¶</a></h1>
-<p>In this part, we work towards exploring and visualising real-life datasets using Python and Pandas and query questions of racial bias in death sentences. Before we can explore real-life datasets, we need to discuss a couple of more advanced Python constructs. First, indexes of data frames.</p>
+  <div class="section" id="dataframe-indexing">
+<h1>DataFrame Indexing<a class="headerlink" href="#dataframe-indexing" title="Permalink to this headline">¶</a></h1>
+<p>In this part, we work towards exploring and visualising real-life datasets using Python and Pandas and query questions of racial bias in death sentences. Before we can explore real-life datasets, we need to discuss a couple of more advanced Python constructs. First, indexes of dataframes.</p>
 <p>First, we need load the libraries Pandas and Numpy. You can run more than one statement in a cell. So, type in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -311,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
@@ -330,8 +330,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="o">--</span> <span class="n">Iris</span> <span class="n">Virginica</span>
 </pre></div>
 </div>
-<p>Read up on the history of the dataset <a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a>. It was published by a famous stastitician called Ronald Fisher (<a class="reference external" href="https://en.wikipedia.org/wiki/Ronald_Fisher">https://en.wikipedia.org/wiki/Ronald_Fisher</a>) who was also a eugenist. It is important to know about this dark history of statistics, too. Check out the Wikipedia entries for more information.</p>
-<p>Run the following code to load iris from a library and assign it to a data frame called df.</p>
+<p>Read up on the history of the dataset <a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a>. It was published by a famous statistician called Ronald Fisher (<a class="reference external" href="https://en.wikipedia.org/wiki/Ronald_Fisher">https://en.wikipedia.org/wiki/Ronald_Fisher</a>) who was also a eugenist. It is important to know about this dark history of statistics, too. Check out the Wikipedia entries for more information.</p>
+<p>Run the following code to load iris from a library and assign it to a dataframe called df.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
@@ -450,7 +450,7 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div></div></div>
 </div>
-<p>Contemplate a bit how the plants are described. Where is the beauty of a flower? The data frame is a good example of using features to describe observations.</p>
+<p>Contemplate a bit how the plants are described. Where is the beauty of a flower? The dataframe is a good example of using features to describe observations.</p>
 <p>Now, select the first 10 rows into a new data frame with <code class="docutils literal notranslate"><span class="pre">my_df</span> <span class="pre">=</span> <span class="pre">df.head(10)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -464,13 +464,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-
-<span class="n">ind</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </pre></div>
 </div>
 </div>
@@ -480,12 +473,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span><span class="p">[</span><span class="s1">&#39;ind&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span>
-<span class="n">my_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-6-91ccf688db2b&gt;:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-6-e978dc564705&gt;:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -493,347 +485,28 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   my_df[&#39;ind&#39;] = ind
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal length (cm)</th>
-      <th>sepal width (cm)</th>
-      <th>petal length (cm)</th>
-      <th>petal width (cm)</th>
-      <th>ind</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5.4</td>
-      <td>3.9</td>
-      <td>1.7</td>
-      <td>0.4</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>4.6</td>
-      <td>3.4</td>
-      <td>1.4</td>
-      <td>0.3</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>5.0</td>
-      <td>3.4</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>4.4</td>
-      <td>2.9</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>4.9</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.1</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
-<p>You can now set the ind column to be the index of the data frame, which will make selecting items, slicing, etc. much faster and consistent.</p>
+</div>
+<p>You can now set the ind column to be the index of the dataframe, which will make selecting items, slicing, etc. much faster and consistent.</p>
 <p>Type in <code class="docutils literal notranslate"><span class="pre">my_df.set_index('ind',</span> <span class="pre">inplace=True)</span></code>. And print out my_df.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ind&#39;</span><span class="p">)</span>
-<span class="n">my_df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ind&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal length (cm)</th>
-      <th>sepal width (cm)</th>
-      <th>petal length (cm)</th>
-      <th>petal width (cm)</th>
-      <th>ind</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5.4</td>
-      <td>3.9</td>
-      <td>1.7</td>
-      <td>0.4</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>4.6</td>
-      <td>3.4</td>
-      <td>1.4</td>
-      <td>0.3</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>5.0</td>
-      <td>3.4</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>4.4</td>
-      <td>2.9</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>4.9</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.1</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>The earlier warning came as Pandas prefers us to create an index not for a column but the whole data.</p>
 <p>So, let’s do this again. This time, we create a new datafame directly with an index. Type in <code class="docutils literal notranslate"><span class="pre">my_df2</span> <span class="pre">=</span> <span class="pre">pd.DataFrame(df.head(10),</span> <span class="pre">index</span> <span class="pre">=</span> <span class="pre">ind)</span></code>. Print my_df2 out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="n">ind</span><span class="p">)</span>
-<span class="n">my_df2</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal length (cm)</th>
-      <th>sepal width (cm)</th>
-      <th>petal length (cm)</th>
-      <th>petal width (cm)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5.4</td>
-      <td>3.9</td>
-      <td>1.7</td>
-      <td>0.4</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>4.6</td>
-      <td>3.4</td>
-      <td>1.4</td>
-      <td>0.3</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>5.0</td>
-      <td>3.4</td>
-      <td>1.5</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>4.4</td>
-      <td>2.9</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>4.9</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
-<p>This should look exactly like the start of the original iris data frame df. Pandas actually automatically creates an index when you call pd.DataFrame. You could, however, make any sequence of unique values into an index. Let’s give the flowers (artificial) names and index the my_df2 directly with them.</p>
-<p>First we create a numpy array <code class="docutils literal notranslate"><span class="pre">flower_names</span> <span class="pre">=</span> <span class="pre">np.array(['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d',</span> <span class="pre">'e',</span> <span class="pre">'f',</span> <span class="pre">'g',</span> <span class="pre">'h',</span> <span class="pre">'i',</span> <span class="pre">'j'])</span></code>. Type it in.</p>
+<p>This should look exactly like the start of the original iris dataframe df. Pandas automatically creates an index when you call pd.DataFrame. You could, however, make any sequence of unique values into an index. Let’s give the flowers (artificial) names and index the my_df2 directly with them.</p>
+<p>First, we create an array <code class="docutils literal notranslate"><span class="pre">flower_names</span> <span class="pre">=</span> <span class="pre">np.array(['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d',</span> <span class="pre">'e',</span> <span class="pre">'f',</span> <span class="pre">'g',</span> <span class="pre">'h',</span> <span class="pre">'i',</span> <span class="pre">'j'])</span></code>. Type it in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flower_names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">])</span>
@@ -850,120 +523,13 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 </div>
-<p>Next we can use <code class="docutils literal notranslate"><span class="pre">my_df.set_index('names',</span> <span class="pre">inPlace</span> <span class="pre">=</span> <span class="pre">True)</span></code> to update the index of my_df2. Print out my_df2.</p>
+<p>Next we can use <code class="docutils literal notranslate"><span class="pre">my_df2.set_index('names',</span> <span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True)</span></code> to update the index of my_df2. Print out my_df2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">my_df2</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal length (cm)</th>
-      <th>sepal width (cm)</th>
-      <th>petal length (cm)</th>
-      <th>petal width (cm)</th>
-    </tr>
-    <tr>
-      <th>names</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>a</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>b</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>c</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>d</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>e</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>f</th>
-      <td>5.4</td>
-      <td>3.9</td>
-      <td>1.7</td>
-      <td>0.4</td>
-    </tr>
-    <tr>
-      <th>g</th>
-      <td>4.6</td>
-      <td>3.4</td>
-      <td>1.4</td>
-      <td>0.3</td>
-    </tr>
-    <tr>
-      <th>h</th>
-      <td>5.0</td>
-      <td>3.4</td>
-      <td>1.5</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>i</th>
-      <td>4.4</td>
-      <td>2.9</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>j</th>
-      <td>4.9</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>With the names index, we can directly select rows for different flower names values using the .loc function. To select a single name type in <code class="docutils literal notranslate"><span class="pre">my_df2.loc['a']</span></code>.</p>
 <div class="cell docutils container">
@@ -1162,8 +728,8 @@ Name: a, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Finally, a logical selection is also possible with an indexed data frame directly — not just via selectors as previously discussed.</p>
-<p>Try to retrieve all entries with petal width (cm) = 0.2 by typing in <code class="docutils literal notranslate"><span class="pre">my_df2.loc[my_df2['petal</span> <span class="pre">width</span> <span class="pre">(cm)']</span> <span class="pre">==</span> <span class="pre">0.2]</span></code>. Yes, you have to repeat the data frame inside the [].</p>
+<p>Finally, a logical selection is also possible with an indexed dataframe directly — not just via selectors as previously discussed.</p>
+<p>Try to retrieve all entries with petal width (cm) = 0.2 by typing in <code class="docutils literal notranslate"><span class="pre">my_df2.loc[my_df2['petal</span> <span class="pre">width</span> <span class="pre">(cm)']</span> <span class="pre">==</span> <span class="pre">0.2]</span></code>. Yes, you have to repeat the dataframe inside the [].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">my_df2</span><span class="p">[</span><span class="s1">&#39;petal width (cm)&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.2</span><span class="p">]</span>
@@ -1256,7 +822,7 @@ Name: a, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>There is so much more you can do with data frames in Pandas. One more function you will use quite a bit: value_counts(). It counts the number of times a value appears in a column. Try it with <code class="docutils literal notranslate"><span class="pre">my_df2['petal</span> <span class="pre">width</span> <span class="pre">(cm)'].value_counts()</span></code>.</p>
+<p>There is so much more you can do with dataframes in Pandas. One more function you will use quite a bit: value_counts(). It counts the number of times a value appears in a column. Try it with <code class="docutils literal notranslate"><span class="pre">my_df2['petal</span> <span class="pre">width</span> <span class="pre">(cm)'].value_counts()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df2</span><span class="p">[</span><span class="s1">&#39;petal width (cm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>

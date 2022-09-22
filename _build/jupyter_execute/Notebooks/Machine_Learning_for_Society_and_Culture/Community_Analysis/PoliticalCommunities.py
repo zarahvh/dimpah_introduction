@@ -162,7 +162,7 @@ congress_114 = pd.read_csv("https://tinyurl.com/2p8vyp99")
 k = 2
 
 
-# Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use ```congress_114.loc[:, bill_cols]`` to create ```congress_114_voting```. Also, print out the first couple of rows of congress_114_voting.
+# Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use ```congress_114.loc[:, bill_cols]``` to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.
 
 # In[ ]:
 
@@ -200,10 +200,10 @@ from sklearn.cluster import KMeans
 
 # The cluster assignments are stored as a one-dimensional NumPy array in kmeans.labels_. Here’s a look at the first five predicted labels. Run the code below.
 
-# In[5]:
+# In[ ]:
 
 
-kmeans.labels_[:5]
+
 
 
 # Ok, so now that we have run our first machine learning algorithms, what do we do with the results? A good first step for k-means and other clustering algorithms is to check out the size of the clusters. Who do you expect to belong to each cluster?

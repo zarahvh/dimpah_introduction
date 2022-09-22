@@ -314,7 +314,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Now to the main star of this show, which is the networkx library: <a class="reference external" href="https://networkx.org/">https://networkx.org/</a> Load this commonly used network library with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">networkx</span> <span class="pre">as</span> <span class="pre">nx</span></code>.</p>
+<p>Now to the main star of this show, which is the networkx library: <a class="reference external" href="https://networkx.org/">https://networkx.org/</a>.</p>
+<p>Load this commonly used network library with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">networkx</span> <span class="pre">as</span> <span class="pre">nx</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span> 
@@ -322,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>You have two data frames  in the environment.</p>
+<p>You have two dataframes  in the environment.</p>
 <p>The first is karate_nodes, which contains the nodes of the network with information about the karate club members. Run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -402,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div></div></div>
 </div>
-<p>The second data frame karate_edges contains the edges with information whether one member likes another and by how much (weight). Run the code below.</p>
+<p>The second dataframe karate_edges contains the edges with information whether one member likes another and by how much (weight). Run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://tinyurl.com/mtmwc8hd&quot;</span><span class="p">)</span>
@@ -479,7 +480,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;from&quot;</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(),</span> <span class="n">edge_attr</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The first argument is the data frame, the second the source node, the third is the target node. We also tell from_pandas_edgelist to create a directed graph with create_using=nx.DiGraph() and to keep all the edge attributes with edge_attr = True.</p>
+<p>The first argument is the dataframe, the second the source node, the third is the target node. We also tell from_pandas_edgelist to create a directed graph with create_using=nx.DiGraph() and to keep all the edge attributes with edge_attr = True.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;from&quot;</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(),</span> <span class="n">edge_attr</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -487,8 +488,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Unfortunately, it is not very easy to add all the attributes of the nodes. <a class="reference external" href="https://newbedev.com/networkx-setting-node-attributes-from-dataframe">https://newbedev.com/networkx-setting-node-attributes-from-dataframe</a> explains how this is done by creating first a dictionary of dictionaries from karate_nodes.
-Type in: <code class="docutils literal notranslate"><span class="pre">node_attr</span> <span class="pre">=</span> <span class="pre">karate_nodes.set_index('id').to_dict('index')</span></code>. This will first set the index of karate_nodes to the ids of all nodes. to_dict will then add the row values as another dictionary. Check out how this looks for a row by adding <code class="docutils literal notranslate"><span class="pre">node_attr[2]</span></code>.</p>
+<p>Unfortunately, it is not very easy to add all the attributes of the nodes. <a class="reference external" href="https://newbedev.com/networkx-setting-node-attributes-from-dataframe">https://newbedev.com/networkx-setting-node-attributes-from-dataframe</a> explains how this is done by creating first a dictionary of dictionaries from karate_nodes.</p>
+<p>Type in: <code class="docutils literal notranslate"><span class="pre">node_attr</span> <span class="pre">=</span> <span class="pre">karate_nodes.set_index('id').to_dict('index')</span></code>. This will first set the index of karate_nodes to the ids of all nodes. to_dict will then add the row values as another dictionary.</p>
+<p>Check out how this looks for a row by adding <code class="docutils literal notranslate"><span class="pre">node_attr[2]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_attr</span> <span class="o">=</span> <span class="n">karate_nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
@@ -575,10 +577,10 @@ Type in: <code class="docutils literal notranslate"><span class="pre">node_attr<
 </div>
 </div>
 </div>
-<p>There are a lot of options here and it is good at this moment to check out the documention. To get only edges incident to nodes 1 and 3, type <code class="docutils literal notranslate"><span class="pre">G.edges([1,</span> <span class="pre">3])</span></code>.</p>
+<p>There are a lot of options here and it is good at this moment to check out the documention. To get only edges linked to nodes 1 and 3, type <code class="docutils literal notranslate"><span class="pre">G.edges([1,</span> <span class="pre">3])</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -588,7 +590,8 @@ Type in: <code class="docutils literal notranslate"><span class="pre">node_attr<
 </div>
 </div>
 </div>
-<p>We can see the node together with its attributes, if we want to now only see the age attribute of each node, we access it using <code class="docutils literal notranslate"><span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'age').values()</span></code>. get_node_attributes returns a dictionary with the node’s id as the key and the age the value. With values(), we only receive the values().</p>
+<p>We can observe the node together with its attributes.</p>
+<p>If we want to now only see the age attribute of each node, we access it using <code class="docutils literal notranslate"><span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'age').values()</span></code>. get_node_attributes returns a dictionary with the node’s id as the key and the age the value. With values(), we only receive the values().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
@@ -602,7 +605,7 @@ Type in: <code class="docutils literal notranslate"><span class="pre">node_attr<
 </div>
 </div>
 <p>It’s a dictionary. You would have to cast to a list to get only the ages. Do you know how?</p>
-<p>Let’s try an plot this graph. It’s easy in networkx. Just run nx.draw(G).</p>
+<p>Let’s try an plot this graph. It’s easy in networkx. Just run <code class="docutils literal notranslate"><span class="pre">nx.draw(G)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>

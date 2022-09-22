@@ -24,7 +24,7 @@ if (medium == 'LinkedIn'):
 
 # Next assign ```num_views = 14```.
 
-# In[2]:
+# In[ ]:
 
 
 
@@ -32,7 +32,7 @@ if (medium == 'LinkedIn'):
 
 # Let’s try to confirm whether we are popular with ```if num_views > 15``` then print `'You are very popular!'` How do you do it?
 
-# In[3]:
+# In[ ]:
 
 
 
@@ -49,7 +49,7 @@ if (medium == 'LinkedIn'):
 # 
 # Explain the results!
 
-# In[4]:
+# In[ ]:
 
 
 
@@ -70,7 +70,7 @@ else:
 
 # Another important concept in Python data analysis are for-loops. They are used for iterating over a sequence (like a list or even a secquence of letters or a string). The code below shows the syntax. Run the cell.
 
-# In[6]:
+# In[ ]:
 
 
 for letter in 'LinkedIn':
@@ -92,21 +92,17 @@ for letter in 'LinkedIn':
 # 
 # ```i**2``` is the power-operator in Python.
 
-# In[7]:
+# In[ ]:
 
 
-import numpy as np
 
-ind = np.array(range(0, 10))
-for i in ind:
-    print(i**2)
 
 
 # However NumPy also has easier operators to apply functions to the entire array at once, which is why we often prefer it over standard Python. 
 # 
 # Run ```np.square(ind)``` and admire the simplicity. 
 
-# In[8]:
+# In[ ]:
 
 
 
@@ -116,7 +112,7 @@ for i in ind:
 # 
 # Let's say we want to take the average of our linkdin and facebook views. First load the social media data again by running the code below.
 
-# In[9]:
+# In[ ]:
 
 
 linkedin = np.array([16, 9, 13, 5, 2, 17, 14])
@@ -125,7 +121,7 @@ facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 
 # Now run ```np.average(linkedin)``` to get the average of the LinkedIn array.
 
-# In[10]:
+# In[ ]:
 
 
 
@@ -133,7 +129,7 @@ facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 
 # To add 2 to each element in a numpy array we simply type the name of the array + 2. Try ```facebook + 2```.
 
-# In[11]:
+# In[ ]:
 
 
 
@@ -141,7 +137,7 @@ facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 
 # You can also combine these arrays to get one exciting average count for all our social media with `np.average(facebook + linkedin)`.
 
-# In[12]:
+# In[ ]:
 
 
 
@@ -156,7 +152,7 @@ facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 # ``` 
 # and find out that ...
 
-# In[13]:
+# In[ ]:
 
 
 
@@ -166,7 +162,7 @@ facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 # 
 # What happens if you type in ```np.char.upper(flower_names)```?
 
-# In[14]:
+# In[ ]:
 
 
 
@@ -174,7 +170,7 @@ facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 
 # For our final example, run ```np.size(flower_names)```.
 
-# In[15]:
+# In[ ]:
 
 
 

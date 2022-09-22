@@ -303,8 +303,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="arrays">
 <h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
-<p>The next new concept is the numpy array. You often use this construct in data analysis. We want to use the numpy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?</p>
-<p>Numpy has been a long-standing toolkit for data analysis. According to <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>, it is ‘the fundamental package for scientific computing with Python’. It features heavily in what is still a standard introduction in our field: <a class="reference external" href="https://wesmckinney.com/pages/book.html">https://wesmckinney.com/pages/book.html</a>. It is a really good book to further work on the topics that are discussed in these introductions.</p>
+<p>The next new concept is the NumPy array. You often use this construct in data analysis. We want to employ the NumPy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?</p>
+<p>NumPy has been a long-standing toolkit for data analysis. According to <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>, it is ‘the fundamental package for scientific computing with Python’. It features heavily in what is still a standard introduction in our field: <a class="reference external" href="https://wesmckinney.com/pages/book.html">https://wesmckinney.com/pages/book.html</a>. It is a really good book to further work on the topics that are discussed in these introductions.</p>
 <p>First, we have to import the library numpy. You always do that in Python with import. In this case, type in <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -313,8 +313,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Let’s move on from our gambling and look at social media.</p>
-<p>We will now introduce an example from social analytics brought to us by <a class="reference external" href="http://dataquest.com">dataquest.com</a>, which we will come back to again later in the course. You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week.</p>
+<p>Let’s move on from our gambling and look at social media. We will now introduce an example from social analytics brought to us by <a class="reference external" href="http://dataquest.io/">dataquest.com</a>, which we will come back to again later in the course.</p>
+<p>You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week.</p>
 <p>Type in <code class="docutils literal notranslate"><span class="pre">linkedin</span> <span class="pre">=</span> <span class="pre">numpy.array([16,</span> <span class="pre">9,</span> <span class="pre">13,</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">17,</span> <span class="pre">14])</span></code> to record the views for LinkedIn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>This is how you create a numpy array directly. If you are reminded of standard Python lists, you are right. For now, numpy arrays and lists are basically the same for us.</p>
+<p>This is how you create a NumPy array directly. If you are reminded of standard Python lists, you are right. For now, NumPy arrays and lists are basically the same for us.</p>
 <p>Now, please create the list <code class="docutils literal notranslate"><span class="pre">facebook_list</span> <span class="pre">=</span> <span class="pre">[17,</span> <span class="pre">7,</span> <span class="pre">5,</span> <span class="pre">16,</span> <span class="pre">8,</span> <span class="pre">13,</span> <span class="pre">14]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -445,7 +445,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>The order is of indexs is row first and then column. Try <code class="docutils literal notranslate"><span class="pre">views[1][4]</span></code>.</p>
+<p>The order of indexes is row first and then column. Try <code class="docutils literal notranslate"><span class="pre">views[1][4]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
@@ -458,29 +458,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>There is much more we can do. Numpy contains a lot of support functions.</p>
-<p>We can, for instance, reorder the social media views, so that the social media companies to be the columns and the rows to be the days.</p>
+<p>There is much more we can do. NumPy contains a lot of support functions.</p>
+<p>We can, for instance, reorder the social media views, so that the social media companies are the columns and the rows are the days.</p>
 <p>If you remember your school days, you can do change the axes in a matrix by transposing it - in Python with numpy.transpose. Simply run <code class="docutils literal notranslate"><span class="pre">views_t</span> <span class="pre">=</span> <span class="pre">numpy.transpose(views)</span></code>. Print out views_t.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views_t</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">views</span><span class="p">)</span>
-<span class="n">views_t</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16, 17],
-       [ 9,  7],
-       [13,  5],
-       [ 5, 16],
-       [ 2,  8],
-       [17, 13],
-       [14, 14]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Array and matrix are important ideas for interactive data explorations. Many of the comparisions we did in this notebook cannot be done directly with Python lists. In the next session, we will be introduced to the idea of data frames, which takes the matrix one step further.</p>
+<p>Array and matrix are important ideas for interactive data explorations. Many of the comparisons we did in this notebook cannot be done directly with Python lists.</p>
+<p>In the next session, we will be introduced to the idea of data frames, which takes the matrix one step further.</p>
 </div>
 
     <script type="text/x-thebe-config">

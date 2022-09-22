@@ -13,7 +13,7 @@
 4 + 3
 
 
-# Now, let’s try it yourself by typing in ```12 – 5``` into the cell below. And then click on arrow/Run again.
+# Now, let’s try it yourself by typing in ```12 - 5``` into the cell below. And then click on arrow/Run again.
 
 # In[ ]:
 

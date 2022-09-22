@@ -12,7 +12,7 @@
 # In[1]:
 
 
-numeric_list = [1,10,49]
+numeric_list = [1, 10, 49]
 
 
 # To check that the new list exists, please type ```numeric_list```.
@@ -41,7 +41,7 @@ string_list
 
 # Lists are useful to, for instance, hold your poker winnings during the week. You do not play on Saturday and Sunday, but record all the other 5 days, by entering ```poker_list = [140, -50, 20, -120, 240]```. 
 # 
-# Thank you datacamp.com for this example! An excellent resource to learn data science things btw, but unfortunately you have to pay for it.
+# Thank you  [datacamp.com](https://www.datacamp.com) for this example! An excellent resource to learn data science things btw, but unfortunately you have to pay for it.
 
 # In[5]:
 
@@ -57,7 +57,7 @@ poker_list = [140, -50, 20, -120, 240]
 roulette_list =[-24, -50, 100, -350, 10]
 
 
-# Because you prefer it organised, you would now like to name each of the entries. This is possible in Python with dictionaries. Please create an empty dictionary by typing ```names_poker = {}```.
+# Because you prefer it organised, you would now like to name each of the entries. This is possible in Python with [dictionaries](https://realpython.com/python-dicts/). Please create an empty dictionary by typing ```names_poker = {}```.
 
 # In[7]:
 
@@ -65,7 +65,7 @@ roulette_list =[-24, -50, 100, -350, 10]
 names_poker = {}
 
 
-# To create a dictionary (which is like a named list), simply use the {} and then for each element the key to access the element comes first, then a ‘:’, and finish it with the value. 
+# To create a dictionary (which is like a named list), simply use the {}. For each element, use the key to access the element comes first, then a ‘:’, and finish it with the value. 
 # 
 # So, in order to create a dictionary containing all your poker winnings type in ```names_poker = {'Monday': 140,'Tuesday': -50, 'Wednesday': 20, 'Thursday': -120, 'Friday': 240}```.
 # 
@@ -77,7 +77,7 @@ names_poker = {}
 names_poker = {'Monday': 140,'Tuesday': -50, 'Wednesday': 20, 'Thursday': -120, 'Friday': 240}
 
 
-# Now you can access a single element with ```names_poker['Monday']```. Type it in.
+# Now, you can access a single element with ```names_poker['Monday']```. Type it in.
 
 # In[9]:
 
@@ -111,7 +111,7 @@ sum(roulette_list)
 total_week = sum(poker_list) + sum(roulette_list)
 
 
-# Print out total_week.
+# Print out total_week. No hint this time. You know how to do it.
 
 # In[13]:
 
@@ -139,13 +139,12 @@ poker_monday
 
 # You can also select more than one element with the colon operator. 
 # 
-# In order to select your winnings from Tuesday to Friday, please run ```roulette_selection_list = roulette_list[1:5]```.  The first value, left of the colon, is the first index to select (in this case Tuesday). The last value is the first index NOT to select (here an imaginary Saturday). Print out roulette_selection_list.
+# In order to select your winnings from Tuesday to Friday, please run ```roulette_selection_list = roulette_list[1:5]```.  The first value, left of the colon, is the first index to select (in this case Tuesday). The last value is the first index NOT to select (here an imaginary Saturday). Print out roulette_selection_list in the same cell.
 
 # In[16]:
 
 
 roulette_selection_list = roulette_list[1:5]
-roulette_selection_list
 
 
 # This is called list slicing in Python and requires some getting used to.
@@ -167,7 +166,7 @@ roulette_selection_list
 sum(roulette_selection_list)
 
 
-# Using the index we can also update elements in lists. 
+# Using the index, we can also update elements in lists. 
 # 
 # Let’s  set the Wednesday winnings of roulette_selection_vector to 1000 with ```roulette_selection_list[1] = 1000```.
 

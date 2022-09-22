@@ -350,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="section" id="political-communities">
 <h1>Political Communities<a class="headerlink" href="#political-communities" title="Permalink to this headline">¶</a></h1>
 <p>Today, we start exploring political and social community data using a popular exploration technique with association mining like clustering. It is very effective and easy to use. We will gain some real insights about US politics as well as communities in social networking sites.</p>
-<p>Another focus today will be to introduce you to the problems of real life social datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges.</p>
+<p>Another focus today will be to introduce you to the problems of datasets, which often lack the quality to be processed easily. For instance, you will learn various strategies of dealing with missing entries either by removing them completely or by trying to replicate its values. The kind of social data we are dealing with is vast and unorganized, which makes organizing it for analysis no easy task. In reality, you will spend most of your time on working through such data challenges.</p>
 <p>Finally, today will be dedicated to data exploration and the insights you can gain here. Exploring data is not necessarily a very structured part of your work.</p>
 <p>You might remember the power of Pandas functions like head(), describe(), etc. to quickly explore essential components of data. Some people consider data exploration to be the most important part in the data analysis process, as it is really important to understand each aspect of the data and the way it is represented. In social and cultural analytics, most of our work is based on data exploration techniques rather than prediction. We will cover prediction later in the course.</p>
 <p>First load all the standard Pandas, etc. Python libraries, which should be familiar to you.</p>
@@ -378,7 +378,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s move on to some actual work.</p>
 <p>In a first exercise, we will use k-means to understand voting behaviour in the US senate. We selected a senate that was not too partisian as we would like to investigate changing voting behaviour.</p>
 <p>The data is a subset of the data from <a class="reference external" href="https://www.dataquest.io/blog/k-means-clustering-us-senators/">https://www.dataquest.io/blog/k-means-clustering-us-senators/</a>.</p>
-<p>Please, run the code below to create the congress_114 data frame, which contains the voting behaviour of 114th US Senate. According to Wikipedia (<a class="reference external" href="https://en.wikipedia.org/wiki/114th_United_States_Congress">https://en.wikipedia.org/wiki/114th_United_States_Congress</a>), the 114th Congress met in Washington, D.C. from 3 January 2015 to 3 January 2017, during the final two years of Barack Obama’s presidency.</p>
+<p>Please, run the code below to create the congress_114 dataframe, which contains the voting behaviour of 114th US Senate. According to Wikipedia (<a class="reference external" href="https://en.wikipedia.org/wiki/114th_United_States_Congress">https://en.wikipedia.org/wiki/114th_United_States_Congress</a>), the 114th Congress met in Washington, D.C. from 3 January 2015 to 3 January 2017, during the final two years of Barack Obama’s presidency.</p>
 <p>The 2014 elections gave the Republicans control of the Senate (and control of both houses of Congress) for the first time since the 109th Congress. With 247 seats in the House of Representatives and 54 seats in the Senate, this Congress began with the largest Republican majority since the 71st Congress of 1929–1931. There are 23 Democrats, 1 Independent and 33 Republicans in our dataset. Please note that this does not represent the full 114th congress but a sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,164 +799,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Check the last 5 elements again to make sure that the observation with NaN values (of the senator who missed votes) is really gone.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">congress_114</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">congress_114</span> <span class="o">=</span> <span class="n">congress_114</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>name</th>
-      <th>party</th>
-      <th>state</th>
-      <th>bill-1</th>
-      <th>bill-4</th>
-      <th>bill-5</th>
-      <th>bill-6</th>
-      <th>bill-7</th>
-      <th>bill-8</th>
-      <th>bill-9</th>
-      <th>bill-10</th>
-      <th>bill-20</th>
-      <th>bill-26</th>
-      <th>bill-32</th>
-      <th>bill-38</th>
-      <th>bill-39</th>
-      <th>bill-44</th>
-      <th>bill-47</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>52</th>
-      <td>52</td>
-      <td>Klobuchar</td>
-      <td>D</td>
-      <td>MN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>53</td>
-      <td>Lankford</td>
-      <td>R</td>
-      <td>OK</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>54</td>
-      <td>Leahy</td>
-      <td>D</td>
-      <td>VT</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>55</td>
-      <td>Lee</td>
-      <td>R</td>
-      <td>UT</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.5</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>56</th>
-      <td>56</td>
-      <td>Manchin</td>
-      <td>D</td>
-      <td>WV</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Finally, check how many democrats, republicans and independents there are in the dataset congress_114. As you can see this is only a subset of the 100 senators. Type in <code class="docutils literal notranslate"><span class="pre">congress_114.iloc[:,2].value_counts()</span></code> to select column 3 with iloc and apply value_counts().</p>
 <div class="cell docutils container">
@@ -975,7 +821,7 @@ Name:  party , dtype: int64
 </div>
 </div>
 <p>We want to improve the content of the dataframe next and make the types fit better. To this end, we change the float types to integers.</p>
-<p>This is actually quite hard work in things like Pandas. You need to first select the right columns in the data frame. You could just count the column numbers, as it is a very small data frame. But there is a trick to find the indexes automatically. We match the beginnings of the column names and are only interested in those that start with “bill-“.</p>
+<p>This is actually quite hard work in things like Pandas. You need to first select the right columns in the dataframe. You could just count the column numbers, as it is a very small dataframe. But there is a trick to find the indexes automatically. We match the beginnings of the column names and are only interested in those that start with “bill-“.</p>
 <p>Check first the names of the columns to verify that there is a pattern you can exploit. Run <code class="docutils literal notranslate"><span class="pre">congress_114.columns</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1020,7 +866,7 @@ Name:  party , dtype: int64
 </div>
 </div>
 </div>
-<p>Check that everything has come out as planned by running dtypes.</p>
+<p>Check that everything has come out as planned by running <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>.</p>
 <p>BTW, you will have noticed that string types are objects in Pandas …</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1066,7 +912,7 @@ dtype: object
 </div>
 </div>
 </div>
-<p>Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use congress_114.loc[:, bill_cols] to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.</p>
+<p>Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use <code class="docutils literal notranslate"><span class="pre">congress_114.loc[:,</span> <span class="pre">bill_cols]</span></code> to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">congress_114_voting</span> <span class="o">=</span> <span class="n">congress_114</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">bill_cols</span><span class="p">]</span>
@@ -1238,9 +1084,7 @@ dtype: object
 <p>The cluster assignments are stored as a one-dimensional NumPy array in kmeans.labels_. Here’s a look at the first five predicted labels. Run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
-
-<span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1838,7 +1682,7 @@ dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result data frame?</p>
+<p>Take a minute to interpret the results. Which party is more coherent in its voting behaviour? Can you identify the outliers by looking through the result dataframe?</p>
 <p>k = 2 seems to have been a fairly good choice as there is a lot of overlap between parties and voting clusters. But if you want to practice further, why not rerun the analysis with a different k?</p>
 </div>
 

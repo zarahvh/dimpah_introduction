@@ -49,11 +49,10 @@ url = 'https://en.wikipedia.org/wiki/Current_members_of_the_United_States_Senate
 
 # If it all worked as it should run the code below to create our senators dataframe.
 
-# In[3]:
+# In[ ]:
 
 
-senators = senator_wiki[0]
-senators.head()
+
 
 
 # Fortunately, the data is already of fairly good quality, but we still need to clean the data a bit.
@@ -94,7 +93,7 @@ senators.head()
 # 
 # We first need to know which year we are currently in. We will use this to calculate the years left in office. We can use the datetime library and its now() function. Run the code below.
 
-# In[ ]:
+# In[3]:
 
 
 import datetime
@@ -112,7 +111,7 @@ year_
 
 # Finally, let's delete all unnecessary columns that you now changed such as 'Born' and 'Party.1'. Run the code below.
 
-# In[ ]:
+# In[4]:
 
 
 senators.drop(['Party.1', 'Born'], 1, inplace = True)

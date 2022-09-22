@@ -303,8 +303,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="little-control-structures">
 <h1>Little Control Structures<a class="headerlink" href="#little-control-structures" title="Permalink to this headline">¶</a></h1>
-<p>We will soon come back to real-life datasets. But before that we need to introduce a few more aspects from Python, the programming language, which you might need in data analysis tasks. This part is probably least about interactive data exploration but is common to all programming languages.</p>
-<p>The first topic are control structures. Control structures execute a piece of code based on a condition. You can recognize them in most programming languages by the keyword if. In Python, they look like the following:</p>
+<p>We will soon come back to real-life datasets. But before that we need to introduce a few more aspects from Python, the programming language, which you might need in data analysis tasks.</p>
+<p>The first topic are control structures.</p>
+<p>Control structures execute a piece of code based on a condition. You can recognize them in most programming languages by the keyword if. In Python, they look like the following cell. Run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium</span> <span class="o">=</span> <span class="s1">&#39;LinkedIn&#39;</span>
@@ -322,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>The first statement creates a variable medium with ‘LinkedIn’ as a value. The control structure starts with if, then uses a condition to evaluate to a Boolean (medium == ‘LinkedIn’), followed by a colon. The statement to execute follows in the next line.  print(‘Showing LinkedIn information’) will print out if the condition is met.</p>
 <p>Important: Observe the indentation, which is a way of telling Python that a group of statements belongs together as a block. Blocks can be regarded as the grouping of statements for a specific purpose. Python really does not like it if you mess with its indentation. Check <a class="reference external" href="https://www.dummies.com/programming/python/how-to-indent-and-dedent-your-python-code/">https://www.dummies.com/programming/python/how-to-indent-and-dedent-your-python-code/</a>.</p>
-<p>Now, also assign <code class="docutils literal notranslate"><span class="pre">num_views</span> <span class="pre">=</span> <span class="pre">14</span></code>.</p>
+<p>Next assign <code class="docutils literal notranslate"><span class="pre">num_views</span> <span class="pre">=</span> <span class="pre">14</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_views</span> <span class="o">=</span> <span class="mi">14</span>
@@ -373,7 +374,7 @@ Try to be more visible!
 </div>
 </div>
 </div>
-<p>Another important concept in Python data analysis are for-loops. They are used for iterating over a sequence (like a list or even a secquence of letters or a string). The code below shows the syntax. Try it.</p>
+<p>Another important concept in Python data analysis are for-loops. They are used for iterating over a sequence (like a list or even a secquence of letters or a string). The code below shows the syntax. Run the cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">&#39;LinkedIn&#39;</span><span class="p">:</span>
@@ -394,7 +395,7 @@ n
 </div>
 </div>
 </div>
-<p>For-loops can be very useful to perform repeated operations on collections of data, which is something we often want to do. So, for instance, loops could be used to get the square of each element in a list/array. Or, we could use them to calculate the average value of a numeric column in a data frame, etc.</p>
+<p>For-loops can be very useful to perform repeated operations on collections of data, which is something we often want to do. So, for instance, loops could be used to get the square of each element in a list/array. Or, we could use them to calculate the average value of a numeric column in a dataframe, etc.</p>
 <p>The next cell introduces the <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">l</span> <span class="pre">in</span> <span class="pre">list</span></code> construct, which is a short form for going through elements in a list. Run the following to square each number in our list ind and observe the code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -430,7 +431,7 @@ n
 </div>
 </div>
 </div>
-<p>However numpy also has easier operators to apply functions to the entire array at once, which is why we often prefer using it over standard Python.</p>
+<p>However NumPy also has easier operators to apply functions to the entire array at once, which is why we often prefer it over standard Python.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">np.square(ind)</span></code> and admire the simplicity.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -444,7 +445,7 @@ n
 </div>
 </div>
 </div>
-<p>Here, numpy is simply amazing and super fast.</p>
+<p>Here, NumPy is simply amazing and super fast.</p>
 <p>Let’s say we want to take the average of our linkdin and facebook views. First load the social media data again by running the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -493,7 +494,7 @@ n
 </div>
 </div>
 </div>
-<p>You can also play with numpy’s other functions such as np.char.str_len. This counts the number of character for each entry in the flower_names list.</p>
+<p>You can also play with NumPy’s other functions such as np.char.str_len. This counts the number of character for each entry in the flower_names list.</p>
 <p>Run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flower_names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">str_len</span><span class="p">(</span><span class="n">flower_names</span><span class="p">)</span>

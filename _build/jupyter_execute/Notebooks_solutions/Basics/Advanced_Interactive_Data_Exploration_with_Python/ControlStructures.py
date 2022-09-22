@@ -3,9 +3,11 @@
 
 # ## Little Control Structures
 
-# We will soon come back to real-life datasets. But before that we need to introduce a few more aspects from Python, the programming language, which you might need in data analysis tasks. This part is probably least about interactive data exploration but is common to all programming languages.
+# We will soon come back to real-life datasets. But before that we need to introduce a few more aspects from Python, the programming language, which you might need in data analysis tasks. 
 # 
-# The first topic are control structures. Control structures execute a piece of code based on a condition. You can recognize them in most programming languages by the keyword if. In Python, they look like the following:
+# The first topic are control structures. 
+# 
+# Control structures execute a piece of code based on a condition. You can recognize them in most programming languages by the keyword if. In Python, they look like the following cell. Run the cell below.
 
 # In[1]:
 
@@ -20,7 +22,7 @@ if (medium == 'LinkedIn'):
 # 
 # Important: Observe the indentation, which is a way of telling Python that a group of statements belongs together as a block. Blocks can be regarded as the grouping of statements for a specific purpose. Python really does not like it if you mess with its indentation. Check https://www.dummies.com/programming/python/how-to-indent-and-dedent-your-python-code/.
 
-# Now, also assign ```num_views = 14```.
+# Next assign ```num_views = 14```.
 
 # In[2]:
 
@@ -68,7 +70,7 @@ else:
     print('Try to be more visible!')
 
 
-# Another important concept in Python data analysis are for-loops. They are used for iterating over a sequence (like a list or even a secquence of letters or a string). The code below shows the syntax. Try it.
+# Another important concept in Python data analysis are for-loops. They are used for iterating over a sequence (like a list or even a secquence of letters or a string). The code below shows the syntax. Run the cell.
 
 # In[6]:
 
@@ -77,7 +79,7 @@ for letter in 'LinkedIn':
     print(letter)
 
 
-# For-loops can be very useful to perform repeated operations on collections of data, which is something we often want to do. So, for instance, loops could be used to get the square of each element in a list/array. Or, we could use them to calculate the average value of a numeric column in a data frame, etc.
+# For-loops can be very useful to perform repeated operations on collections of data, which is something we often want to do. So, for instance, loops could be used to get the square of each element in a list/array. Or, we could use them to calculate the average value of a numeric column in a dataframe, etc.
 # 
 # The next cell introduces the ```for l in list``` construct, which is a short form for going through elements in a list. Run the following to square each number in our list ind and observe the code:
 # 
@@ -102,7 +104,7 @@ for i in ind:
     print(i**2)
 
 
-# However numpy also has easier operators to apply functions to the entire array at once, which is why we often prefer using it over standard Python. 
+# However NumPy also has easier operators to apply functions to the entire array at once, which is why we often prefer it over standard Python. 
 # 
 # Run ```np.square(ind)``` and admire the simplicity. 
 
@@ -112,7 +114,7 @@ for i in ind:
 np.square(ind)
 
 
-# Here, numpy is simply amazing and super fast. 
+# Here, NumPy is simply amazing and super fast. 
 # 
 # Let's say we want to take the average of our linkdin and facebook views. First load the social media data again by running the code below.
 
@@ -147,7 +149,7 @@ facebook + 2
 np.average(facebook + linkedin)
 
 
-# You can also play with numpy's other functions such as np.char.str_len. This counts the number of character for each entry in the flower_names list. 
+# You can also play with NumPy's other functions such as np.char.str_len. This counts the number of character for each entry in the flower_names list. 
 # 
 # Run 
 # ```

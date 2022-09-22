@@ -3,9 +3,9 @@
 
 # ## Arrays
 
-# The next new concept is the numpy array. You often use this construct in data analysis. We want to use the numpy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?
+# The next new concept is the NumPy array. You often use this construct in data analysis. We want to employ the NumPy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?
 # 
-# Numpy has been a long-standing toolkit for data analysis. According to https://numpy.org/, it is 'the fundamental package for scientific computing with Python'. It features heavily in what is still a standard introduction in our field: https://wesmckinney.com/pages/book.html. It is a really good book to further work on the topics that are discussed in these introductions.
+# NumPy has been a long-standing toolkit for data analysis. According to https://numpy.org/, it is 'the fundamental package for scientific computing with Python'. It features heavily in what is still a standard introduction in our field: https://wesmckinney.com/pages/book.html. It is a really good book to further work on the topics that are discussed in these introductions.
 # 
 # First, we have to import the library numpy. You always do that in Python with import. In this case, type in ```import numpy```.
 
@@ -15,9 +15,9 @@
 import numpy
 
 
-# Let’s move on from our gambling and look at social media. 
+# Let’s move on from our gambling and look at social media. We will now introduce an example from social analytics brought to us by [dataquest.com](http://dataquest.io/), which we will come back to again later in the course. 
 # 
-# We will now introduce an example from social analytics brought to us by dataquest.com, which we will come back to again later in the course. You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week. 
+# You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week. 
 # 
 # Type in ```linkedin = numpy.array([16, 9, 13, 5, 2, 17, 14])``` to record the views for LinkedIn.
 
@@ -27,7 +27,7 @@ import numpy
 linkedin = numpy.array([16, 9, 13, 5, 2, 17, 14])
 
 
-# This is how you create a numpy array directly. If you are reminded of standard Python lists, you are right. For now, numpy arrays and lists are basically the same for us. 
+# This is how you create a NumPy array directly. If you are reminded of standard Python lists, you are right. For now, NumPy arrays and lists are basically the same for us. 
 # 
 # Now, please create the list ```facebook_list = [17, 7, 5, 16, 8, 13, 14]```. 
 
@@ -115,7 +115,7 @@ sum(facebook >= (linkedin * 2))
 views[0][1]
 
 
-# The order is of indexs is row first and then column. Try `views[1][4]`.
+# The order of indexes is row first and then column. Try `views[1][4]`.
 
 # In[13]:
 
@@ -123,9 +123,9 @@ views[0][1]
 views[1][4]
 
 
-# There is much more we can do. Numpy contains a lot of support functions.
+# There is much more we can do. NumPy contains a lot of support functions.
 # 
-# We can, for instance, reorder the social media views, so that the social media companies to be the columns and the rows to be the days. 
+# We can, for instance, reorder the social media views, so that the social media companies are the columns and the rows are the days. 
 # 
 # If you remember your school days, you can do change the axes in a matrix by transposing it - in Python with numpy.transpose. Simply run `views_t = numpy.transpose(views)`. Print out views_t. 
 
@@ -133,10 +133,11 @@ views[1][4]
 
 
 views_t = numpy.transpose(views)
-views_t
 
 
-# Array and matrix are important ideas for interactive data explorations. Many of the comparisions we did in this notebook cannot be done directly with Python lists. In the next session, we will be introduced to the idea of data frames, which takes the matrix one step further.
+# Array and matrix are important ideas for interactive data explorations. Many of the comparisons we did in this notebook cannot be done directly with Python lists. 
+# 
+# In the next session, we will be introduced to the idea of data frames, which takes the matrix one step further.
 
 # In[ ]:
 

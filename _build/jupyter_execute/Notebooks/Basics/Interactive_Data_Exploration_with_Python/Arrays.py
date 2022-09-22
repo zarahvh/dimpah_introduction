@@ -9,7 +9,7 @@
 # 
 # First, we have to import the library numpy. You always do that in Python with import. In this case, type in ```import numpy```.
 
-# In[1]:
+# In[ ]:
 
 
 
@@ -39,7 +39,7 @@
 
 # You can transform lists easily into arrays with ```facebook = numpy.array(facebook_list)```. Try it.
 
-# In[4]:
+# In[ ]:
 
 
 
@@ -57,7 +57,7 @@
 # 
 # We can create a matrix called views by simply combing linkedin and facebook. Type in ```views = numpy.array([linkedin, facebook])```.
 
-# In[6]:
+# In[ ]:
 
 
 
@@ -117,7 +117,7 @@
 
 # The order of indexes is row first and then column. Try `views[1][4]`.
 
-# In[13]:
+# In[ ]:
 
 
 

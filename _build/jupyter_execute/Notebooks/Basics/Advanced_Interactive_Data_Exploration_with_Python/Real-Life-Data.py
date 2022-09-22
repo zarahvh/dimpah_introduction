@@ -238,7 +238,7 @@ deathpenalty_df = pd.read_csv('https://tinyurl.com/4ejjhx94')
 
 # The boxplot displays the centre and spread in a format that allows you to quickly obtain a sense of the behaviour of the data. The median is denoted by the line inside the box while the box around it stands for the spread. The boxplot shows one outlier (the top dot). Can you identify it in the dataset?
 # 
-# But this was just a taste of the visualisations we focus on in the next sessions.
+# But this was just a taste of the visualisations that we focus on in the next sessions.
 
 # In[ ]:
 

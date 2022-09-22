@@ -56,7 +56,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # 
 # Check out the Matplotlib documentation at https://matplotlib.org/stable/contents.html.
 
-# In[5]:
+# In[ ]:
 
 
 
@@ -79,7 +79,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # 
 # As you can see we need to build a plot step by step ...
 
-# In[7]:
+# In[ ]:
 
 
 
@@ -124,7 +124,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # 
 # (Tip: Adapt plt.title and use color='red', fontsize=20)?
 
-# In[10]:
+# In[ ]:
 
 
 
@@ -143,7 +143,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # plt.xticks(ticks=[0,1,2,3,4,5,6], labels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
 # ```
 
-# In[11]:
+# In[ ]:
 
 
 
@@ -161,7 +161,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # plt.show()
 # ```
 
-# In[12]:
+# In[ ]:
 
 
 
@@ -169,7 +169,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Finally, let us add a legend in the bottom left corner like in our original plot. We need to add plt.legend() at the end before plt.show(). Try it ...
 
-# In[13]:
+# In[ ]:
 
 
 
@@ -181,7 +181,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Let’s create a simple barplot of facebook views with a barplot using Matplotlib directly with Pandas: https://en.wikipedia.org/wiki/Bar_chart. Run ```df['Facebook'].plot.bar()```.
 
-# In[14]:
+# In[ ]:
 
 
 

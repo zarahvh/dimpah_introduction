@@ -335,25 +335,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Unfortunately, web content in HTML format is not very structured and often simply chaotic. We would like to download only the table of the page of current US Senators and need to find a so-called ‘match’ for read_html to choose that table from the HTML document.</p>
 <p>Fortunately, for us there are many existing strategies to determine exactly the HTML element we would like to select. I looked for specific names in the table that are not repeated in the rest of the wiki page. Run: <code class="docutils literal notranslate"><span class="pre">senator_wiki</span> <span class="pre">=</span> <span class="pre">pd.read_html('https://en.wikipedia.org/wiki/List_of_current_United_States_senators',</span> <span class="pre">match</span> <span class="pre">=</span> <span class="pre">'Richard</span> <span class="pre">Shelby')</span></code>.</p>
 <p>If it all worked as it should run the code below to create our senators dataframe.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span> <span class="o">=</span> <span class="n">senator_wiki</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">aee0d9a1011c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">senators</span> <span class="o">=</span> <span class="n">senator_wiki</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;senator_wiki&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
 <p>Fortunately, the data is already of fairly good quality, but we still need to clean the data a bit.</p>
 <p>Let’s do some basic cleaning, where we ignore the strange textual errors and focus on the various columns that require direct attention. Please:</p>
 <p>(1) Create a ‘Party’ column from whatever name read_html has given that column. In my case, it was called Party.1</p>
@@ -372,6 +353,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022
+</pre></div>
+</div>
+</div>
 </div>
 <p>The years in the office of a senator can be calculated by subtracting from year_ the year when the office was assumed. We can use our regular expression knowledge and simply look for the strings which are four consecutive numbers (\d\d\d\d) and return those. Type in <code class="docutils literal notranslate"><span class="pre">senators['Years</span> <span class="pre">in</span> <span class="pre">Office']</span> <span class="pre">=</span> <span class="pre">year_</span> <span class="pre">-</span> <span class="pre">senators['Assumed</span> <span class="pre">office'].str.extract(r'.*,.*(\d\d\d\d).*').astype(int)</span></code>. Observe that we use astype(int) to transform the extracted string into an int.</p>
 <p>Finally, let’s delete all unnecessary columns that you now changed such as ‘Born’ and ‘Party.1’. Run the code below.</p>
@@ -379,6 +365,17 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Party.1&#39;</span><span class="p">,</span> <span class="s1">&#39;Born&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">bee5056342ca</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">senators</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Party.1&#39;</span><span class="p">,</span> <span class="s1">&#39;Born&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;senators&#39; is not defined
 </pre></div>
 </div>
 </div>

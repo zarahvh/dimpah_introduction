@@ -3,11 +3,11 @@
 
 # ## Exploring a real-life dataset
 
-# Next, we use our knowledge to analyse a real-life social dataset about death penalties. We will work through a detailed example of data exploration and analyse a very small part of the complex question of racism in the USA. 
+# Next, we use our knowledge to analyse a real-life dataset about death penalties. We will work through a detailed example of data exploration and analyse a very small part of the complex question of racism in the USA. 
 # 
 # The data deathpenalty_df covers judgements of defendants in cases of multiple murders in Florida between 1976 and 1987. The cases all have features that (a) describe whether the death penalty was handed out (where 0 refers to no, 1 to yes), (b) the race of the defendant and (c) the race of the victim (black is referred as 0, white is 1). 
 # 
-# Load the dataset by running the code below. Later on we will discuss in detail how you can load your own data in data frame, but if you are already curious check out: https://www.w3schools.com/python/pandas/pandas_csv.asp.
+# Load the dataset by running the code below. Later on we will discuss in detail how you can load your own data in a dataframe, but if you are already curious check out: https://www.w3schools.com/python/pandas/pandas_csv.asp.
 
 # In[1]:
 
@@ -34,9 +34,9 @@ deathpenalty_df.head()
 deathpenalty_df.tail()
 
 
-# Next, we will try to ask the data a few simple questions. With the Numpy function np.mean(), you can retrieve the average of a series of numbers.
+# Next, we will try to ask the data a few simple questions. With the function np.mean(), you can retrieve the average of a series of numbers.
 # 
-# We want to know the average of the frequency column by selecting it from the dataframe. You can thus answer what the average frequency of judgements would be by entering ```np.mean(deathpenalty_df['Freq'])```. Try it.
+# We want to know the average of the frequency column by selecting it from the dataframe. The average frequency of judgements is found by entering ```np.mean(deathpenalty_df['Freq'])```. Try it.
 
 # In[4]:
 
@@ -44,9 +44,9 @@ deathpenalty_df.tail()
 np.mean(deathpenalty_df['Freq'])
 
 
-# The numpy mean function is very useful to understand data. When something is deemed average, it falls somewhere between the extreme ends of the scale. An average student might have marks falling in the middle of their classmates; an average weight is neither unusually light nor heavy. An average item is typical, and not too unlike the others in the group. You might think of an average as an exemplar or even an expectation/tendency if you do not anything else.
+# The NumPy mean function is very useful to understand data. When something is deemed average, it falls somewhere between the extreme ends of the scale. An average student might have marks falling in the middle of their classmates; an average weight is neither unusually light nor heavy. An average item is typical, and not too unlike the others in the group. You might think of an average as an exemplar or even an expectation/tendency if you do not anything else.
 # 
-# median is another function like mean that summarizes a whole dataset by delivering a central tendency. Like mean, it identifies a value that falls in the middle of a set of data. median splits the upper 50% of a data from the lower 50%. It thus delivers the value that occurs halfway if we order a list of values. How do you get the median frequency of judgements? Hint: The Numpy function is called np.median.
+# median is another function like mean that summarizes a whole dataset by delivering a central tendency. Like mean, it identifies a value that falls in the middle of a set of data. median splits the upper 50% of a data from the lower 50%. It thus delivers the value that occurs halfway if we order a list of values. How do you get the median frequency of judgements? Hint: The NumPy function is called np.median.
 
 # In[5]:
 
@@ -56,7 +56,7 @@ np.median(deathpenalty_df['Freq'])
 
 # There is a significant diffference between the mean and medium value. What does it mean? Check out https://www.datascienceblog.net/post/basic-statistics/mean_vs_median/.
 # 
-# What is the lowest number of judgements (np.min)? Assign the value to min_freq, please. Print out min_freq, too.
+# What is the lowest number of judgements ```(np.min)```? Assign the value to min_freq, please. Print out min_freq, too.
 
 # In[6]:
 
@@ -65,7 +65,7 @@ min_freq = np.min(deathpenalty_df['Freq'])
 min_freq
 
 
-# What is the highest number of judgements (np.max)? Assign the value to max_freq, please. Print out max_freq, too.
+# What is the highest number of judgements (```np.max```)? Assign the value to max_freq, please. Print out max_freq, too.
 
 # In[7]:
 
@@ -76,7 +76,7 @@ max_freq
 
 # What kind of case combinations had the lowest numbers of judgements? We could use min_freq and max_freq to select the specific rows from deathpenalty_df. Do you know how? 
 # 
-# Try it for the highest number of judgements (max_freq).
+# Try it for the highest number of judgements (```max_freq```).
 
 # In[8]:
 
@@ -96,7 +96,7 @@ deathpenalty_df.nsmallest(1, 'Freq')
 
 # Onwards ... 
 # 
-# Which case combinations had the highest number of judgements? You just need to change the function to deathpenalty_df.nlargest.
+# Which case combinations had the highest number of judgements? You just need to change the function to ```deathpenalty_df.nlargest```.
 
 # In[10]:
 
@@ -116,7 +116,7 @@ max_freq - min_freq
 
 # The data is very spread out ...
 # 
-# To know more about the distribution of data, np.quantile comes in handy. The function defines cut-off points dividing observations. It is the function that helps us calculate the nth quantile of the given data. 
+# To know more about the distribution of data, np.quantile comes in handy. The function defines cut-off points dividing observations. It is the function that helps us calculate the n-th quantile of the data. 
 # 
 # Check out ```np.quantile(deathpenalty_df['Freq'], [0.25,0.5, 0.75, 1])```. The first argument is the column and the second argument is the list of the percentage cut-off points at 25%, 50%, 75% and 100%.
 
@@ -136,9 +136,9 @@ np.quantile(deathpenalty_df['Freq'], [0.25,0.5, 0.75, 1])
 deathpenalty_df.describe()
 
 
-# describes returns the value you just tried to find yourself! Oh, well. 
+# ```describes``` returns the value you just tried to find yourself! Oh, well. 
 # 
-# There is another Pandas function called info(), which returns the structure of a data frame. It is very useful to find out about columns and features of a dataset. Try ```deathpenalty_df.info()```.
+# There is another Pandas function called ```info()```, which returns the structure of a dataframe. It is very useful to find out about columns and features of a dataset. Try ```deathpenalty_df.info()```.
 
 # In[14]:
 
@@ -148,7 +148,7 @@ deathpenalty_df.info()
 
 # Summary statistics work only with what in statistics is called numerical data, which is basically anything measured in numbers. Freq is a numerical column.
 # 
-# Alternatively, if data is represented by a set of categories, it is called categorical or nominal. In Python, we can compare categorical features by counting the values of the VictimRace to see how often each race occurs by typing deathpenalty_df.value_counts('VictimRace'). You will see that both victim races are equally represented.
+# Alternatively, if data is represented by a set of categories, it is called categorical or nominal. In Python, we can compare categorical features by counting the values of the VictimRace to see how often each race occurs by typing ```deathpenalty_df.value_counts('VictimRace')```. You will see that both victim races are equally represented.
 # 
 # BTW: 'race' is a highly contested idea, and we should be more careful than the data we use, which assigns people to two very simplified categories. Discussing such constraint should be part of your own critical data analysis.
 
@@ -162,7 +162,9 @@ deathpenalty_df.value_counts('VictimRace')
 # 
 # We want to know how many 'black' or 'white' defandants received the death penalty. 
 # 
-# Remember that a black person is represented by 0 and a white by 1. A death penalty was handed out if the column DeathPenalty equals 1, with 0 otherwise. Let’s first create a new data frame black_and_deathpenalty, which contains black defendants who received the death penalty by usling deathpenalty_df.loc[]. It is a bit complicated with ```black_and_deathpenalty = deathpenalty_df.loc[(deathpenalty_df['DefendantRace'] == 0) & (deathpenalty_df['DeathPenalty'] == 1)]```.
+# Remember that a black person is represented by 0 and a white by 1. A death penalty was handed out if the column DeathPenalty equals 1, with 0 otherwise. 
+# 
+# Let’s first create a new dataframe black_and_deathpenalty, which contains black defendants which received the death penalty by using deathpenalty_df.loc[]. It is a bit complicated: ```black_and_deathpenalty = deathpenalty_df.loc[(deathpenalty_df['DefendantRace'] == 0) & (deathpenalty_df['DeathPenalty'] == 1)]```.
 
 # In[16]:
 
@@ -193,7 +195,6 @@ n_black_deathpenalty
 
 
 n_white_deathpenalty = white_and_deathpenalty['Freq'].sum()
-n_white_deathpenalty
 
 
 # What is therefore the proportion of black people receiving the death penalty? Remember you can get this by dividing the number of black defendants with the death penalty by the total number of defendants with the death penalty.
@@ -241,3 +242,9 @@ deathpenalty_df.boxplot('Freq')
 # The boxplot displays the centre and spread in a format that allows you to quickly obtain a sense of the behaviour of the data. The median is denoted by the line inside the box while the box around it stands for the spread. The boxplot shows one outlier (the top dot). Can you identify it in the dataset?
 # 
 # But this was just a taste of the visualisations that we focus on in the next sessions.
+
+# In[ ]:
+
+
+
+

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Data Frames
+# ## DataFrames
 
-# The most important structure in Python to store and process data are ‘data frames’. 
+# The most important structure in Python to store and process data are ‘dataframes’. 
 # 
-# The library to do so is Pandas that is a key part of our work. It is another library just like numpy. With `import pandas as pd`, we tell Python to use the acronym pd for accessing pandas operations. This way we avoid having to type in pandas all the time. 
+# The library to do so in Python is Pandas - a key part of our work. It is another library just like NumPy. With `import pandas as pd`, we tell Python to use the acronym pd for accessing Pandas operations. This way we avoid having to type in pandas all the time. 
 # 
 # Try `import pandas as pd`.
 
@@ -30,14 +30,14 @@ views_t = numpy.transpose(views)
 
 # Just like matrixes, data frames also have rows and columns but can hold different types of variables in each of their columns. 
 # 
-# Think about it for a moment. The power! This way, we can record any observation in the world. Any observation will have different attributes we associate with it. For instance, flowers can be of different types and colours. With data frames we can record each observation of flowers by recording it in rows and assign to the columns the various features we observe like colour, type, etc. This way the whole world is for us to record in data frames!
+# Think about it for a moment. The power! This way, we can record any observation in the world. Any observation will have different attributes we associate with it. For instance, flowers can be of different types and colours. With dataframes, we can record each observation of flowers by recording it in rows and assign to the columns the various features we observe like colour, type, etc. This way the whole world is for us to record in dataframes!
 # 
-# In order to get our week together into a single data frame, we create `my_week_df = pd.DataFrame(views_t, columns = ['Facebook', 'LinkedIn'])`. To create my_week_df, first the DataFrame function from Pandas (pd) is called with the transposed views. It is given the columns attribute with a list of names for the columns. 
+# In order to get our week together into a single dataframe, we create `my_week_df = pd.DataFrame(views_t, columns = ['Facebook', 'LinkedIn'])`. To create my_week_df, first the DataFrame function from Pandas (pd) is called with the transposed views. It is given the columns attribute with a list of names for the columns. 
 
 # In[3]:
 
 
-my_week_df = pd.DataFrame(views_t, columns = ['facebook', 'linkedin'])
+my_week_df = pd.DataFrame(views_t, columns = ['Facebook', 'LinkedIn'])
 
 
 # Print out my_week_df.
@@ -48,9 +48,9 @@ my_week_df = pd.DataFrame(views_t, columns = ['facebook', 'linkedin'])
 my_week_df
 
 
-# Just like matrixes, we can select rows and columns. For that, we need the operator iloc[row][column]. We need to use the Pandas iloc function here but otherwise it is the same principle as for lists and arrays. 
+# Just like matrixes, we can select rows and columns in dataframes. For that, we need the operator ```iloc[row][column]```. We need to use the Pandas iloc function here but otherwise it is the same principle as for lists and arrays. 
 # 
-# Select row 1, column 2 with `my_week_df.iloc[0][1]`. Please note, that this function uses [] brackets instead of (). I guess they wanted to give it the numpy feel.
+# Select row 1, column 2 with `my_week_df.iloc[0][1]`. Please note, that this function uses [] brackets instead of (). 
 
 # In[5]:
 
@@ -76,7 +76,9 @@ my_week_df.iloc[0:2][:]
 my_week_df.iloc[1]
 
 
-# Any idea how to select the second column rather than a row? Take a look at https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html, and you will find out that it is `my_week_df.iloc[:, 1]`. Try it.
+# Any idea how to select the second column rather than a row? 
+# 
+# Take a look at https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html, and you will find out that it is `my_week_df.iloc[:, 1]`. Try it.
 
 # In[8]:
 
@@ -92,20 +94,20 @@ my_week_df.iloc[:, 1]
 my_week_df.iloc[3:5, :]
 
 
-# You can also select the facebook column directly with `my_week_df['facebook']`. 
+# You can also select the facebook column directly with `my_week_df['Facebook']`. 
 
 # In[10]:
 
 
-my_week_df['facebook']
+my_week_df['Facebook']
 
 
-# If you use two [[ ]], you get back a new dataframe. Try `my_week_df[['facebook']]`.
+# If you use two [[ ]], you get back a new dataframe. Try `my_week_df[['Facebook']]`.
 
 # In[11]:
 
 
-my_week_df[['facebook']]
+my_week_df[['Facebook']]
 
 
 # Let's add another column to our dataframe, which we call 'happy' for our happy days in the week.
@@ -134,12 +136,14 @@ my_week_df['happy'] = happy
 my_week_df
 
 
-# Say, we would like to select all days, we were happy. We first define a selector series for the happy days with `happy_days = df['happy'] == True`. Remember the numpy arrays? This is very similar.
+# Say, we would like to select all days, we were happy. 
+# 
+# We first define a selector series for the happy days with `happy_days = my_week_df['happy'] == True`. Remember the numpy arrays? This is very similar.
 
 # In[15]:
 
 
-happy_days = my_week_df ['happy'] == True
+happy_days = my_week_df['happy'] == True
 
 
 # Print out happy_days.
@@ -152,7 +156,7 @@ happy_days
 
 # It is a 'Series' of Booleans. Series is yet another term for lists and arrays. Pandas calls single columns things like that. I know there are lots of names here ...
 # 
-# Now, we use the Boolean selector to create `happy_days_df = df.loc[happy_days]`.
+# Now, we use the Boolean selector to create `happy_days_df = my_week_df.loc[happy_days]`.
 
 # In[17]:
 
@@ -170,15 +174,15 @@ happy_days_df = my_week_df.loc[happy_days]
 happy_days_df
 
 
-# If you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can proceed in a similar way. First define the selector with `small = my_week_df['linkedin'] > my_week_df['facebook']`.
+# If you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can proceed in a similar way. First define the selector with `small = my_week_df['LinkedIn'] > my_week_df['Facebook']`.
 
 # In[19]:
 
 
-small = my_week_df['linkedin'] > my_week_df['facebook']
+small = my_week_df['LinkedIn'] > my_week_df['Facebook']
 
 
-# Then, create a new data frame with `small_df = my_week_df.loc[small]`.
+# Then, create a new dataframe with `small_df = my_week_df.loc[small]`.
 
 # In[20]:
 
@@ -196,12 +200,12 @@ small_df
 
 # That’s almost it for data frames. 
 # 
-# I promise they get more interesting once we start working with real data. One more thing you often want to do is to sort a data frame according to one of its columns. We have another Pandas function for that called sort_values. Run `sorted_df = my_week_df.sort_values(by=['facebook'])` to sort my_week_df by the values in the facebook column.
+# I promise they get more interesting once we start working with real data. One more thing you often want to do is to sort a dataframe according to one of its columns. We have another Pandas function for that called sort_values. Run `sorted_df = my_week_df.sort_values(by=['facebook'])` to sort my_week_df by the values in the facebook column.
 
 # In[22]:
 
 
-sorted_df = my_week_df.sort_values(by=['facebook'])
+sorted_df = my_week_df.sort_values(by=['Facebook'])
 
 
 # Print out sorted_df.
@@ -212,12 +216,6 @@ sorted_df = my_week_df.sort_values(by=['facebook'])
 sorted_df
 
 
-# That’s it for the most important concepts around data frames in Python. 
+# That’s it for the most important concepts around dataframes in Python. 
 # 
 # Next, we move on to some real-life datasets and more advanced data exploration.
-
-# In[ ]:
-
-
-
-

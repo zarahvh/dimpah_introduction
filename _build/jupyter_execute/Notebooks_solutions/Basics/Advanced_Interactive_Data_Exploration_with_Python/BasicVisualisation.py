@@ -5,7 +5,7 @@
 
 # Those last plots did look promising, didn’t they? Let’s start from the beginning and go through basic plots in Python.
 # 
-# To make it a bit more interesting, we return to the LinkedIn and Facebook view numbers. We would like to investigate their relationship. They should be loaded already. Let's create our Linkedin and Facebook views of the week again and also create a dataframe df to hold them. Run the code below. Do you understand what it is doing?
+# To make it a bit more interesting, we return to the LinkedIn and Facebook view numbers. We would like to investigate their relationship. Let's create our Linkedin and Facebook views of the week again and also create a dataframe df to hold them. Run the code below. Do you understand what it is doing?
 
 # In[1]:
 
@@ -20,7 +20,7 @@ df = pd.DataFrame(zip(linkedin, facebook), columns = ['LinkedIn', 'Facebook'])
 df
 
 
-# The earlier boxplot function came directly with the Pandas library. There are some limited plots in Pandas called basic plots at https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html. It would be easy to plot the linkedin and facebook data directly as a line plot with df.plot().
+# The earlier boxplot function came directly with the Pandas library. There are some limited plots in Pandas called basic plots: https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html. It would be easy to plot the linkedin and facebook data directly as a line plot with df.plot().
 
 # In[2]:
 
@@ -28,7 +28,7 @@ df
 df.plot()
 
 
-# While Pandas plot normally provides only a quick overview of the data, in this case it is actually very good because the data is quite simply. The plot function would, however, struggle with the death penality dataset, as it contains different types of columns.
+# While Pandas, plots normally provide only a quick overview of the data - in this case it is actually very good because the data is quite simple. The plot function would, however, struggle with the death penalty dataset, as it contains different types of columns.
 # 
 # We want more control and use the most popular libraries in Python to plot and visualise. According to https://matplotlib.org/, 'Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python'.
 # 
@@ -86,9 +86,11 @@ plt.plot(linkedin, marker='o', color='blue')
 plt.title('LinkedIn', color='red', fontsize=20)
 
 
-# Better. Now, we would like to compare LinkedIn and Facebook views and create a graph containing both. 
+# Better. 
 # 
-# First let’s set the xlabel to Days and the ylabel to views. Run:
+# Next, we would like to compare LinkedIn and Facebook views and create a graph containing both. 
+# 
+# First let’s set the xlabel (x-axis label) to Days and the ylabel to views. Run:
 # 
 # ```
 # plt.plot(linkedin, marker='o', color='blue')
@@ -158,8 +160,8 @@ plt.plot(linkedin, marker='o', color='blue')
 plt.plot(facebook, marker='x', color='red')
 plt.xlabel('Days')
 plt.ylabel('Views')
-plt.title('LinkedIn-Facebook-Week', color='red', fontsize=20)
-plt.xticks(ticks=[0,1,2,3,4,5,6],labels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
+plt.title('LinkedIn-Facebook-week', color='red', fontsize=20)
+plt.xticks(ticks=[0,1,2,3,4,5,6], labels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
 
 
 # To get rid of all that additional plotting information on top, use plt.show() at the end to immediately display open figures. Run:
@@ -203,9 +205,9 @@ plt.show()
 
 # Much better. You could add this graph already to your presentations. It looks good enough. There are, however, a million ways to improve this even further in Python/Matplotlib. If you are interested, just search the web for all the fantastic visualisations people have created with Matplotlib. 
 # 
-# But, we will move on to look at how visualisations can be used with a data frame. Remember, data frames are the workhorses of Python, which we use in almost all our data analysis tasks.
+# But, we will move on to look at how visualisations can be used with a dataframe. Remember, dataframes are the workhorses of Python, which we use in almost all our data analysis tasks.
 
-# Let’s create a simple barplot of facebook views with a barplot using Matplotlib directly with Pandas: https://en.wikipedia.org/wiki/Bar_chart. Run df['Facebook'].plot.bar().
+# Let’s create a simple barplot of facebook views with a barplot using Matplotlib directly with Pandas: https://en.wikipedia.org/wiki/Bar_chart. Run ```df['Facebook'].plot.bar()```.
 
 # In[14]:
 
@@ -233,7 +235,7 @@ plt.xticks(ticks=[0,1,2,3,4,5,6],labels=['Mon','Tue','Wed','Thu','Fri','Sat','Su
 plt.show()
 
 
-# Finally, we can also create a stacked barplot and show both the views of facebook and linkedin using the same function as before but now adding stacked=True as an argument.
+# We can also create a stacked barplot and show both the views of facebook and linkedin using the same function as before but now adding stacked=True as an argument.
 # 
 # Run:
 # 

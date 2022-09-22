@@ -422,7 +422,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use <code class="docutils literal notranslate"><span class="pre">congress_114.loc[:,</span> <span class="pre">bill_cols]``</span> <span class="pre">to</span> <span class="pre">create</span> </code>congress_114_voting```. Also, print out the first couple of rows of congress_114_voting.</p>
+<p>Next, we need to understand what we would like to cluster and choose the relevant features as input into the k-means algorithm. If you look back into your earlier explorations of the dataset, you can see that the first 4 columns do not contain voting behaviour. They have the name, state, etc. of the various senators. The voting behaviour can be found in columns 5 to 19. Use either the column indexes or bill_cols to create a new dataframe congress_114_voting, which only contains the voting behaviour. Tip you need to use <code class="docutils literal notranslate"><span class="pre">congress_114.loc[:,</span> <span class="pre">bill_cols]</span></code> to create congress_114_voting. Also, print out the first couple of rows of congress_114_voting.</p>
 <p>Great, we are ready to cluster the votes. Check out the details of k-means in the SKlearn documentation: <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html</a></p>
 <p>Its main arguments are the dataset to cluster and the number of clusters. We can leave all the other inputs at their defaults.</p>
 <p>First import KMeans from sklearn.cluster by running the code below.</p>
@@ -441,23 +441,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This should not have taken too long, as the dataset is very small.</p>
 <p>In the meantime, you can celebrate that you have just run a machine learning algorithm. k-means is a fairly simply one, but still a standard example of an unsupervised machine learning algorithm. Unsupervised machine learning means that you do not have to train the computer in advance about the kind of results you expect. You can also check out what that means in a wonderful Coursera/Stanford course under <a class="reference external" href="https://www.coursera.org/learn/machine-learning/lecture/olRZo/unsupervised-learning">https://www.coursera.org/learn/machine-learning/lecture/olRZo/unsupervised-learning</a>. The course is legendary and gives you in-depth knowledge of machine learning.</p>
 <p>The cluster assignments are stored as a one-dimensional NumPy array in kmeans.labels_. Here’s a look at the first five predicted labels. Run the code below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">d35f031222a5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;kmeans&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
 <p>Ok, so now that we have run our first machine learning algorithms, what do we do with the results? A good first step for k-means and other clustering algorithms is to check out the size of the clusters. Who do you expect to belong to each cluster?</p>
 <p>Use np.bincount with kmeans.labels_, please, and run <code class="docutils literal notranslate"><span class="pre">np.bincount(kmeans.labels_)</span></code>.</p>
 <p>These numbers show that there is not really a clear division between Republicans and Democrats, as the clusters do not correspond to the numbers each party has in the senate.</p>

@@ -18,23 +18,23 @@ import matplotlib.pyplot as plt
 
 # Seaborn is a more recent Python data visualization library based on Matplotlib. According to https://seaborn.pydata.org/, it 'provides a high-level interface for drawing attractive and informative statistical graphics.' It integrates easily with Pandas and provides an easier to use set of more high-level functions. So, load the library with `import seaborn as sns`.
 
-# In[2]:
+# In[ ]:
 
 
-import seaborn as sns
+
 
 
 # In the session, we look at museums and how to get a job as an analyst there. Several arts museums around the world publish their collections’ metadata online. Very popular is, for instance, New York’s Museum of Modern Art (MoMA) collection data (https://github.com/MuseumofModernArt/collection). Let us take a look at their artworks’ information. Please note that this data is refreshed monthly and fairly large with over 50 MB at the time of writing. So, if you download it now you might see some differences to our suggested data frame moma_artworks, which is just a sample. 
 # 
 # Run the code below.
 
-# In[3]:
+# In[2]:
 
 
 moma_art = pd.read_csv("https://tinyurl.com/bdyxhcj9", index_col=False)
 
 
-# Type in `moma_artworks.head()` to take a look at the first rows. For the rest of the MoMA exercises, we take inspiration from http://sebastianbarfort.github.io/ who many years ago came up with this task.
+# Type in `moma_art.head()` to take a look at the first rows. For the rest of the MoMA exercises, we take inspiration from http://sebastianbarfort.github.io/ who many years ago came up with this task.
 
 # In[ ]:
 
@@ -46,7 +46,7 @@ moma_art = pd.read_csv("https://tinyurl.com/bdyxhcj9", index_col=False)
 # 
 # Run the next code and observe the argument parse_date which allows you to specify which columns should be parsed for the date format.
 
-# In[4]:
+# In[3]:
 
 
 moma_stock = pd.read_csv("https://tinyurl.com/y2cj56vh", parse_dates=['date'])
@@ -54,10 +54,10 @@ moma_stock = pd.read_csv("https://tinyurl.com/y2cj56vh", parse_dates=['date'])
 
 # Check out the first few records of moma_stock.
 
-# In[ ]:
+# In[4]:
 
 
-
+moma_stock.head()
 
 
 # Next, we draw a simple line to represent the stock development. 
@@ -148,7 +148,7 @@ plt.tick_params(labelsize=8)
 
 # After your success at MoMA, why not start at the TATE-galleries in Britain? Your first task is to compare visitor numbers. You have been given a data frame tate_attendance. Run the next cell.
 
-# In[7]:
+# In[ ]:
 
 
 tate_attendance = pd.read_csv("https://tinyurl.com/5n7ca2ea")

@@ -21,15 +21,15 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Pillow (https://pypi.org/project/Pillow/) is the most commonly used library to process images. Load its image part with `from PIL import Image`.
 
-# In[ ]:
+# In[2]:
 
 
-
+from PIL import Image
 
 
 # Because we are from Amsterdam, we will work with the famous self-portrait of van Gogh. With PIL's `Image.open()`, we load an image. With requests, we ensure that we can read the image from a URL. Run the code in the next cell.
 
-# In[2]:
+# In[3]:
 
 
 import requests
@@ -94,7 +94,7 @@ Gogh = Image.open(Gogh_re)
 # 
 # The relevant NumPy function is np.rot90(), so let us rotate the master with it. Check out the documentation how and then also display rotated_gogh by running the code below.
 
-# In[ ]:
+# In[4]:
 
 
 rotated_gogh = np.rot90(nGogh)

@@ -9,15 +9,15 @@
 # 
 # Try `import pandas as pd`.
 
-# In[ ]:
+# In[1]:
 
 
-
+import pandas as pd
 
 
 # Before we continue, we need to recreate the data from the last session. Please run the code below.
 
-# In[1]:
+# In[2]:
 
 
 import numpy
@@ -94,7 +94,7 @@ views_t = numpy.transpose(views)
 
 
 
-# You can also select the facebook column directly with `my_week_df['facebook']`. 
+# You can also select the facebook column directly with `my_week_df['Facebook']`. 
 
 # In[ ]:
 
@@ -102,7 +102,7 @@ views_t = numpy.transpose(views)
 
 
 
-# If you use two [[ ]], you get back a new dataframe. Try `my_week_df[['facebook']]`.
+# If you use two [[ ]], you get back a new dataframe. Try `my_week_df[['Facebook']]`.
 
 # In[ ]:
 
@@ -138,7 +138,7 @@ views_t = numpy.transpose(views)
 
 # Say, we would like to select all days, we were happy. 
 # 
-# We first define a selector series for the happy days with `happy_days = df['happy'] == True`. Remember the numpy arrays? This is very similar.
+# We first define a selector series for the happy days with `happy_days = my_week_df['happy'] == True`. Remember the numpy arrays? This is very similar.
 
 # In[ ]:
 
@@ -156,7 +156,7 @@ views_t = numpy.transpose(views)
 
 # It is a 'Series' of Booleans. Series is yet another term for lists and arrays. Pandas calls single columns things like that. I know there are lots of names here ...
 # 
-# Now, we use the Boolean selector to create `happy_days_df = df.loc[happy_days]`.
+# Now, we use the Boolean selector to create `happy_days_df = my_week_df.loc[happy_days]`.
 
 # In[ ]:
 
@@ -174,7 +174,7 @@ views_t = numpy.transpose(views)
 
 
 
-# If you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can proceed in a similar way. First define the selector with `small = my_week_df['linkedin'] > my_week_df['facebook']`.
+# If you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can proceed in a similar way. First define the selector with `small = my_week_df['LinkedIn'] > my_week_df['Facebook']`.
 
 # In[ ]:
 
@@ -219,15 +219,3 @@ views_t = numpy.transpose(views)
 # That’s it for the most important concepts around dataframes in Python. 
 # 
 # Next, we move on to some real-life datasets and more advanced data exploration.
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

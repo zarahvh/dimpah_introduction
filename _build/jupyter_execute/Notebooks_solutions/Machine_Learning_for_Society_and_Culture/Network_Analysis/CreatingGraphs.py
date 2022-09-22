@@ -15,7 +15,9 @@ import numpy as np
 import matplotlib as plt
 
 
-# Now to the main star of this show, which is the networkx library: https://networkx.org/ Load this commonly used network library with `import networkx as nx`.
+# Now to the main star of this show, which is the networkx library: https://networkx.org/. 
+# 
+# Load this commonly used network library with `import networkx as nx`.
 
 # In[2]:
 
@@ -23,7 +25,7 @@ import matplotlib as plt
 import networkx as nx 
 
 
-# You have two data frames  in the environment. 
+# You have two dataframes  in the environment. 
 # 
 # The first is karate_nodes, which contains the nodes of the network with information about the karate club members. Run the code below.
 
@@ -34,7 +36,7 @@ karate_nodes = pd.read_csv("https://tinyurl.com/2p9byesa")
 karate_nodes.head()
 
 
-# The second data frame karate_edges contains the edges with information whether one member likes another and by how much (weight). Run the code below.
+# The second dataframe karate_edges contains the edges with information whether one member likes another and by how much (weight). Run the code below.
 
 # In[4]:
 
@@ -48,7 +50,7 @@ karate_edges.head()
 # G = nx.from_pandas_edgelist(karate_edges, source = "from", target = "to", create_using=nx.DiGraph(), edge_attr = True)
 # ```
 # 
-# The first argument is the data frame, the second the source node, the third is the target node. We also tell from_pandas_edgelist to create a directed graph with create_using=nx.DiGraph() and to keep all the edge attributes with edge_attr = True.
+# The first argument is the dataframe, the second the source node, the third is the target node. We also tell from_pandas_edgelist to create a directed graph with create_using=nx.DiGraph() and to keep all the edge attributes with edge_attr = True.
 
 # In[5]:
 
@@ -57,7 +59,10 @@ G = nx.from_pandas_edgelist(karate_edges, source = "from", target = "to", create
 
 
 # Unfortunately, it is not very easy to add all the attributes of the nodes. https://newbedev.com/networkx-setting-node-attributes-from-dataframe explains how this is done by creating first a dictionary of dictionaries from karate_nodes.
-# Type in: `node_attr = karate_nodes.set_index('id').to_dict('index')`. This will first set the index of karate_nodes to the ids of all nodes. to_dict will then add the row values as another dictionary. Check out how this looks for a row by adding `node_attr[2]`.
+# 
+# Type in: `node_attr = karate_nodes.set_index('id').to_dict('index')`. This will first set the index of karate_nodes to the ids of all nodes. to_dict will then add the row values as another dictionary. 
+# 
+# Check out how this looks for a row by adding `node_attr[2]`.
 
 # In[6]:
 
@@ -114,15 +119,17 @@ G.nodes.data()
 G.nodes[1]['age']
 
 
-# There are a lot of options here and it is good at this moment to check out the documention. To get only edges incident to nodes 1 and 3, type `G.edges([1, 3])`.
+# There are a lot of options here and it is good at this moment to check out the documention. To get only edges linked to nodes 1 and 3, type `G.edges([1, 3])`.
 
 # In[13]:
 
 
-G.edges([1, 3])  
+G.edges([1, 3])
 
 
-# We can see the node together with its attributes, if we want to now only see the age attribute of each node, we access it using `nx.get_node_attributes(G, 'age').values()`. get_node_attributes returns a dictionary with the node's id as the key and the age the value. With values(), we only receive the values().
+# We can observe the node together with its attributes. 
+# 
+# If we want to now only see the age attribute of each node, we access it using `nx.get_node_attributes(G, 'age').values()`. get_node_attributes returns a dictionary with the node's id as the key and the age the value. With values(), we only receive the values().
 
 # In[14]:
 
@@ -132,7 +139,7 @@ nx.get_node_attributes(G, 'age').values()
 
 # It's a dictionary. You would have to cast to a list to get only the ages. Do you know how?
 # 
-# Let's try an plot this graph. It's easy in networkx. Just run nx.draw(G).
+# Let's try an plot this graph. It's easy in networkx. Just run `nx.draw(G)`.
 
 # In[15]:
 
