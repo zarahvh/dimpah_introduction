@@ -3,7 +3,7 @@ root: intro
 parts:
   - caption: Basics
     chapters:
-    - file: Interactive_Data_Exploration_with_Python
+    - file: Notebooks/Basics/Unit1-Introduction
       sections:
         - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/StartingPython
         - file: Notebooks/Basics/Interactive_Data_Exploration_with_Python/PythonLists
@@ -17,7 +17,7 @@ parts:
         - file: Notebooks/Basics/Advanced_Interactive_Data_Exploration_with_Python/BasicVisualisation
   - caption:  Machine learning for Society and Culture
     chapters:
-    - file: Community_Analysis
+    - file: Notebooks/Machine_Learning_for_Society_and_Culture/Unit2-Introduction
       sections:
         - file: Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/PoliticalCommunities
         - file: Notebooks/Machine_Learning_for_Society_and_Culture/Community_Analysis/WebScraping
